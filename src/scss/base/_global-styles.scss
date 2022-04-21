@@ -1,0 +1,158 @@
+/*Webkit:: Disabling the browsers default bg colour for autofill fields*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+p {
+  font-family: inherit;
+  font-size: $font-size-normal;
+  line-height: 1.15;
+}
+
+select {
+  padding: 5px $padding-normal 10px $padding-normal !important;
+  color: #000000 !important;
+}
+
+/*Label used in Payment steps*/
+.label {
+  color: #000000 !important;
+}
+
+/*Overriding default text success -danger color*/
+.text-success {
+  color: #93c563 !important;
+}
+
+.text-danger {
+  color: $color-red-10 !important;
+}
+
+/*Removing color effects for text-success/danger links*/
+a.text-success:focus,
+a.text-success:active,
+a.text-success:visited,
+a.text-success:hover {
+  color: #93c563 !important;
+}
+
+a:hover {
+  color: #000000 !important;
+}
+
+.link-danger,
+a.link-danger:focus,
+a.link-danger:active,
+a.link-danger:visited,
+a.link-danger:hover {
+  color: $color-red-10 !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+/*Disabling focus and active for touch experience*/
+button:focus,
+button:active,
+button:visited,
+button:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/*Removing shadow for bootstrap form control*/
+.form-control {
+  box-shadow: none;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn {
+  max-height: 40px !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+select {
+  height: 40px !important;
+}
+
+.btn-modal:hover {
+  color: white;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.text-secondary {
+  color: #d0d0d0 !important;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #dcdcdc !important;
+}
+
+input:focus {
+  border-color: #dcdcdc !important;
+}
+
+input:focus::placeholder {
+  transition: opacity 0.2s 0.05s ease !important;
+  opacity: 0.05;
+}
+
+input:disabled {
+  color: lightgray;
+}
+
+/*Custom Font weight*/
+.font-normal {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.font-bolder {
+  font-weight: 700;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

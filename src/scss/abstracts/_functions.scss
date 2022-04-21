@@ -1,0 +1,9 @@
+// PX to REM and PX to EM calculator
+@function px-to-rem($pxValue, $oneRem: $oneRemPxCount) {
+  @return ($pxValue / $oneRem) + rem;
+}
+
+// PX to EM, eg. for line-height: yolo-px-to-em($line-height, $font-size)
+@function px-to-em($pxValue, $oneEm) {
+  @return ($pxValue / $oneEm) + em;
+}
