@@ -1,9 +1,12 @@
+// colors
 $color-blue-10: rgb(84, 18, 220);
 $color-green-10: rgb(112, 173, 71);
 $color-yellow-10: rgb(255, 176, 0);
 $color-purple-10: rgb(108, 0, 202);
 $color-red-10: rgb(192, 0, 0);
 $color-white-10: rgb(255, 255, 255);
+$color-black-10: rgb(0, 0, 0);
+$color-neutral-10: transparent;
 $color-orange-10: rgb(237, 125, 49);
 $color-gray-10: rgb(127, 127, 127);
 $color-gray-15: rgb(38, 38, 38);
@@ -13,23 +16,18 @@ $color-gray-30: rgb(191, 191, 191);
 $color-gray-40: rgb(217, 217, 217);
 $color-gray-50: rgb(242, 242, 242);
 $color-bg-active: #e9edf2;
-$color-bg: #ffffff;
-$color-black: #000000;
+
 $disabled-text-color: #d3d3d3;
 $color-disabled: rgba(255, 255, 255, 0.4);
-$color-fg-heading: #2a2a2a;
-$color-fg-text: #4b4b4b;
-$color-fg: #a4abb3;
 $color-gray-border: #dcdcdc;
-$color-neutral: transparent;
-$color-separator: #ebeef2;
-$color-white: #ffffff;
+
 $color-button-active: #cecece;
 $color-danger-text: #f03e08;
 $color-info-text: #b5b5b5;
 
 //theme
 $color-background: #f8f6f1;
+$color-bg-white: #ffffff;
 $color-new: #a3d0da;
 $color-new-10: #dbecf0;
 
@@ -56,12 +54,14 @@ $padding-normal: 16px;
 $padding-normal-half: 8px;
 $padding-medium: 12px;
 $padding-large: 30px;
+
 $marging-normal: 16px;
 $marging-normal-half: 8px;
 $margin-small: 4px;
 $border-radius: 8px;
 $border-radius-half: 4px;
 $border-width: 2px;
+$border-color: $color-gray-border;
 $button-border-radius: 4px;
 
 $card-header-font-size: 18px;
@@ -75,6 +75,7 @@ $font-size-sm: 0.875rem;
 $font-size-xlg: 30px;
 $font-size-xs: 0.75rem;
 $font-size: $font-size-normal;
+
 $font-weight-thin: 200;
 $font-weight-light: 300;
 $font-weight-normal: 500;
@@ -86,7 +87,6 @@ $text-heading-6-font-size: 28px;
 $text-heading-6-font-weight: $font-weight-normal;
 $link-text-color: $color-black;
 
-$border-color: $color-gray-border;
 $inner-radius: 4px;
 $line-height: 20px;
 $linear-gradient: none;
