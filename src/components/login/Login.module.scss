@@ -1,2 +1,137 @@
 .login {
+  width: (330/16) + rem;
+  .socialLogin {
+    margin: 0 auto;
+    width: 100%;
+    .google {
+      background-color: #4285f4;
+    }
+    .linkedin {
+      background-color: #0077b5;
+    }
+    .google,
+    .linkedin {
+      border: none;
+      border-radius: 10px;
+      width: (330/16) + rem;
+      height: 59px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      span {
+        color: #fff;
+        width: (167/16) + rem;
+        font-weight: 700;
+        font-size: (18/16) + em;
+      }
+      svg {
+        color: #fff;
+        width: (24/16) + em;
+        height: (24/16) + em;
+      }
+    }
+  }
+
+  .google {
+    margin-bottom: (20/16) + rem;
+  }
+  .divider {
+    display: flex;
+    width: (330/16) + rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 20px;
+    hr {
+      width: (144/16) + rem;
+      height: 1px;
+    }
+    .text {
+      padding: 0 10px;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      color: #c4c4c4;
+    }
+  }
+  .nativeLogin {
+    .loginForm {
+      input[type="submit"] {
+        display: block;
+        width: (330/16) + rem;
+        height: (59/16) + rem;
+        border-radius: 10px;
+        background-color: #343a40;
+        border: 1px solid #343a40;
+        padding: 0;
+        margin: 20px 0 0 0;
+        color: #fff;
+        font-weight: 700;
+        font-size: (18/16) + em;
+        &:hover {
+          background-color: #6b9080;
+          border: 1px solid #6b9080;
+        }
+      }
+      .passwordLabel,
+      .emailLabel {
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 24px;
+        color: #00354f;
+        margin-bottom: 16px;
+      }
+      .email,
+      .password {
+        width: (330/16) + rem;
+        height: (59/16) + rem;
+        color: #f1f1f1;
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        background-color: #f1f1f1;
+        &::placeholder {
+          font-size: 15px;
+          line-height: 22.5px;
+          font-weight: 500;
+          padding-left: 20px;
+        }
+      }
+      .email {
+        margin-bottom: 22px;
+      }
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+    .formAction {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      color: #00354f;
+      .rememberMeLabel {
+        margin-left: 5px;
+      }
+    }
+  }
+  .bottomText {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+    .question {
+      color: #00354f;
+    }
+    a {
+      color: #219ebc;
+      margin-left: 5px;
+      &:hover {
+        text-decoration: underline !important;
+        color: #219ebc !important;
+      }
+    }
+  }
 }
