@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Login.module.scss";
-import { GoogleIconSvg } from "../../assets/svg/icons";
-import { Google, LinkedIn } from "@mui/icons-material";
+import { GoogleIconSvg, LinkedinIconSvg } from "../../assets/svg/icons";
 
 const Login = (props: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submit, setSubmit] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -20,6 +20,10 @@ const Login = (props: any) => {
   const handlePassword = (event: any) => {
     setPassword(event.target.value);
   };
+
+  const handleRememberMe = (event: any) => {
+    setRememberMe(event.target.checked);
+  };
   return (
     <div className={styles.login}>
       <div className={styles.socialLogin}>
@@ -28,7 +32,7 @@ const Login = (props: any) => {
           onClick={() => console.log("google clicked")}
         >
           {/* <GoogleIconSvg width={24} height={24} /> */}
-          <Google />
+          <GoogleIconSvg />
           <span>Log in with Google</span>
         </div>
         <div
@@ -36,7 +40,7 @@ const Login = (props: any) => {
           onClick={() => console.log("LikedIn clicked")}
         >
           {/* <GoogleIconSvg width={24} height={24} /> */}
-          <LinkedIn />
+          <LinkedinIconSvg />
           <span>Log in with Google</span>
         </div>
       </div>
@@ -48,25 +52,31 @@ const Login = (props: any) => {
       <div className={styles.nativeLogin}>
         <form className={styles.loginForm} onSubmit={handleSubmit}>
           <div>
-            <label>
-              <div className={styles.emailLabel}>Email address</div>
-              <input
-                className={styles.email}
-                type="email"
-                name="email"
-                placeholder="Your email address"
-                id="email"
-                value={email}
-                onChange={handleEmail}
-              />
+            <label htmlFor="email" className={styles.emailLabel}>
+              Email address
             </label>
+            <input
+              className={styles.email}
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              id="email"
+              value={email}
+              onChange={handleEmail}
+            />
+
             {/* {!email && submit && <p>Enter a valid email address</p>} */}
           </div>
-
-          <label>
-            <div className={styles.passwordLabel}>Password</div>
+          <div>
+            <label htmlFor="password" className={styles.passwordLabel}>
+              Password
+            </label>
             <input
-              className={styles.password}
+              className={
+                password.length < 8 && submit
+                  ? styles.password
+                  : styles.password
+              }
               type="password"
               name="password"
               placeholder="password"
@@ -74,18 +84,26 @@ const Login = (props: any) => {
               value={password}
               onChange={handlePassword}
             />
-          </label>
+          </div>
+
           {/* {password.length <= 8 && submit && (
             <p>Password cannot be less than 8 characters</p>
           )} */}
           <div className={styles.formAction}>
             <span className={styles.rememberMe}>
               <label>
-                <input type="checkbox" name="rememberMe" id="rememberMe" />
+                <input
+                  type="checkbox"
+                  name="rememberMe"
+                  id="rememberMe"
+                  onClick={handleRememberMe}
+                />
                 <span className={styles.rememberMeLabel}>Remember me</span>
               </label>
             </span>
-            <span className={styles.forgetPassword}>Forget password</span>
+            <a className={styles.forgetPassword} href="/">
+              Forget password
+            </a>
           </div>
           <input type="submit" value="Log in" />
         </form>

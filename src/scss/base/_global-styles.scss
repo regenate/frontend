@@ -23,37 +23,7 @@ select {
   color: #000000 !important;
 }
 
-/*Label used in Payment steps*/
-.label {
-  color: #000000 !important;
-}
-
-/*Overriding default text success -danger color*/
-.text-success {
-  color: #93c563 !important;
-}
-
 .text-danger {
-  color: $color-red-10 !important;
-}
-
-/*Removing color effects for text-success/danger links*/
-a.text-success:focus,
-a.text-success:active,
-a.text-success:visited,
-a.text-success:hover {
-  color: #93c563 !important;
-}
-
-a:hover {
-  color: #000000 !important;
-}
-
-.link-danger,
-a.link-danger:focus,
-a.link-danger:active,
-a.link-danger:visited,
-a.link-danger:hover {
   color: $color-red-10 !important;
 }
 
