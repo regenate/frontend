@@ -31,7 +31,6 @@ const Login = (props: any) => {
           className={styles.google}
           onClick={() => console.log("google clicked")}
         >
-          {/* <GoogleIconSvg width={24} height={24} /> */}
           <GoogleIconSvg />
           <span>Log in with Google</span>
         </div>
@@ -39,9 +38,8 @@ const Login = (props: any) => {
           className={styles.linkedin}
           onClick={() => console.log("LikedIn clicked")}
         >
-          {/* <GoogleIconSvg width={24} height={24} /> */}
           <LinkedinIconSvg />
-          <span>Log in with Google</span>
+          <span>Log in with LinkedIn</span>
         </div>
       </div>
       <div className={styles.divider}>
