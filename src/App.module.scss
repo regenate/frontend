@@ -1,0 +1,17 @@
+.app {
+  position: relative;
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid lightgray;
+  }
+  .notFound {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .footer {
+    text-align: center;
+  }
+}

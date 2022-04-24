@@ -8,6 +8,7 @@ import {
   EyeOffSVG,
   EyeSVG,
 } from "../../assets/svg/icons";
+import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
 
 const Join = (props: any) => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const Join = (props: any) => {
   const [name, setName] = useState("");
   const [inputType, setInputType] = useState(false);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmit(true);
   };
@@ -126,16 +127,16 @@ const Join = (props: any) => {
           <div className={styles.bottomText}>
             <span className={styles.text}>By continuing, you agree to the</span>
             <span className={styles.textBold}>
-              <a href="/">Terms of use Privacy policy</a>
+              <Link to="/">Terms of use Privacy policy</Link>
             </span>
             <span className={styles.text}>, and</span>
             <span className={styles.textBold}>
-              <a href="/">Community Standards</a>
+              <Link to="/">Community Standards</Link>
             </span>{" "}
             <span className={styles.text}>of Regenate.com</span>
             <div className={styles.login}>
               <span>Already have an account?</span>
-              <a href="/">Log in</a>
+              <Link to="/login">Log in</Link>
             </div>
           </div>
         </div>

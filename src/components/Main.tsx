@@ -5,16 +5,13 @@ import Home from "../pages/home/Home";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import styles from "./Main.module.scss";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
   return (
     <div className={styles.main}>
-      <div className={styles.header}>
-        <Header />
-      </div>
       <div className={styles.body}>
-        {/* <Login /> */}
-        <Join />
+        <Outlet />
       </div>
       <div className={styles.footer}>
         <Footer />

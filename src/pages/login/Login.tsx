@@ -6,6 +6,7 @@ import {
   LivechatIconSvg,
   CommunityIconSvg,
 } from "../../assets/svg/icons";
+import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
 
 const Login = (props: any) => {
   const [email, setEmail] = useState("");
@@ -117,7 +118,7 @@ const Login = (props: any) => {
           </div>
           <div className={styles.bottomText}>
             <span className={styles.question}>New to Regenate?</span>
-            <a href="/">Create an account</a>
+            <Link to="/register">Create an account</Link>
           </div>
         </div>
 
