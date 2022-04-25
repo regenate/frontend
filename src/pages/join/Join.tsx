@@ -34,7 +34,7 @@ const Join = (props: any) => {
     setPassword(event.target.value);
   };
 
-  const handleInputType = (event: any) => {
+  const handleInputType = () => {
     setInputType(!inputType);
   };
 
@@ -106,7 +106,7 @@ const Join = (props: any) => {
                 </label>
                 <input
                   className={styles.password}
-                  type={inputType ? "password" : "text"}
+                  type={!inputType ? "password" : "text"}
                   name="password"
                   placeholder="password"
                   id="password"
@@ -114,7 +114,7 @@ const Join = (props: any) => {
                   onChange={handlePassword}
                 />
                 <div className={styles.eye} onClick={handleInputType}>
-                  {inputType ? <EyeOffSVG /> : <EyeSVG />}
+                  {inputType ? <EyeSVG /> : <EyeOffSVG />}
                 </div>
               </div>
 

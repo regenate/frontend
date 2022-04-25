@@ -5,15 +5,8 @@ import Login from "./pages/login/Login";
 import Join from "./pages/join/Join";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import {
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-  useLocation,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
+import User from "./pages/user/User";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -30,8 +23,10 @@ function App() {
             </main>
           }
         />
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Join />} />
+        <Route path="/user/:id" element={<User />} />
       </Routes>
       <div className={styles.footer}>
         <Footer />
