@@ -7,7 +7,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import User from "./pages/user/User";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
-import CommunityStandards from './pages/communityStandards/CommunityStandards'
+import CommunityStandards from "./pages/communityStandards/CommunityStandards";
 import { Routes, Route } from "react-router-dom";
 
 function App() {

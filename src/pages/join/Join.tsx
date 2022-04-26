@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Join.module.scss";
 import {
   GoogleIconSvg,
@@ -8,6 +8,7 @@ import {
   EyeOffSVG,
   EyeSVG,
 } from "../../assets/svg/icons";
+import SocialLogin from "../../modals/socialLogin/SocialLogin";
 import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
 
 const Join = (props: any) => {
@@ -16,6 +17,8 @@ const Join = (props: any) => {
   const [submit, setSubmit] = useState(false);
   const [name, setName] = useState("");
   const [inputType, setInputType] = useState(false);
+
+  const inputRef = useRef(null);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -48,15 +51,17 @@ const Join = (props: any) => {
           <div className={styles.socialLogin}>
             <div
               className={styles.google}
-              onClick={() => console.log("google clicked")}
+              onClick={() => inputRef.current.handleOpen()}
             >
+              <SocialLogin ref={inputRef} />
               <GoogleIconSvg />
               <span>Continue with Google</span>
             </div>
             <div
               className={styles.linkedin}
-              onClick={() => console.log("LikedIn clicked")}
+              onClick={() => inputRef.current.handleOpen()}
             >
+              <SocialLogin ref={inputRef} />
               <LinkedinIconSvg />
               <span>Continue with LinkedIn</span>
             </div>
@@ -161,4 +166,5 @@ const Join = (props: any) => {
     </div>
   );
 };
+
 export default Join;
