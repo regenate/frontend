@@ -127,11 +127,11 @@ const Join = (props: any) => {
           <div className={styles.bottomText}>
             <span className={styles.text}>By continuing, you agree to the</span>
             <span className={styles.textBold}>
-              <Link to="/">Terms of use Privacy policy</Link>
+              <Link to="/privacyPolicy">Terms of use Privacy policy</Link>
             </span>
             <span className={styles.text}>, and</span>
             <span className={styles.textBold}>
-              <Link to="/">Community Standards</Link>
+              <Link to="/communityStandards">Community Standards</Link>
             </span>{" "}
             <span className={styles.text}>of Regenate.com</span>
             <div className={styles.login}>

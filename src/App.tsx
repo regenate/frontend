@@ -6,6 +6,8 @@ import Join from "./pages/join/Join";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import User from "./pages/user/User";
+import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
+import CommunityStandards from './pages/communityStandards/CommunityStandards'
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Join />} />
         <Route path="/user/:id" element={<User />} />
+        <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/communityStandards" element={<CommunityStandards />} />
       </Routes>
       <div className={styles.footer}>
         <Footer />
