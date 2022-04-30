@@ -1,0 +1,109 @@
+.home {
+  .body {
+    display: grid;
+    grid-template-columns: 55.27% 44.73%;
+    .left {
+      margin-left: calc(87 / 16) + rem;
+      overflow-y: scroll;
+      .upperText {
+        font-weight: 500;
+        font-size: calc(20 / 16) + em;
+        line-height: 30px;
+        height: 90px;
+        width: 361px;
+        margin: 49px 0 40px 13px;
+        color: #00354f;
+      }
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      p {
+        margin: 0;
+      }
+      .userOptions {
+        display: flex;
+        gap: 20px;
+        .communityUser {
+          cursor: pointer;
+          position: relative;
+          width: 268px;
+          height: 329px;
+
+          img {
+            margin-left: 13px;
+          }
+          .communityText {
+            margin: 2px 35px 24px 49px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+          }
+          .title {
+            margin: 10px 67px 0 81px;
+            // width: 120px;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 21px;
+            color: #00354f;
+          }
+          .shadow {
+            background-color: #f2e9e4;
+            height: 240px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: -5;
+          }
+        }
+        .beAmentor {
+          cursor: pointer;
+          position: relative;
+          width: 268px;
+          height: 329px;
+          .title {
+            margin: 10px 67px 0 81px;
+            // width: 120px;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 21px;
+            color: #00354f;
+          }
+          .mentorText {
+            margin: 2px 49px 24px 37px;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+          }
+          .shadow {
+            background-color: #f2e9e4;
+            height: 240px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: -5;
+          }
+        }
+      }
+    }
+    .right {
+      position: sticky;
+      top: 85px;
+      height: calc(579 / 16) + rem;
+      background: linear-gradient(
+        258.09deg,
+        #ea1869 7.64%,
+        #d72e7e 45.19%,
+        #c04897 91.99%
+      );
+      .liveChat {
+        position: absolute;
+        right: 50px;
+        bottom: 27px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -83,6 +83,7 @@ const Join = (props: any) => {
                   name="name"
                   placeholder="First and last name"
                   id="name"
+                  autoComplete="name"
                   value={name}
                   onChange={handleName}
                 />
@@ -99,6 +100,7 @@ const Join = (props: any) => {
                   name="email"
                   placeholder="Your email address"
                   id="email"
+                  autoComplete="email"
                   value={email}
                   onChange={handleEmail}
                 />
@@ -115,6 +117,7 @@ const Join = (props: any) => {
                   name="password"
                   placeholder="password"
                   id="password"
+                  autoComplete="password"
                   value={password}
                   onChange={handlePassword}
                 />

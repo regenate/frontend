@@ -1,4 +1,52 @@
+import React, { useEffect, useState } from "react";
+import styles from "./Home.module.scss";
+import { LivechatIconSvg } from "../../assets/svg/icons";
+import { Link } from "react-router-dom";
+import Community from "../../components/community/Community";
+import communutyUser from "../../assets/image/communityUser.svg";
+import beAMentor from "../../assets/image/beAMentor.svg";
+
 const Home = (props: any) => {
-  return <div></div>;
+  return (
+    <div className={styles.home}>
+      <div className={styles.body}>
+        <div className={styles.left}>
+          <div className={styles.upperText}>
+            We're glad you're here! How do you want to be a part of this
+            community?
+          </div>
+          <div className={styles.userOptions}>
+            <Link to="/">
+              <div className={styles.communityUser}>
+                <img src={communutyUser} alt="community users" />
+                <p className={styles.title}>Community User</p>
+                <div className={styles.communityText}>
+                  You’ll be able to book mentors, join group sessions and more
+                </div>
+                <div className={styles.shadow}></div>
+              </div>
+            </Link>
+            <Link to="/">
+              <div className={styles.beAmentor}>
+                <img src={beAMentor} alt="be a mentor" />
+                <p className={styles.title}>Be a mentor</p>
+                <p className={styles.mentorText}>
+                  Mentor the global community, and meet new mentees
+                </p>
+                <div className={styles.shadow}></div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        <div className={styles.right}>
+          <Community />
+          <div className={styles.liveChat}>
+            <LivechatIconSvg />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 export default Home;

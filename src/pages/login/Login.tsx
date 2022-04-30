@@ -4,9 +4,9 @@ import {
   GoogleIconSvg,
   LinkedinIconSvg,
   LivechatIconSvg,
-  CommunityIconSvg,
 } from "../../assets/svg/icons";
-import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Community from "../../components/community/Community";
 
 const Login = (props: any) => {
   const [email, setEmail] = useState("");
@@ -73,6 +73,7 @@ const Login = (props: any) => {
                   name="email"
                   placeholder="Your email address"
                   id="email"
+                  autoComplete="email"
                   value={email}
                   onChange={handleEmail}
                 />
@@ -89,6 +90,7 @@ const Login = (props: any) => {
                   name="password"
                   placeholder="password"
                   id="password"
+                  autoComplete="password"
                   value={password}
                   onChange={handlePassword}
                 />
@@ -104,6 +106,7 @@ const Login = (props: any) => {
                       type="checkbox"
                       name="rememberMe"
                       id="rememberMe"
+                      autoComplete="rememberMe"
                       onClick={handleRememberMe}
                     />
                     <span className={styles.rememberMeLabel}>Remember me</span>
@@ -123,17 +126,7 @@ const Login = (props: any) => {
         </div>
 
         <div className={styles.right}>
-          <div className={styles.community}>
-            <CommunityIconSvg />
-            <div className={styles.title}>
-              A community of mentors and mentees.
-            </div>
-            <div className={styles.text}>
-              Be part of a community of mentors and mentees globally that
-              supports each other to make magical conversations happen;
-              supported 24/7
-            </div>
-          </div>
+          <Community />
           <div className={styles.liveChat}>
             <LivechatIconSvg />
           </div>

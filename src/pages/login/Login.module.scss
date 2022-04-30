@@ -160,33 +160,6 @@
         #d72e7e 45.19%,
         #c04897 91.99%
       );
-      .community {
-        background-color: #fff;
-        border-radius: 10px;
-        width: 383px;
-        height: 251px;
-        position: absolute;
-        padding: 47px 38px 48px 39px;
-        top: 230px;
-        left: 25%;
-        right: 25%;
-        .title {
-          width: calc(273 / 16) + em;
-          height: 54px;
-          font-weight: 600;
-          font-size: calc(18 / 16) + em;
-          line-height: 27px;
-          margin: 10px 0 6px 0;
-        }
-        .text {
-          width: 306px;
-          height: 54px;
-          font-weight: 400;
-          font-size: calc(12 / 16) + em;
-          line-height: 18px;
-          color: #00354f;
-        }
-      }
       .liveChat {
         position: absolute;
         right: 50px;
