@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Login.module.scss";
-import {
-  GoogleIconSvg,
-  LinkedinIconSvg,
-  LivechatIconSvg,
-  CommunityIconSvg,
-} from "../../assets/svg/icons";
+import React, { useState } from "react";
+import { LivechatIconSvg, StarIconSvg } from "../../../assets/svg/icons";
+import Community from "../../../components/community/Community";
+import styles from "./Step5.module.scss";
 import { Link } from "react-router-dom";
-import Community from "../../components/community/Community";
 
-const Login = (props: any) => {
+const Step5 = (props: any) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submit, setSubmit] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
-  const title = "";
-  const text = "";
+  const title = "3,000+ mentors";
+  const text =
+    "Get access to about 3,000+ mentors with diverse experience and career role to help you get the next job and advance in your career";
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -35,7 +31,7 @@ const Login = (props: any) => {
     setRememberMe(event.target.checked);
   };
   return (
-    <div className={styles.login}>
+    <div className={styles.step5}>
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
@@ -44,27 +40,7 @@ const Login = (props: any) => {
               A place to meet mentors in the global community
             </div>
           </div>
-          <div className={styles.socialLogin}>
-            <div
-              className={styles.google}
-              onClick={() => console.log("google clicked")}
-            >
-              <GoogleIconSvg />
-              <span>Log in with Google</span>
-            </div>
-            <div
-              className={styles.linkedin}
-              onClick={() => console.log("LikedIn clicked")}
-            >
-              <LinkedinIconSvg />
-              <span>Log in with LinkedIn</span>
-            </div>
-          </div>
-          <div className={styles.divider}>
-            <hr />
-            <span className={styles.text}>OR</span>
-            <hr />
-          </div>
+
           <div className={styles.nativeLogin}>
             <form className={styles.loginForm} onSubmit={handleSubmit}>
               <div>
@@ -101,8 +77,8 @@ const Login = (props: any) => {
               </div>
 
               {/* {password.length <= 8 && submit && (
-            <p>Password cannot be less than 8 characters</p>
-          )} */}
+        <p>Password cannot be less than 8 characters</p>
+      )} */}
               <div className={styles.formAction}>
                 <span className={styles.rememberMe}>
                   <label>
@@ -130,7 +106,7 @@ const Login = (props: any) => {
         </div>
 
         <div className={styles.right}>
-          <Community Icon={CommunityIconSvg} title={title} text={text} />
+          <Community Icon={StarIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
             <LivechatIconSvg />
           </div>
@@ -139,4 +115,5 @@ const Login = (props: any) => {
     </div>
   );
 };
-export default Login;
+
+export default Step5;

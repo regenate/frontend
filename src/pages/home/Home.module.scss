@@ -91,7 +91,7 @@
     .right {
       position: sticky;
       top: 85px;
-      height: calc(579 / 16) + rem;
+      height: calc(100vh - 85px - 26px);
       background: linear-gradient(
         258.09deg,
         #ea1869 7.64%,

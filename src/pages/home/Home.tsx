@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
-import { LivechatIconSvg } from "../../assets/svg/icons";
+import { CommunityIconSvg, LivechatIconSvg } from "../../assets/svg/icons";
 import { Link } from "react-router-dom";
 import Community from "../../components/community/Community";
 import communutyUser from "../../assets/image/communityUser.svg";
 import beAMentor from "../../assets/image/beAMentor.svg";
 
 const Home = (props: any) => {
+  const title = "A community of mentors and mentees.";
+  const text =
+    "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7";
   return (
     <div className={styles.home}>
       <div className={styles.body}>
@@ -40,7 +43,7 @@ const Home = (props: any) => {
         </div>
 
         <div className={styles.right}>
-          <Community />
+          <Community Icon={CommunityIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
             <LivechatIconSvg />
           </div>

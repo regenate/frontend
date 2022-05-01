@@ -5,12 +5,14 @@
   height: 251px;
   position: absolute;
   padding: 47px 38px 48px 39px;
-  top: 230px;
-  left: 25%;
-  right: 25%;
+  // top: 230px;
+  top: 25%;
+  left: 50%;
+  right: 50%;
+  transform: translatex(-50%);
   .title {
     width: calc(273 / 16) + em;
-    height: 54px;
+    // height: 54px;
     font-weight: 600;
     font-size: calc(18 / 16) + em;
     line-height: 27px;
