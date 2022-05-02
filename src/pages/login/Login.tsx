@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Login.module.scss";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
+  CommunityIconSvg,
   GoogleIconSvg,
   LinkedinIconSvg,
   LivechatIconSvg,
-  CommunityIconSvg,
 } from "../../assets/svg/icons";
-import { Link } from "react-router-dom";
 import Community from "../../components/community/Community";
+import styles from "./Login.module.scss";
 
 const Login = (props: any) => {
   const [email, setEmail] = useState("");
@@ -15,8 +15,9 @@ const Login = (props: any) => {
   const [submit, setSubmit] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
-  const title = "";
-  const text = "";
+  const title = "A community of mentors and mentees.";
+  const text =
+    "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7";
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
