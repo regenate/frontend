@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./Join.module.scss";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
+  EyeOffSVG,
+  EyeSVG,
   GoogleIconSvg,
   LinkedinIconSvg,
   LivechatIconSvg,
   PlayIcon,
-  EyeOffSVG,
-  EyeSVG,
 } from "../../assets/svg/icons";
 import SocialLogin from "../../modals/socialLogin/SocialLogin";
-import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
+import styles from "./Join.module.scss";
 
 const Join = (props: any) => {
   const [email, setEmail] = useState("");

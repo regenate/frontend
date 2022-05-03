@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
-  LivechatIconSvg,
   BriefcaseIconSvg,
   ChevronLeftIconSvg,
+  LivechatIconSvg,
 } from "../../../assets/svg/icons";
 import Community from "../../../components/community/Community";
 import styles from "./Step3.module.scss";
-import { Link } from "react-router-dom";
 
 const Step3 = (props: any) => {
   const [userTitle, setUserTitle] = useState("");

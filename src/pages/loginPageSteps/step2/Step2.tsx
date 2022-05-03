@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
-  LivechatIconSvg,
-  ChevronLeftIconSvg,
   BriefcaseIconSvg,
+  ChevronLeftIconSvg,
+  LivechatIconSvg,
 } from "../../../assets/svg/icons";
 import Community from "../../../components/community/Community";
 import styles from "./Step2.module.scss";
-import { Link } from "react-router-dom";
 
 const Step2 = (props: any) => {
   const [expertise, setExpertise] = useState("");

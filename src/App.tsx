@@ -1,20 +1,20 @@
 import React from "react";
-import "./scss/style.scss";
+import { Navigate, Route, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
-import Login from "./pages/login/Login";
-import Join from "./pages/join/Join";
-import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import User from "./pages/user/User";
-import Home from "./pages/home/Home";
-import Step1 from "./pages/loginPageSteps/step1/Step1";
-import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
+import Header from "./components/header/Header";
 import CommunityStandards from "./pages/communityStandards/CommunityStandards";
-import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Join from "./pages/join/Join";
+import Login from "./pages/login/Login";
+import Step1 from "./pages/loginPageSteps/step1/Step1";
 import Step2 from "./pages/loginPageSteps/step2/Step2";
 import Step3 from "./pages/loginPageSteps/step3/Step3";
 import Step4 from "./pages/loginPageSteps/step4/Step4";
 import Step5 from "./pages/loginPageSteps/step5/Step5";
+import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
+import User from "./pages/user/User";
+import "./scss/style.scss";
 
 function App() {
   const user = true;

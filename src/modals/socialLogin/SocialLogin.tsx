@@ -1,5 +1,5 @@
-import React, { useState, useImperativeHandle, forwardRef } from "react";
 import Modal from "@mui/material/Modal";
+import React, { forwardRef, useImperativeHandle, useState } from "react";
 import styles from "./SocialLogin.module.scss";
 
 const SocialLogin = forwardRef((props, ref) => {
