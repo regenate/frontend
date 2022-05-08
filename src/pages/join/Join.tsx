@@ -1,5 +1,3 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   EyeOffSVG,
   EyeSVG,
@@ -7,8 +5,10 @@ import {
   LinkedinIconSvg,
   LivechatIconSvg,
   PlayIcon,
-} from "../../assets/svg/icons";
-import SocialLogin from "../../modals/socialLogin/SocialLogin";
+} from "assets/svg/icons";
+import SocialLogin from "modals/socialLogin/SocialLogin";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Join.module.scss";
 
 const Join = (props: any) => {

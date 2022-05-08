@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   CommunityIconSvg,
   GoogleIconSvg,
   LinkedinIconSvg,
   LivechatIconSvg,
-} from "../../assets/svg/icons";
-import Community from "../../components/community/Community";
+} from "assets/svg/icons";
+import Community from "components/community/Community";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";
 
 const Login = (props: any) => {

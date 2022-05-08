@@ -1,9 +1,9 @@
+import beAMentor from "assets/image/beAMentor.svg";
+import communutyUser from "assets/image/communityUser.svg";
+import { CommunityIconSvg, LivechatIconSvg } from "assets/svg/icons";
+import Community from "components/community/Community";
 import React from "react";
 import { Link } from "react-router-dom";
-import beAMentor from "../../assets/image/beAMentor.svg";
-import communutyUser from "../../assets/image/communityUser.svg";
-import { CommunityIconSvg, LivechatIconSvg } from "../../assets/svg/icons";
-import Community from "../../components/community/Community";
 import styles from "./Home.module.scss";
 
 const Home = (props: any) => {

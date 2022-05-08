@@ -1,7 +1,7 @@
+import { CameraIconSvg, LivechatIconSvg } from "assets/svg/icons";
+import Community from "components/community/Community";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { CameraIconSvg, LivechatIconSvg } from "../../../assets/svg/icons";
-import Community from "../../../components/community/Community";
 import styles from "./Step4.module.scss";
 
 const Step4 = (props: any) => {

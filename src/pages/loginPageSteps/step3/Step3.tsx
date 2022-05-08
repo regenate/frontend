@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   BriefcaseIconSvg,
   ChevronLeftIconSvg,
   LivechatIconSvg,
-} from "../../../assets/svg/icons";
-import Community from "../../../components/community/Community";
+} from "assets/svg/icons";
+import Community from "components/community/Community";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Step3.module.scss";
 
 const Step3 = (props: any) => {

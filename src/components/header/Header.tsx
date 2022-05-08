@@ -1,5 +1,5 @@
+import { RegensLogo } from "assets/svg/icons";
 import { Link } from "react-router-dom";
-import { RegensLogo } from "../../assets/svg/icons";
 import styles from "./Header.module.scss";
 
 const Header = (props: any) => {
