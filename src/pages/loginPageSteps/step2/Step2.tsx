@@ -1,11 +1,8 @@
-import {
-  BriefcaseIconSvg,
-  ChevronLeftIconSvg,
-  LivechatFalseIconSvg,
-} from "assets/svg/icons";
+import { BriefcaseIconSvg, ChevronLeftIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
 import Experience from "components/formComponents/Experience";
 import Expertise from "components/formComponents/Expertise";
+import LiveChat from "components/liveChat/LiveChat";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Step2.module.scss";
@@ -97,7 +94,7 @@ const Step2 = (props: any) => {
         <div className={styles.right}>
           <Community Icon={BriefcaseIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>

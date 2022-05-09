@@ -3,9 +3,9 @@ import {
   EyeSVG,
   GoogleIconSvg,
   LinkedinIconSvg,
-  LivechatFalseIconSvg,
   PlayIcon,
 } from "assets/svg/icons";
+import LiveChat from "components/liveChat/LiveChat";
 import SocialLogin from "modals/socialLogin/SocialLogin";
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -162,7 +162,7 @@ const Join = (props: any) => {
             </div>
           </div>
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>

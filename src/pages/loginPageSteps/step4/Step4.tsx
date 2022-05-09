@@ -1,10 +1,7 @@
 import { AddPhoto } from "assets/image/images";
-import {
-  CameraIconSvg,
-  ChevronLeftIconSvg,
-  LivechatFalseIconSvg,
-} from "assets/svg/icons";
+import { CameraIconSvg, ChevronLeftIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
+import LiveChat from "components/liveChat/LiveChat";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Step4.module.scss";
@@ -70,7 +67,7 @@ const Step4 = (props: any) => {
         <div className={styles.right}>
           <Community Icon={CameraIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>
