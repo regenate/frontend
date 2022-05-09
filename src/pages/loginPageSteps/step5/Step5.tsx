@@ -1,114 +1,110 @@
-import { LivechatIconSvg, StarIconSvg } from "assets/svg/icons";
+import {
+  ChevronLeftIconSvg,
+  LivechatFalseIconSvg,
+  StarIconSvg,
+} from "assets/svg/icons";
 import Community from "components/community/Community";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Step5.module.scss";
 
 const Step5 = (props: any) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [userStory, setUserStory] = useState("");
+  const [userBio, setUserBio] = useState("");
   const [submit, setSubmit] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
 
-  const title = "3,000+ mentors";
+  const title = "More about your expertise";
   const text =
-    "Get access to about 3,000+ mentors with diverse experience and career role to help you get the next job and advance in your career";
+    "This will make it easier for potential mentors and mentees to know about your expertise and experience";
+  const userBioText =
+    "i am a product designer at Apple who writes about design. I love my doggie (fluffy) and enjoy collecting new NFTs during my free time!";
+  const userStoryText =
+    "Tell us more about yourself, your goals and what you love!";
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
     setSubmit(true);
   };
 
-  const handleEmail = (event: any) => {
-    setEmail(event.target.value);
+  const handleUserStory = (event: any) => {
+    setUserStory(event.target.value);
   };
 
-  const handlePassword = (event: any) => {
-    setPassword(event.target.value);
+  const handleUserBio = (event: any) => {
+    setUserBio(event.target.value);
   };
 
-  const handleRememberMe = (event: any) => {
-    setRememberMe(event.target.checked);
-  };
   return (
     <div className={styles.step5}>
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.title}>Welcome Back!</div>
+            <div className={styles.step}>STEP 5 of 5</div>
             <div className={styles.text}>
-              A place to meet mentors in the global community
+              Almost there! How would you like to be intro'd
             </div>
           </div>
 
-          <div className={styles.nativeLogin}>
-            <form className={styles.loginForm} onSubmit={handleSubmit}>
+          <div className={styles.form}>
+            <form className={styles.step5Form} onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="email" className={styles.emailLabel}>
-                  Email address
+                <label htmlFor="userStory" className={styles.userStoryLabel}>
+                  <img
+                    className={styles.profilePic}
+                    src="/profile-picture.jpg"
+                    alt="user avatar"
+                  />
+                  <span>Everybody has a story, what's yours?</span>
                 </label>
-                <input
-                  className={styles.email}
-                  type="email"
-                  name="email"
-                  placeholder="Your email address"
-                  id="email"
-                  autoComplete="email"
-                  value={email}
-                  onChange={handleEmail}
+                <textarea
+                  className={styles.userStory}
+                  onChange={handleUserStory}
+                  id="userStory"
+                  name="userStory"
+                  value={userStory}
+                  placeholder={userStoryText}
                 />
 
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div>
-                <label htmlFor="password" className={styles.passwordLabel}>
-                  Password
+                <label htmlFor="userBio" className={styles.userBioLabel}>
+                  Sample Bio
                 </label>
-                <input
-                  className={styles.password}
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  id="password"
-                  autoComplete="password"
-                  value={password}
-                  onChange={handlePassword}
+                <textarea
+                  className={styles.userBio}
+                  id="userBio"
+                  name="userBio"
+                  value={userBio}
+                  onChange={handleUserBio}
+                  placeholder={userBioText}
                 />
               </div>
 
               {/* {password.length <= 8 && submit && (
         <p>Password cannot be less than 8 characters</p>
       )} */}
-              <div className={styles.formAction}>
-                <span className={styles.rememberMe}>
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="rememberMe"
-                      id="rememberMe"
-                      autoComplete="rememberMe"
-                      onClick={handleRememberMe}
-                    />
-                    <span className={styles.rememberMeLabel}>Remember me</span>
-                  </label>
-                </span>
-                <a className={styles.forgetPassword} href="/">
-                  Forget password
-                </a>
+              <div className={styles.buttons}>
+                <Link to="/step4">
+                  <ChevronLeftIconSvg />
+                  <input
+                    type="button"
+                    className={styles.backButton}
+                    value="Back"
+                  />
+                </Link>
+                <Link to="/">
+                  <input type="submit" value="Continue" />
+                </Link>
               </div>
-              <input type="submit" value="Log in" />
             </form>
-          </div>
-          <div className={styles.bottomText}>
-            <span className={styles.question}>New to Regenate?</span>
-            <Link to="/register">Create an account</Link>
           </div>
         </div>
 
         <div className={styles.right}>
           <Community Icon={StarIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import {
   CommunityIconSvg,
   GoogleIconSvg,
   LinkedinIconSvg,
-  LivechatIconSvg,
+  LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
 import React, { useState } from "react";
@@ -133,7 +133,7 @@ const Login = (props: any) => {
         <div className={styles.right}>
           <Community Icon={CommunityIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>

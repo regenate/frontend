@@ -3,7 +3,7 @@ import {
   EyeSVG,
   GoogleIconSvg,
   LinkedinIconSvg,
-  LivechatIconSvg,
+  LivechatFalseIconSvg,
   PlayIcon,
 } from "assets/svg/icons";
 import SocialLogin from "modals/socialLogin/SocialLogin";
@@ -162,7 +162,7 @@ const Join = (props: any) => {
             </div>
           </div>
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>

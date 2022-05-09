@@ -1,6 +1,6 @@
 import beAMentor from "assets/image/beAMentor.svg";
 import communutyUser from "assets/image/communityUser.svg";
-import { CommunityIconSvg, LivechatIconSvg } from "assets/svg/icons";
+import { CommunityIconSvg, LivechatFalseIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const Home = (props: any) => {
             community?
           </div>
           <div className={styles.userOptions}>
-            <Link to="/">
+            <Link to="/step1">
               <div className={styles.communityUser}>
                 <img src={communutyUser} alt="community users" />
                 <p className={styles.title}>Community User</p>
@@ -45,7 +45,7 @@ const Home = (props: any) => {
         <div className={styles.right}>
           <Community Icon={CommunityIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>

@@ -4,21 +4,30 @@
     grid-template-columns: 55.27% 44.73%;
     .left {
       width: calc(330 / 16) + rem;
-      margin-left: calc(101 / 16) + rem;
+      margin-left: calc(100 / 16) + rem;
       overflow-y: scroll;
+      margin-top: 60px;
       .welcome {
-        .title {
-          font-weight: 600;
-          font-size: calc(20 / 16) + em;
-          line-height: 30px;
-          margin: 54px 0 7px 0;
+        .step {
+          margin-bottom: 20px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
         }
         .text {
           font-weight: 500;
-          line-height: 24px;
-          height: 48px;
-          width: 304px;
-          margin-bottom: 23px;
+          line-height: 33px;
+          font-size: 22px;
+          width: 245px;
+          margin-bottom: 20px;
+          color: #00354f;
+        }
+        .textSmall {
+          width: 266px;
+          font-size: 14px;
+          line-height: 21px;
+          font-weight: 400;
+          margin-bottom: 20px;
         }
       }
       -ms-overflow-style: none; /* IE and Edge */
@@ -27,125 +36,39 @@
       &::-webkit-scrollbar {
         display: none;
       }
-      .socialLogin {
-        margin: 0 auto;
-        .google {
-          background-color: #4285f4;
-        }
-        .linkedin {
-          background-color: #0077b5;
-        }
-        .google,
-        .linkedin {
-          border: none;
-          border-radius: 10px;
-          width: calc(330 / 16) + rem;
-          height: 59px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          cursor: pointer;
-          span {
-            color: #fff;
-            font-weight: 700;
-            font-size: calc(18 / 16) + em;
-          }
-        }
-      }
-      .divider {
-        display: flex;
-        width: calc(330 / 16) + rem;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 16px;
-        margin-top: 20px;
-        hr {
-          width: calc(144 / 16) + rem;
-          height: 1px;
-        }
-        .text {
-          padding: 0 10px;
-          font-size: 16px;
-          font-weight: 600;
-          line-height: 24px;
-          color: #c4c4c4;
-        }
-      }
-      .nativeLogin {
-        .loginForm {
+      .form {
+        .step4Form {
           input[type="submit"] {
             display: block;
-            width: calc(330 / 16) + rem;
+            width: calc(120 / 16) + rem;
             height: calc(59 / 16) + rem;
             border-radius: 10px;
             background-color: #343a40;
             border: 1px solid #343a40;
             padding: 0;
-            margin: 20px 0 0 0;
             color: #fff;
-            font-weight: 700;
-            font-size: calc(18 / 16) + em;
+            font-weight: 500;
+            font-size: calc(14 / 16) + em;
+            line-height: 21px;
             &:hover {
               background-color: #6b9080;
               border: 1px solid #6b9080;
             }
           }
-          .passwordLabel,
-          .emailLabel {
-            font-size: 1em;
-            font-weight: 500;
-            line-height: 24px;
-            color: #00354f;
-            margin-bottom: 16px;
-          }
-          .email,
-          .password {
-            width: calc(330 / 16) + rem;
-            height: calc(59 / 16) + rem;
-            border: 1px solid #c4c4c4;
-            border-radius: 10px;
-            background-color: #f1f1f1;
-            padding-left: 20px;
-            &::placeholder {
-              font-size: 15px;
-              line-height: 22.5px;
-              font-weight: 500;
-            }
-          }
-          .email {
-            margin-bottom: 22px;
-          }
-          p {
-            padding: 0;
-            margin: 0;
-          }
         }
-        .formAction {
+        .buttons {
           display: flex;
           justify-content: space-between;
-          margin-top: 20px;
-          font-weight: 500;
-          line-height: 24px;
-          color: #00354f;
-          .rememberMeLabel {
-            margin-left: 5px;
-          }
-        }
-      }
-      .bottomText {
-        text-align: center;
-        margin-top: 20px;
-        font-weight: 500;
-        .question {
-          color: #00354f;
-        }
-        a {
-          color: #219ebc;
-          margin-left: 5px;
-          &:hover {
-            text-decoration: underline !important;
-            color: #219ebc !important;
+          align-items: center;
+          margin-top: 30px;
+          .backButton {
+            border: none;
+            background-color: #fff;
+            margin-left: 10px;
+            color: #00354f;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: left;
           }
         }
       }
@@ -167,9 +90,5 @@
         cursor: pointer;
       }
     }
-  }
-
-  .google {
-    margin-bottom: calc(20 / 16) + rem;
   }
 }

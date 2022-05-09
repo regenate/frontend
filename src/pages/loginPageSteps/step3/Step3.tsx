@@ -1,7 +1,7 @@
 import {
   BriefcaseIconSvg,
   ChevronLeftIconSvg,
-  LivechatIconSvg,
+  LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
 import React, { useState } from "react";
@@ -86,15 +86,18 @@ const Step3 = (props: any) => {
                 <label htmlFor="linkedInUrl" className={styles.urlLabel}>
                   LinkedIn URL (Optional)
                 </label>
-                <input
-                  className={styles.url}
-                  type="text"
-                  name="linkedInUrl"
-                  id="linkedInUrl"
-                  autoComplete="linkedInUrl"
-                  value={url}
-                  onChange={handleUrl}
-                />
+                <div className={styles.linkedIn}>
+                  <span className={styles.linkedInPrefix}>Linkedin.com</span>
+                  <input
+                    className={styles.url}
+                    type="text"
+                    name="linkedInUrl"
+                    id="linkedInUrl"
+                    autoComplete="linkedInUrl"
+                    value={url}
+                    onChange={handleUrl}
+                  />
+                </div>
               </div>
               <div onClick={handleGetLinkedInURL} className={styles.getUrl}>
                 Get your LinkedIn URL
@@ -123,7 +126,7 @@ const Step3 = (props: any) => {
         <div className={styles.right}>
           <Community Icon={BriefcaseIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>
