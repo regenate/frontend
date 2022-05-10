@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./Join.module.scss";
 import {
-  GoogleIconSvg,
-  LinkedinIconSvg,
-  LivechatIconSvg,
-  PlayIcon,
   EyeOffSVG,
   EyeSVG,
-} from "../../assets/svg/icons";
-import SocialLogin from "../../modals/socialLogin/SocialLogin";
-import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
+  GoogleIconSvg,
+  LinkedinIconSvg,
+  LivechatFalseIconSvg,
+  PlayIcon,
+} from "assets/svg/icons";
+import SocialLogin from "modals/socialLogin/SocialLogin";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./Join.module.scss";
 
 const Join = (props: any) => {
   const [email, setEmail] = useState("");
@@ -162,7 +162,7 @@ const Join = (props: any) => {
             </div>
           </div>
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>

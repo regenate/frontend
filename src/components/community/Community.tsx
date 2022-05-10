@@ -1,4 +1,3 @@
-import { CommunityIconSvg } from "../../assets/svg/icons";
 import styles from "./Community.module.scss";
 
 const Community = ({

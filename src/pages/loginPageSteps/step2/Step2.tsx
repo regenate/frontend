@@ -1,12 +1,14 @@
-import React, { useState } from "react";
 import {
-  LivechatIconSvg,
-  ChevronLeftIconSvg,
   BriefcaseIconSvg,
-} from "../../../assets/svg/icons";
-import Community from "../../../components/community/Community";
-import styles from "./Step2.module.scss";
+  ChevronLeftIconSvg,
+  LivechatFalseIconSvg,
+} from "assets/svg/icons";
+import Community from "components/community/Community";
+import Experience from "components/formComponents/Experience";
+import Expertise from "components/formComponents/Expertise";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import styles from "./Step2.module.scss";
 
 const Step2 = (props: any) => {
   const [expertise, setExpertise] = useState("");
@@ -52,16 +54,7 @@ const Step2 = (props: any) => {
                   value={expertise}
                   className={styles.expertise}
                 >
-                  <option value="" selected disabled>
-                    Eg. USA, India, etc
-                  </option>
-                  <option value="Design">Design</option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Product Management">Product Management</option>
-                  <option value="Product Research">Product Research</option>
-                  <option value="Software Development">
-                    Software Development
-                  </option>
+                  <Expertise />
                 </select>
 
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
@@ -77,13 +70,7 @@ const Step2 = (props: any) => {
                   value={experience}
                   className={styles.experience}
                 >
-                  <option value="" selected disabled>
-                    Select level
-                  </option>
-                  <option value="Beginner">Beginner</option>
-                  <option value="Junior">Junior</option>
-                  <option value="Intermediate">Intermediate</option>
-                  <option value="Professional">Professional</option>
+                  <Experience />
                 </select>
               </div>
 
@@ -110,7 +97,7 @@ const Step2 = (props: any) => {
         <div className={styles.right}>
           <Community Icon={BriefcaseIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>

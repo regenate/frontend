@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Home.module.scss";
-import { CommunityIconSvg, LivechatIconSvg } from "../../assets/svg/icons";
+import beAMentor from "assets/image/beAMentor.svg";
+import communutyUser from "assets/image/communityUser.svg";
+import { CommunityIconSvg, LivechatFalseIconSvg } from "assets/svg/icons";
+import Community from "components/community/Community";
+import React from "react";
 import { Link } from "react-router-dom";
-import Community from "../../components/community/Community";
-import communutyUser from "../../assets/image/communityUser.svg";
-import beAMentor from "../../assets/image/beAMentor.svg";
+import styles from "./Home.module.scss";
 
 const Home = (props: any) => {
   const title = "A community of mentors and mentees.";
@@ -19,7 +19,7 @@ const Home = (props: any) => {
             community?
           </div>
           <div className={styles.userOptions}>
-            <Link to="/">
+            <Link to="/step1">
               <div className={styles.communityUser}>
                 <img src={communutyUser} alt="community users" />
                 <p className={styles.title}>Community User</p>
@@ -45,7 +45,7 @@ const Home = (props: any) => {
         <div className={styles.right}>
           <Community Icon={CommunityIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>

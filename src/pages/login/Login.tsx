@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   CommunityIconSvg,
   GoogleIconSvg,
   LinkedinIconSvg,
-  LivechatIconSvg,
-} from "../../assets/svg/icons";
-import Community from "../../components/community/Community";
+  LivechatFalseIconSvg,
+} from "assets/svg/icons";
+import Community from "components/community/Community";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Login.module.scss";
 
 const Login = (props: any) => {
@@ -133,7 +133,7 @@ const Login = (props: any) => {
         <div className={styles.right}>
           <Community Icon={CommunityIconSvg} title={title} text={text} />
           <div className={styles.liveChat}>
-            <LivechatIconSvg />
+            <LivechatFalseIconSvg />
           </div>
         </div>
       </div>
