@@ -4,7 +4,7 @@ const Expertise = () => {
   return (
     <>
       <option value="" selected disabled>
-        Eg. USA, India, etc
+        Select up to 3 options
       </option>
       <option value="Design">Design</option>
       <option value="Marketing">Marketing</option>
