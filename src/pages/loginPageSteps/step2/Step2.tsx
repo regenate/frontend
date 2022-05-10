@@ -39,7 +39,7 @@ const Step2 = (props: any) => {
           </div>
 
           <div className={styles.form}>
-            <form className={styles.step1Form} onSubmit={handleSubmit}>
+            <form className={styles.step2Form} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="country" className={styles.expertiseLabel}>
                   What is your expertise?

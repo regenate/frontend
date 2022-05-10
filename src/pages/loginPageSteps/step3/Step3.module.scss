@@ -30,7 +30,7 @@
         display: none;
       }
       .form {
-        .step1Form {
+        .step3Form {
           input[type="submit"] {
             display: block;
             width: calc(120 / 16) + rem;
@@ -67,6 +67,7 @@
             background-color: #f1f1f1;
             padding-left: 20px;
             margin-bottom: 30px;
+            outline: none;
             &::placeholder {
               font-size: 15px;
               line-height: 22.5px;

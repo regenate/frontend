@@ -44,7 +44,7 @@ const Step3 = (props: any) => {
           </div>
 
           <div className={styles.form}>
-            <form className={styles.step1Form} onSubmit={handleSubmit}>
+            <form className={styles.step3Form} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="company" className={styles.companySchoolLabel}>
                   Company/School
