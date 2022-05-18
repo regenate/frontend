@@ -1,5 +1,6 @@
 import { AnyAction } from "@reduxjs/toolkit";
 import { LoginModel } from "models/login";
+import { UserModel } from "models/user";
 import { Dispatch } from "react";
 import { NavigateFunction } from "react-router-dom";
 import { authUpdateUser } from "redux/slice/userSlice";
@@ -18,7 +19,7 @@ export class AuthService {
       const request = await AuthApi.signIn(data);
       const response = await request.json();
 
-      dispatch(authUpdateUser(response));
+      dispatch(authUpdateUser(UserModel.fromJson(response)));
     } catch (error) {
       setReportProgress("failed");
       throw error;
