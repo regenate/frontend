@@ -5,19 +5,21 @@ import {
   LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
+import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { LoginModel } from "models/login";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { authUpdateUser } from "redux/slice/userSlice";
 import { AuthService } from "services/auth.service";
+import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Login.module.scss";
 
 const Login = (props: any) => {
-  const dispatch = useDispatch();
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const from = "/";
 
   const title = "A community of mentors and mentees.";
   const text =
@@ -32,18 +34,19 @@ const Login = (props: any) => {
       username: formData.get("email") as string,
       password: formData.get("password") as string,
     };
-    try {
-      const data = await AuthService.login(inputData);
-      dispatch(authUpdateUser(data));
-    } catch (error) {
-      console.warn(error);
-    }
 
-    navigate(from, { replace: true });
+    await AuthService.loginDispatch(
+      inputData,
+      dispatch,
+      navigate,
+      setReportProgress
+    );
   };
 
   return (
     <div className={styles.login}>
+      {reportProgress === "inProgress" && <ProgressOverlay />}
+
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>

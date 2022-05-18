@@ -15,7 +15,7 @@ import PrivacyPolicy from "pages/privacyPolicy/PrivacyPolicy";
 import User from "pages/user/User";
 import React from "react";
 import { useSelector } from "react-redux";
-import { Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { RootState } from "redux/store";
 import styles from "./App.module.scss";
 import "./scss/style.scss";
@@ -70,11 +70,7 @@ function App() {
 }
 
 const UserOnboarding = (props: { user: UserModel }) => {
-  const location = useLocation();
-
   const user = props.user;
-
-  console.warn(user?.role);
 
   if (user?.bearerToken) {
     return <Outlet />;
@@ -84,7 +80,6 @@ const UserOnboarding = (props: { user: UserModel }) => {
 
 const Protected = (props: { user: UserModel }) => {
   const user = props.user;
-  console.warn(user?.role);
 
   if (user?.bearerToken && RoleEnum.isValid(user?.role)) {
     return <Outlet />;
