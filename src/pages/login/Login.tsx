@@ -5,36 +5,43 @@ import {
   LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { LoginModel } from "models/login";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { authUpdateUser } from "redux/slice/userSlice";
+import { AuthService } from "services/auth.service";
 import styles from "./Login.module.scss";
 
 const Login = (props: any) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [submit, setSubmit] = useState(false);
-  const [rememberMe, setRememberMe] = useState(false);
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+  const from = "/";
 
   const title = "A community of mentors and mentees.";
   const text =
     "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7";
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setSubmit(true);
+
+    const formData = new FormData(event.currentTarget);
+
+    const inputData: LoginModel = {
+      username: formData.get("email") as string,
+      password: formData.get("password") as string,
+    };
+    try {
+      const data = await AuthService.login(inputData);
+      dispatch(authUpdateUser(data));
+    } catch (error) {
+      console.warn(error);
+    }
+
+    navigate(from, { replace: true });
   };
 
-  const handleEmail = (event: any) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePassword = (event: any) => {
-    setPassword(event.target.value);
-  };
-
-  const handleRememberMe = (event: any) => {
-    setRememberMe(event.target.checked);
-  };
   return (
     <div className={styles.login}>
       <div className={styles.body}>
@@ -79,8 +86,6 @@ const Login = (props: any) => {
                   placeholder="Your email address"
                   id="email"
                   autoComplete="email"
-                  value={email}
-                  onChange={handleEmail}
                 />
 
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
@@ -96,8 +101,6 @@ const Login = (props: any) => {
                   placeholder="password"
                   id="password"
                   autoComplete="password"
-                  value={password}
-                  onChange={handlePassword}
                 />
               </div>
 
@@ -112,7 +115,6 @@ const Login = (props: any) => {
                       name="rememberMe"
                       id="rememberMe"
                       autoComplete="rememberMe"
-                      onClick={handleRememberMe}
                     />
                     <span className={styles.rememberMeLabel}>Remember me</span>
                   </label>
