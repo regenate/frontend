@@ -1,8 +1,20 @@
 {
+  "general": {
+    "or": "OR"
+  },
   "login": {
     "title": "Welcome Back!",
     "sub_title": "A place to meet mentors in the global community",
     "google_login": "Log in with Google",
-    "linkedin_login": "Log in with LinkedIn"
+    "linkedin_login": "Log in with LinkedIn",
+    "email_address": "Email address",
+    "email_placeholder": "Your email address",
+    "password": "Password",
+    "remember_me": "Remember me",
+    "forgot_password": "Forget password",
+    "new_to_regenate": "New to Regenate?",
+    "create_account": "Create an account",
+    "community_title": "A community of mentors and mentees.",
+    "community_body": "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7"
   }
 }
