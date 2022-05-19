@@ -1,5 +1,6 @@
 import Footer from "components/footer/Footer";
 import Header from "components/header/Header";
+import Notification from "components/notification/Notification";
 import { GlobalUrls } from "enums/GlobalUrls";
 import { RoleEnum } from "enums/role";
 import { UserModel } from "models/user";
@@ -23,11 +24,21 @@ import "./scss/style.scss";
 
 function App() {
   const user = useSelector((state: RootState) => state.userReducer.user);
+  const notificationRed = useSelector(
+    (state: RootState) => state.notificationReducer
+  );
+
   return (
     <div className={styles.app}>
       <div className={styles.header}>
         <Header />
       </div>
+      <Notification
+        text={notificationRed.text}
+        direction={notificationRed.direction}
+        notificationType={notificationRed.type}
+        refresh={notificationRed.value}
+      />
       <Routes>
         <Route
           path="*"

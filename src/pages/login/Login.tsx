@@ -36,7 +36,8 @@ const Login = (props: any) => {
       inputData,
       dispatch,
       navigate,
-      setReportProgress
+      setReportProgress,
+      t
     );
   };
 

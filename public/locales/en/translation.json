@@ -15,6 +15,8 @@
     "new_to_regenate": "New to Regenate?",
     "create_account": "Create an account",
     "community_title": "A community of mentors and mentees.",
-    "community_body": "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7"
+    "community_body": "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7",
+    "successful": "login successful",
+    "failed": "login failed. Please check your credentials"
   }
 }

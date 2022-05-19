@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counterReducer from "redux/slice/counterSlice";
 import persistReducer from "reduxjs-toolkit-persist/lib/persistReducer";
 import storage from "reduxjs-toolkit-persist/lib/storage";
+import notificationReducer from "./slice/notificationSlice";
 import userReducer from "./slice/userSlice";
 
 const persistConfig = {
@@ -10,8 +11,9 @@ const persistConfig = {
   whitelist: ["userReducer"],
 };
 const reducers = combineReducers({
-  counter1: counterReducer,
+  counterReducer: counterReducer,
   userReducer: userReducer,
+  notificationReducer: notificationReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
