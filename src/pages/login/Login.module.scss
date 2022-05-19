@@ -2,6 +2,7 @@
   .body {
     display: grid;
     grid-template-columns: 55.27% 44.73%;
+
     .left {
       width: calc(330 / 16) + rem;
       margin-left: calc(101 / 16) + rem;

@@ -2,5 +2,6 @@
 export enum GlobalUrls {
   login = "login",
   register = "register",
+  role = "role",
   home = "",
 }

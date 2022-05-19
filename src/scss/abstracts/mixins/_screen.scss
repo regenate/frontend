@@ -1,0 +1,41 @@
+@mixin mobile() {
+  @include media-breakpoint-down(sm) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @include media-breakpoint-up(md) {
+    @content;
+  }
+}
+
+@mixin largeDesktop() {
+  @include media-breakpoint-up(lg) {
+    @content;
+  }
+}
+
+@mixin extraLargeDesktop() {
+  @include media-breakpoint-up(xl) {
+    @content;
+  }
+}
+
+@mixin deviceWiderThan760() {
+  @media only screen and (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin deviceHigherThan850() {
+  @media only screen and (min-height: 850px) {
+    @content;
+  }
+}
+
+@mixin deviceLessThan550() {
+  @media only screen and (max-width: 550px) {
+    @content;
+  }
+}

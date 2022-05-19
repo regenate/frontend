@@ -2,6 +2,10 @@
   "general": {
     "or": "OR"
   },
+  "community": {
+    "title": "A community of mentors and mentees.",
+    "body": "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7"
+  },
   "login": {
     "title": "Welcome Back!",
     "sub_title": "A place to meet mentors in the global community",
@@ -14,9 +18,14 @@
     "forgot_password": "Forget password",
     "new_to_regenate": "New to Regenate?",
     "create_account": "Create an account",
-    "community_title": "A community of mentors and mentees.",
-    "community_body": "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7",
     "successful": "login successful",
     "failed": "login failed. Please check your credentials"
+  },
+  "role": {
+    "part_of_community": "We're glad you're here! How do you want to be a part of this community?",
+    "mentee_title": "Community User",
+    "mentee_text": "You’ll be able to book mentors, join group sessions and more",
+    "mentor_title": "Be a mentor",
+    "mentor_text": "Mentor the global community, and meet new mentees"
   }
 }

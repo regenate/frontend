@@ -5,7 +5,6 @@ import { GlobalUrls } from "enums/GlobalUrls";
 import { RoleEnum } from "enums/role";
 import { UserModel } from "models/user";
 import CommunityStandards from "pages/communityStandards/CommunityStandards";
-import Home from "pages/home/Home";
 import Join from "pages/join/Join";
 import Login from "pages/login/Login";
 import Step1 from "pages/loginPageSteps/step1/Step1";
@@ -14,6 +13,7 @@ import Step3 from "pages/loginPageSteps/step3/Step3";
 import Step4 from "pages/loginPageSteps/step4/Step4";
 import Step5 from "pages/loginPageSteps/step5/Step5";
 import PrivacyPolicy from "pages/privacyPolicy/PrivacyPolicy";
+import Role from "pages/role/Role";
 import User from "pages/user/User";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -52,7 +52,7 @@ function App() {
         <Route path={`/${GlobalUrls.register}`} element={<Join />} />
 
         <Route element={<UserOnboarding user={user} />}>
-          <Route path="/role" element={<Home />} />
+          <Route path={`/${GlobalUrls.role}`} element={<Role />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="/step1" element={<Step1 />} />
           <Route path="/step2" element={<Step2 />} />
@@ -87,7 +87,7 @@ const UserOnboarding = (props: { user: UserModel }) => {
   if (user?.bearerToken) {
     return <Outlet />;
   }
-  return <Navigate to="/login" />;
+  return <Navigate to={`/${GlobalUrls.login}`} />;
 };
 
 const Protected = (props: { user: UserModel }) => {
@@ -96,7 +96,7 @@ const Protected = (props: { user: UserModel }) => {
   if (user?.bearerToken && RoleEnum.isValid(user?.role)) {
     return <Outlet />;
   }
-  return <Navigate to="/role" />;
+  return <Navigate to={`/${GlobalUrls.role}`} />;
 };
 
 export default App;

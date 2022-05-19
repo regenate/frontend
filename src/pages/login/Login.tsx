@@ -139,8 +139,8 @@ const Login = (props: any) => {
         <div className={styles.right}>
           <Community
             Icon={CommunityIconSvg}
-            title={t("login.community_title")}
-            text={t("login.community_body")}
+            title={t("community.title")}
+            text={t("community.body")}
           />
           <div className={styles.liveChat}>
             <LivechatFalseIconSvg />
