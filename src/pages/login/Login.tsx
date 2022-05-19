@@ -8,6 +8,7 @@ import Community from "components/community/Community";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { LoginModel } from "models/login";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthService } from "services/auth.service";
@@ -15,15 +16,11 @@ import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Login.module.scss";
 
 const Login = (props: any) => {
-  const [reportProgress, setReportProgress] =
-    useState<ReportProgressType>("none");
-
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const title = "A community of mentors and mentees.";
-  const text =
-    "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7";
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -50,10 +47,8 @@ const Login = (props: any) => {
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.title}>Welcome Back!</div>
-            <div className={styles.text}>
-              A place to meet mentors in the global community
-            </div>
+            <div className={styles.title}>{t("login.title")}</div>
+            <div className={styles.text}>{t("login.sub_title")}</div>
           </div>
           <div className={styles.socialLogin}>
             <div
@@ -61,32 +56,32 @@ const Login = (props: any) => {
               onClick={() => console.log("google clicked")}
             >
               <GoogleIconSvg />
-              <span>Log in with Google</span>
+              <span>{t("login.google_login")}</span>
             </div>
             <div
               className={styles.linkedin}
               onClick={() => console.log("LikedIn clicked")}
             >
               <LinkedinIconSvg />
-              <span>Log in with LinkedIn</span>
+              <span>{t("login.linkedin_login")}</span>
             </div>
           </div>
           <div className={styles.divider}>
             <hr />
-            <span className={styles.text}>OR</span>
+            <span className={styles.text}>{t("general.or")}</span>
             <hr />
           </div>
           <div className={styles.nativeLogin}>
             <form className={styles.loginForm} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="email" className={styles.emailLabel}>
-                  Email address
+                  {t("login.email_address")}
                 </label>
                 <input
                   className={styles.email}
                   type="email"
                   name="email"
-                  placeholder="Your email address"
+                  placeholder={t("login.email_placeholder")}
                   id="email"
                   autoComplete="email"
                 />
@@ -95,7 +90,7 @@ const Login = (props: any) => {
               </div>
               <div>
                 <label htmlFor="password" className={styles.passwordLabel}>
-                  Password
+                  {t("login.password")}
                 </label>
                 <input
                   className={styles.password}
@@ -119,24 +114,33 @@ const Login = (props: any) => {
                       id="rememberMe"
                       autoComplete="rememberMe"
                     />
-                    <span className={styles.rememberMeLabel}>Remember me</span>
+                    <span className={styles.rememberMeLabel}>
+                      {t("login.remember_me")}
+                    </span>
                   </label>
                 </span>
                 <a className={styles.forgetPassword} href="/">
-                  Forget password
+                  {t("login.forgot_password")}
                 </a>
               </div>
               <input type="submit" value="Log in" />
             </form>
           </div>
           <div className={styles.bottomText}>
-            <span className={styles.question}>New to Regenate?</span>
-            <Link to="/register">Create an account</Link>
+            <span className={styles.question}>
+              {" "}
+              {t("login.new_to_regenate")}
+            </span>
+            <Link to="/register">{t("login.create_account")}</Link>
           </div>
         </div>
 
         <div className={styles.right}>
-          <Community Icon={CommunityIconSvg} title={title} text={text} />
+          <Community
+            Icon={CommunityIconSvg}
+            title={t("login.community_title")}
+            text={t("login.community_body")}
+          />
           <div className={styles.liveChat}>
             <LivechatFalseIconSvg />
           </div>
