@@ -8,6 +8,7 @@ import Community from "components/community/Community";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { LoginModel } from "models/login";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthService } from "services/auth.service";
@@ -15,6 +16,8 @@ import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Login.module.scss";
 
 const Login = (props: any) => {
+  const { t } = useTranslation();
+
   const [reportProgress, setReportProgress] =
     useState<ReportProgressType>("none");
 
@@ -50,10 +53,8 @@ const Login = (props: any) => {
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.title}>Welcome Back!</div>
-            <div className={styles.text}>
-              A place to meet mentors in the global community
-            </div>
+            <div className={styles.title}>{t("login.title")}</div>
+            <div className={styles.text}>{t("login.sub_title")}</div>
           </div>
           <div className={styles.socialLogin}>
             <div
@@ -61,14 +62,14 @@ const Login = (props: any) => {
               onClick={() => console.log("google clicked")}
             >
               <GoogleIconSvg />
-              <span>Log in with Google</span>
+              <span>{t("login.google_login")}</span>
             </div>
             <div
               className={styles.linkedin}
               onClick={() => console.log("LikedIn clicked")}
             >
               <LinkedinIconSvg />
-              <span>Log in with LinkedIn</span>
+              <span>{t("login.linkedin_login")}</span>
             </div>
           </div>
           <div className={styles.divider}>
