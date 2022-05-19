@@ -1,4 +1,5 @@
 import { AnyAction } from "@reduxjs/toolkit";
+import { GlobalUrls } from "enums/GlobalUrls";
 import { LoginModel } from "models/login";
 import { UserModel } from "models/user";
 import { Dispatch } from "react";
@@ -22,10 +23,22 @@ export class AuthService {
       dispatch(authUpdateUser(UserModel.fromJson(response)));
     } catch (error) {
       setReportProgress("failed");
+      dispatch(authUpdateUser(undefined));
       throw error;
     } finally {
       setReportProgress("done");
-      navigate("/", { replace: true });
+      navigate(`/${GlobalUrls.home}`, { replace: true });
     }
+  }
+
+  public static async logoutDispatch(
+    dispatch: Dispatch<AnyAction>,
+    navigate: NavigateFunction,
+    setReportProgress: SetReportProgressType
+  ) {
+    setReportProgress("inProgress");
+    dispatch(authUpdateUser(undefined));
+    setReportProgress("done");
+    navigate(`/${GlobalUrls.login}`, { replace: true });
   }
 }

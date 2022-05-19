@@ -1,5 +1,6 @@
 import Footer from "components/footer/Footer";
 import Header from "components/header/Header";
+import { GlobalUrls } from "enums/GlobalUrls";
 import { RoleEnum } from "enums/role";
 import { UserModel } from "models/user";
 import CommunityStandards from "pages/communityStandards/CommunityStandards";
@@ -36,8 +37,8 @@ function App() {
             </main>
           }
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Join />} />
+        <Route path={`/${GlobalUrls.login}`} element={<Login />} />
+        <Route path={`/${GlobalUrls.register}`} element={<Join />} />
 
         <Route element={<UserOnboarding user={user} />}>
           <Route path="/role" element={<Home />} />
@@ -53,7 +54,7 @@ function App() {
 
         <Route element={<Protected user={user} />}>
           <Route
-            path="/"
+            path={`/${GlobalUrls.home}`}
             element={
               <main className={styles.notFound}>
                 <p>Protected</p>
