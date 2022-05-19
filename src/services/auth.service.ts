@@ -31,14 +31,7 @@ export class AuthService {
     }
   }
 
-  public static async logoutDispatch(
-    dispatch: Dispatch<AnyAction>,
-    navigate: NavigateFunction,
-    setReportProgress: SetReportProgressType
-  ) {
-    setReportProgress("inProgress");
+  public static async logoutDispatch(dispatch: Dispatch<AnyAction>) {
     dispatch(authUpdateUser(undefined));
-    setReportProgress("done");
-    navigate(`/${GlobalUrls.login}`, { replace: true });
   }
 }
