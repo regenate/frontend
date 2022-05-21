@@ -19,11 +19,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { RootState } from "redux/store";
+import { HttpService } from "services/http.service";
 import styles from "./App.module.scss";
 import "./scss/style.scss";
 
 function App() {
   const user = useSelector((state: RootState) => state.userReducer.user);
+
+  HttpService.setUserToken(user?.bearerToken);
+
   const notificationRed = useSelector(
     (state: RootState) => state.notificationReducer
   );
@@ -53,12 +57,12 @@ function App() {
 
         <Route element={<UserOnboarding user={user} />}>
           <Route path={`/${GlobalUrls.role}`} element={<Role />} />
-          <Route path="/user/:id" element={<User />} />
-          <Route path="/step1" element={<Step1 />} />
+          <Route path={`/${GlobalUrls.step1}`} element={<Step1 />} />
           <Route path="/step2" element={<Step2 />} />
           <Route path="/step3" element={<Step3 />} />
           <Route path="/step4" element={<Step4 />} />
           <Route path="/step5" element={<Step5 />} />
+          <Route path="/user/:id" element={<User />} />
           <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
           <Route path="/communityStandards" element={<CommunityStandards />} />
         </Route>

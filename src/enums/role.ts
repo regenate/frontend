@@ -12,4 +12,8 @@ export namespace RoleEnum {
   export function isValid(role: RoleEnum): boolean {
     return VALID_VALUES.includes(role);
   }
+
+  export function fromJson(role: string): RoleEnum {
+    return ALL_VALUES.find((s) => s.toString() === role);
+  }
 }

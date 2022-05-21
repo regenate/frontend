@@ -26,6 +26,8 @@
     "mentee_title": "Community User",
     "mentee_text": "You’ll be able to book mentors, join group sessions and more",
     "mentor_title": "Be a mentor",
-    "mentor_text": "Mentor the global community, and meet new mentees"
+    "mentor_text": "Mentor the global community, and meet new mentees",
+    "successful": "user role successfully chosen",
+    "failed": "error occured while choosing a role"
   }
 }
