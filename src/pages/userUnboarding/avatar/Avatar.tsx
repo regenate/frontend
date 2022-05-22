@@ -7,9 +7,9 @@ import {
 import Community from "components/community/Community";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Step4.module.scss";
+import styles from "./Avatar.module.scss";
 
-const Step4 = (props: any) => {
+const Avatar = (props: any) => {
   const [submit, setSubmit] = useState(false);
 
   const title = "Put a face to your name";
@@ -22,7 +22,7 @@ const Step4 = (props: any) => {
   };
 
   return (
-    <div className={styles.step4}>
+    <div className={styles.avatar}>
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
@@ -36,7 +36,7 @@ const Step4 = (props: any) => {
           </div>
 
           <div className={styles.form}>
-            <form className={styles.step4Form} onSubmit={handleSubmit}>
+            <form className={styles.avatarForm} onSubmit={handleSubmit}>
               <div className={styles.imageUpload}>
                 <label className={styles.imageLabel} htmlFor="uploadPhoto">
                   <AddPhoto />
@@ -51,7 +51,7 @@ const Step4 = (props: any) => {
               </div>
 
               <div className={styles.buttons}>
-                <Link to="/step3">
+                <Link to="/background">
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
@@ -59,7 +59,7 @@ const Step4 = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/step5">
+                <Link to="/bio">
                   <input type="submit" value="Continue" />
                 </Link>
               </div>
@@ -78,4 +78,4 @@ const Step4 = (props: any) => {
   );
 };
 
-export default Step4;
+export default Avatar;

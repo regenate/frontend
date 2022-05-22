@@ -22,7 +22,7 @@ export class OnboardingService {
       const responseData = await request.response.data;
 
       dispatch(onboardingUpdateRole(RoleEnum.fromJson(responseData)));
-      navigate(`/${GlobalUrls.step1}`, { replace: true });
+      navigate(`/${GlobalUrls.origin}`, { replace: true });
     } catch (error) {
       setReportProgress("failed");
       NotificationService.newNotificationDispatch(dispatch, {

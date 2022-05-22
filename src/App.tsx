@@ -7,14 +7,14 @@ import { UserModel } from "models/user";
 import CommunityStandards from "pages/communityStandards/CommunityStandards";
 import Join from "pages/join/Join";
 import Login from "pages/login/Login";
-import Step1 from "pages/loginPageSteps/step1/Step1";
-import Step2 from "pages/loginPageSteps/step2/Step2";
-import Step3 from "pages/loginPageSteps/step3/Step3";
-import Step4 from "pages/loginPageSteps/step4/Step4";
-import Step5 from "pages/loginPageSteps/step5/Step5";
 import PrivacyPolicy from "pages/privacyPolicy/PrivacyPolicy";
 import Role from "pages/role/Role";
 import User from "pages/user/User";
+import Avatar from "pages/userUnboarding/avatar/Avatar";
+import Background from "pages/userUnboarding/background/Background";
+import Bio from "pages/userUnboarding/bio/Bio";
+import Expertise from "pages/userUnboarding/expertise/Expertise";
+import Origin from "pages/userUnboarding/origin/Origin";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
@@ -57,11 +57,11 @@ function App() {
 
         <Route element={<UserOnboarding user={user} />}>
           <Route path={`/${GlobalUrls.role}`} element={<Role />} />
-          <Route path={`/${GlobalUrls.step1}`} element={<Step1 />} />
-          <Route path="/step2" element={<Step2 />} />
-          <Route path="/step3" element={<Step3 />} />
-          <Route path="/step4" element={<Step4 />} />
-          <Route path="/step5" element={<Step5 />} />
+          <Route path={`/${GlobalUrls.origin}`} element={<Origin />} />
+          <Route path="/expertise" element={<Expertise />} />
+          <Route path="/background" element={<Background />} />
+          <Route path="/avatar" element={<Avatar />} />
+          <Route path="/bio" element={<Bio />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
           <Route path="/communityStandards" element={<CommunityStandards />} />

@@ -8,7 +8,7 @@ import Countries from "components/formComponents/Countries";
 import Languages from "components/formComponents/Languages";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Step1.module.scss";
+import styles from "./Origin.module.scss";
 
 const Step1 = (props: any) => {
   const [country, setCountry] = useState("");
@@ -89,7 +89,7 @@ const Step1 = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/step2">
+                <Link to="/expertise">
                   <input type="submit" value="Continue" />
                 </Link>
               </div>

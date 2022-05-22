@@ -1,6 +1,6 @@
 import React from "react";
 
-const Expertise = () => {
+const ExpertiseData = () => {
   return (
     <>
       <option value="" selected disabled>
@@ -15,4 +15,4 @@ const Expertise = () => {
   );
 };
 
-export default Expertise;
+export default ExpertiseData;

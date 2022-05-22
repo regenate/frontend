@@ -6,9 +6,9 @@ import {
 import Community from "components/community/Community";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Step5.module.scss";
+import styles from "./Bio.module.scss";
 
-const Step5 = (props: any) => {
+const Bio = (props: any) => {
   const [userStory, setUserStory] = useState("");
   const [userBio, setUserBio] = useState("");
   const [submit, setSubmit] = useState(false);
@@ -35,7 +35,7 @@ const Step5 = (props: any) => {
   };
 
   return (
-    <div className={styles.step5}>
+    <div className={styles.bio}>
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
@@ -46,7 +46,7 @@ const Step5 = (props: any) => {
           </div>
 
           <div className={styles.form}>
-            <form className={styles.step5Form} onSubmit={handleSubmit}>
+            <form className={styles.bioForm} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="userStory" className={styles.userStoryLabel}>
                   <img
@@ -85,7 +85,7 @@ const Step5 = (props: any) => {
         <p>Password cannot be less than 8 characters</p>
       )} */}
               <div className={styles.buttons}>
-                <Link to="/step4">
+                <Link to="/avatar">
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
@@ -112,4 +112,4 @@ const Step5 = (props: any) => {
   );
 };
 
-export default Step5;
+export default Bio;

@@ -6,9 +6,9 @@ import {
 import Community from "components/community/Community";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Step3.module.scss";
+import styles from "./Background.module.scss";
 
-const Step3 = (props: any) => {
+const Background = (props: any) => {
   const [userTitle, setUserTitle] = useState("");
   const [url, setUrl] = useState("");
   const [companySchool, setCompanySchool] = useState("");
@@ -38,7 +38,7 @@ const Step3 = (props: any) => {
   const handleGetLinkedInURL = () => {};
 
   return (
-    <div className={styles.step3}>
+    <div className={styles.background}>
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
@@ -47,7 +47,7 @@ const Step3 = (props: any) => {
           </div>
 
           <div className={styles.form}>
-            <form className={styles.step1Form} onSubmit={handleSubmit}>
+            <form className={styles.originForm} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="company" className={styles.companySchoolLabel}>
                   Company/School
@@ -107,7 +107,7 @@ const Step3 = (props: any) => {
         <p>Password cannot be less than 8 characters</p>
       )} */}
               <div className={styles.buttons}>
-                <Link to="/step2">
+                <Link to="/expertise">
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
@@ -115,7 +115,7 @@ const Step3 = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/step4">
+                <Link to="/avatar">
                   <input type="submit" value="Continue" />
                 </Link>
               </div>
@@ -134,4 +134,4 @@ const Step3 = (props: any) => {
   );
 };
 
-export default Step3;
+export default Background;

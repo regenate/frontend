@@ -5,12 +5,12 @@ import {
 } from "assets/svg/icons";
 import Community from "components/community/Community";
 import Experience from "components/formComponents/Experience";
-import Expertise from "components/formComponents/Expertise";
+import ExpertiseData from "components/formComponents/ExpertiseData";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Step2.module.scss";
+import styles from "./Expertise.module.scss";
 
-const Step2 = (props: any) => {
+const Expertise = (props: any) => {
   const [expertise, setExpertise] = useState("");
   const [experience, setExperience] = useState("");
   const [submit, setSubmit] = useState(false);
@@ -33,7 +33,7 @@ const Step2 = (props: any) => {
   };
 
   return (
-    <div className={styles.step2}>
+    <div className={styles.expertise}>
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
@@ -42,7 +42,7 @@ const Step2 = (props: any) => {
           </div>
 
           <div className={styles.form}>
-            <form className={styles.step1Form} onSubmit={handleSubmit}>
+            <form className={styles.originForm} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="country" className={styles.expertiseLabel}>
                   What is your expertise?
@@ -54,7 +54,7 @@ const Step2 = (props: any) => {
                   value={expertise}
                   className={styles.expertise}
                 >
-                  <Expertise />
+                  <ExpertiseData />
                 </select>
 
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
@@ -78,7 +78,7 @@ const Step2 = (props: any) => {
         <p>Password cannot be less than 8 characters</p>
       )} */}
               <div className={styles.buttons}>
-                <Link to="/step1">
+                <Link to="/origin">
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
@@ -86,7 +86,7 @@ const Step2 = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/step3">
+                <Link to="/background">
                   <input type="submit" value="Continue" />
                 </Link>
               </div>
@@ -105,4 +105,4 @@ const Step2 = (props: any) => {
   );
 };
 
-export default Step2;
+export default Expertise;
