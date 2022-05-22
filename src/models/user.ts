@@ -10,10 +10,10 @@ export class UserModel {
 
   public static fromJson(json: any): UserModel {
     return {
-      bearerToken: json?.data.bearerToken,
-      emailVerified: json?.data.emailVerified,
-      email: json?.data.email,
-      role: json?.data.role,
+      bearerToken: json?.bearerToken,
+      emailVerified: json?.emailVerified,
+      email: json?.email,
+      role: json?.role,
     };
   }
 }

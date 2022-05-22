@@ -102,7 +102,8 @@ export class HttpService {
   }
 
   private static setUrl(url: string) {
-    return `${HttpService.BASE_URL}/${url}`;
+    const urlWithLeadingForwardSlashRemoved = url.replace(/^\/+/g, "");
+    return `${HttpService.BASE_URL}/${urlWithLeadingForwardSlashRemoved}`;
   }
 
   private static async callApi(
@@ -122,10 +123,10 @@ export class HttpService {
         headers: headers,
         method: method,
       })
-        .then((data) => {
+        .then((res) => {
           const toSendRes: HttpResponse = {
-            statusCode: data.status,
-            response: data,
+            statusCode: res.status,
+            response: res.data,
             error: undefined,
           };
           resolve(toSendRes);
