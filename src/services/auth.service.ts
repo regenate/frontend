@@ -20,9 +20,9 @@ export class AuthService {
     try {
       setReportProgress("inProgress");
       const request = await AuthApi.signIn(data);
-      const response = await request.json();
+      const responseData = UserModel.fromJson(request.response.data);
 
-      dispatch(authUpdateUser(UserModel.fromJson(response)));
+      dispatch(authUpdateUser(UserModel.fromJson(responseData)));
       NotificationService.newNotificationDispatch(dispatch, {
         type: "success",
         text: `${t("login.successful")}`,

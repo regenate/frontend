@@ -10,7 +10,7 @@ import { RootState } from "redux/store";
 // to test redux, copy this component into the home component, and you can see how the example works.
 
 const Counter = () => {
-  const count = useSelector((state: RootState) => state.counter1.value);
+  const count = useSelector((state: RootState) => state.counterReducer.value);
   const dispatch = useDispatch();
 
   return (
