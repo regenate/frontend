@@ -7,7 +7,7 @@ import Community from "components/community/Community";
 import Countries from "components/formComponents/Countries";
 import Languages from "components/formComponents/Languages";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
-import { OriginModel } from "models/original";
+import { OriginModel } from "models/origin";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";

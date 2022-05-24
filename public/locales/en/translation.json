@@ -44,5 +44,21 @@
     "language_speak": "What language(s) do you speak?",
     "successful": "user language and country successfully updated",
     "failed": "error occured while updating language and country"
+  },
+  "expertise": {
+    "successful": "user expertise successfully updated",
+    "failed": "error occured while updating user expertise"
+  },
+  "background": {
+    "successful": "user background successfully updated",
+    "failed": "error occured while updating user background"
+  },
+  "avatar": {
+    "successful": "user avatar successfully updated",
+    "failed": "error occured while updating user avatar"
+  },
+  "bio": {
+    "successful": "user bio successfully updated",
+    "failed": "error occured while updating user bio"
   }
 }
