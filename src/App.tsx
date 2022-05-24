@@ -58,10 +58,10 @@ function App() {
         <Route element={<UserOnboarding user={user} />}>
           <Route path={`/${GlobalUrls.role}`} element={<Role />} />
           <Route path={`/${GlobalUrls.origin}`} element={<Origin />} />
-          <Route path="/expertise" element={<Expertise />} />
-          <Route path="/background" element={<Background />} />
-          <Route path="/avatar" element={<Avatar />} />
-          <Route path="/bio" element={<Bio />} />
+          <Route path={`/${GlobalUrls.expertise}`} element={<Expertise />} />
+          <Route path={`/${GlobalUrls.background}`} element={<Background />} />
+          <Route path={`/${GlobalUrls.avatar}`} element={<Avatar />} />
+          <Route path={`/${GlobalUrls.bio}`} element={<Bio />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
           <Route path="/communityStandards" element={<CommunityStandards />} />

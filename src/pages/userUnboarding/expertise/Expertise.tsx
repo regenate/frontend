@@ -6,6 +6,7 @@ import {
 import Community from "components/community/Community";
 import Experience from "components/formComponents/Experience";
 import ExpertiseData from "components/formComponents/ExpertiseData";
+import { GlobalUrls } from "enums/GlobalUrls";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Expertise.module.scss";
@@ -86,7 +87,7 @@ const Expertise = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/background">
+                <Link to={`/${GlobalUrls.background}`}>
                   <input type="submit" value="Continue" />
                 </Link>
               </div>

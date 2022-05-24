@@ -5,6 +5,7 @@ import {
   LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
+import { GlobalUrls } from "enums/GlobalUrls";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Avatar.module.scss";
@@ -51,7 +52,7 @@ const Avatar = (props: any) => {
               </div>
 
               <div className={styles.buttons}>
-                <Link to="/background">
+                <Link to={`/${GlobalUrls.background}`}>
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
@@ -59,7 +60,7 @@ const Avatar = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/bio">
+                <Link to={`/${GlobalUrls.bio}`}>
                   <input type="submit" value="Continue" />
                 </Link>
               </div>

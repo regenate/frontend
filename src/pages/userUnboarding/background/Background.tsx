@@ -4,6 +4,7 @@ import {
   LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
+import { GlobalUrls } from "enums/GlobalUrls";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Background.module.scss";
@@ -107,7 +108,7 @@ const Background = (props: any) => {
         <p>Password cannot be less than 8 characters</p>
       )} */}
               <div className={styles.buttons}>
-                <Link to="/expertise">
+                <Link to={`/${GlobalUrls.expertise}`}>
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
@@ -115,7 +116,7 @@ const Background = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/avatar">
+                <Link to={`/${GlobalUrls.avatar}`}>
                   <input type="submit" value="Continue" />
                 </Link>
               </div>

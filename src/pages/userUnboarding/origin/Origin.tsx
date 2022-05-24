@@ -6,6 +6,7 @@ import {
 import Community from "components/community/Community";
 import Countries from "components/formComponents/Countries";
 import Languages from "components/formComponents/Languages";
+import { GlobalUrls } from "enums/GlobalUrls";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Origin.module.scss";
@@ -89,7 +90,7 @@ const Step1 = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/expertise">
+                <Link to={`/${GlobalUrls.expertise}`}>
                   <input type="submit" value="Continue" />
                 </Link>
               </div>
