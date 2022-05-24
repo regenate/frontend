@@ -1,4 +1,4 @@
-.step1 {
+.origin {
   .body {
     display: grid;
     grid-template-columns: 55.27% 44.73%;
@@ -30,7 +30,7 @@
         display: none;
       }
       .form {
-        .step1Form {
+        .originForm {
           input[type="submit"] {
             display: block;
             width: calc(120 / 16) + rem;

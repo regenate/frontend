@@ -1,6 +1,9 @@
 {
   "general": {
-    "or": "OR"
+    "or": "OR",
+    "none": "none",
+    "continue": "continue",
+    "back": "back"
   },
   "community": {
     "title": "A community of mentors and mentees.",
@@ -29,5 +32,17 @@
     "mentor_text": "Mentor the global community, and meet new mentees",
     "successful": "user role successfully chosen",
     "failed": "error occured while choosing a role"
+  },
+  "origin": {
+    "community": {
+      "title": "3,000+ mentors",
+      "body": "Get access to about 3,000+ mentors with diverse experience and career role to help you get the next job and advance in your career."
+    },
+    "step_1": "STEP 1 of 5",
+    "origin_story": "Hi, What's your origin story?",
+    "current_country": "Which country do you live in?",
+    "language_speak": "What language(s) do you speak?",
+    "successful": "user language and country successfully updated",
+    "failed": "error occured while updating language and country"
   }
 }
