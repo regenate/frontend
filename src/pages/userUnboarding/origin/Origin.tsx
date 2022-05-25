@@ -6,23 +6,42 @@ import {
 import Community from "components/community/Community";
 import Countries from "components/formComponents/Countries";
 import Languages from "components/formComponents/Languages";
+import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
+import { GlobalUrls } from "enums/GlobalUrls";
+import { OriginModel } from "models/origin";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./Step1.module.scss";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { OnboardingService } from "services/onboarding.service";
+import { ReportProgressType } from "utils/types/ReportProgress";
+import styles from "./Origin.module.scss";
 
-const Step1 = (props: any) => {
-  const [country, setCountry] = useState("");
-  const [language, setLanguage] = useState("");
-  const [submit, setSubmit] = useState(false);
+const Origin = (props: any) => {
+  const [country, setCountry] = useState<string>(undefined);
+  const [language, setLanguage] = useState<string>(undefined);
 
-  const title = "3,000+ mentors";
-  const text =
-    "Get access to about 3,000+ mentors with diverse experience and career role to help you get the next job and advance in your career";
-  let name = "Martins";
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setSubmit(true);
+
+    const inputData: OriginModel = {
+      country: country,
+      language: language,
+    };
+
+    await OnboardingService.updateOriginDispatch(
+      inputData,
+      dispatch,
+      navigate,
+      setReportProgress,
+      t
+    );
   };
 
   const handleCountry = (event: any) => {
@@ -34,21 +53,20 @@ const Step1 = (props: any) => {
   };
 
   return (
-    <div className={styles.step1}>
+    <div className={styles.origin}>
+      {reportProgress === "inProgress" && <ProgressOverlay />}
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.step}>STEP 1 of 5</div>
-            <div className={styles.text}>
-              Hi, {name}! What's your origin story?
-            </div>
+            <div className={styles.step}> {t("origin.step_1")}</div>
+            <div className={styles.text}>{t("origin.origin_story")}</div>
           </div>
 
           <div className={styles.form}>
-            <form className={styles.step1Form} onSubmit={handleSubmit}>
+            <form className={styles.originForm} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="country" className={styles.countryLabel}>
-                  Which country do you live in?
+                  {t("origin.current_country")}
                 </label>
                 <select
                   id="country"
@@ -64,7 +82,7 @@ const Step1 = (props: any) => {
               </div>
               <div>
                 <label htmlFor="language" className={styles.languageLabel}>
-                  What language(s) do you speak?
+                  {t("origin.language_speak")}
                 </label>
                 <select
                   name="language"
@@ -81,24 +99,27 @@ const Step1 = (props: any) => {
         <p>Password cannot be less than 8 characters</p>
       )} */}
               <div className={styles.buttons}>
-                <Link to="/">
+                <Link to={`/${GlobalUrls.home}`}>
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
                     className={styles.backButton}
-                    value="Back"
+                    value={t("general.back")}
                   />
                 </Link>
-                <Link to="/step2">
-                  <input type="submit" value="Continue" />
-                </Link>
+
+                <input type="submit" value={t("general.continue")} />
               </div>
             </form>
           </div>
         </div>
 
         <div className={styles.right}>
-          <Community Icon={StarIconSvg} title={title} text={text} />
+          <Community
+            Icon={StarIconSvg}
+            title={t("origin.community.title")}
+            text={t("origin.community.body")}
+          />
           <div className={styles.liveChat}>
             <LivechatFalseIconSvg />
           </div>
@@ -108,4 +129,4 @@ const Step1 = (props: any) => {
   );
 };
 
-export default Step1;
+export default Origin;

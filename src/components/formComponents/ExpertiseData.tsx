@@ -1,19 +1,19 @@
-import { ExperienceLevelEnum } from "enums/experience-level";
+import { ExpertiseEnum } from "enums/expertise";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Experience = () => {
+const ExpertiseData = () => {
   const { t } = useTranslation();
   return (
     <>
       <option value={undefined}> {t("general.none")}</option>
-      {ExperienceLevelEnum.ALL_VALUES.map((exp, i) => (
+      {ExpertiseEnum.ALL_VALUES.map((exp, i) => (
         <option value={exp} key={i}>
-          {t(ExperienceLevelEnum.toTranslation(exp))}
+          {t(ExpertiseEnum.toTranslation(exp))}
         </option>
       ))}
     </>
   );
 };
 
-export default Experience;
+export default ExpertiseData;

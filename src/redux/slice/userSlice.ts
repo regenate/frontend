@@ -2,16 +2,31 @@
 
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RoleEnum } from "enums/role";
+import { AvatarModel } from "models/avatar";
+import { BackgroundModel } from "models/background";
+import { BioModel } from "models/bio";
+import { ExpertiseModel } from "models/expertise";
+import { OriginModel } from "models/origin";
 import { UserModel } from "models/user";
 
 export interface UserState {
   user: UserModel;
   role: RoleEnum;
+  origin: OriginModel;
+  expertise: ExpertiseModel;
+  background: BackgroundModel;
+  avatar: AvatarModel;
+  bio: BioModel;
 }
 
 const initialState: UserState = {
   user: undefined,
   role: RoleEnum.none,
+  origin: undefined,
+  expertise: undefined,
+  background: undefined,
+  avatar: undefined,
+  bio: undefined,
 };
 
 export const userSlice = createSlice({
@@ -24,11 +39,40 @@ export const userSlice = createSlice({
     onboardingUpdateRole: (state, action: PayloadAction<RoleEnum>) => {
       state.role = action.payload;
     },
+    onboardingUpdateOrigin: (state, action: PayloadAction<OriginModel>) => {
+      state.origin = action.payload;
+    },
+    onboardingUpdateExpertise: (
+      state,
+      action: PayloadAction<ExpertiseModel>
+    ) => {
+      state.expertise = action.payload;
+    },
+    onboardingUpdateBackground: (
+      state,
+      action: PayloadAction<BackgroundModel>
+    ) => {
+      state.background = action.payload;
+    },
+    onboardingUpdateAvatar: (state, action: PayloadAction<AvatarModel>) => {
+      state.avatar = action.payload;
+    },
+    onboardingUpdateBio: (state, action: PayloadAction<BioModel>) => {
+      state.bio = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { authUpdateUser, onboardingUpdateRole } = userSlice.actions;
+export const {
+  authUpdateUser,
+  onboardingUpdateRole,
+  onboardingUpdateOrigin,
+  onboardingUpdateExpertise,
+  onboardingUpdateBackground,
+  onboardingUpdateAvatar,
+  onboardingUpdateBio,
+} = userSlice.actions;
 
 const userReducer = userSlice.reducer;
 

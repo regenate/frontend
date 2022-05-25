@@ -1,4 +1,4 @@
-.step2 {
+.origin {
   .body {
     display: grid;
     grid-template-columns: 55.27% 44.73%;
@@ -18,7 +18,7 @@
           font-weight: 500;
           line-height: 33px;
           font-size: 22px;
-          width: 207px;
+          width: 304px;
           margin-bottom: 20px;
           color: #00354f;
         }
@@ -30,7 +30,7 @@
         display: none;
       }
       .form {
-        .step1Form {
+        .originForm {
           input[type="submit"] {
             display: block;
             width: calc(120 / 16) + rem;
@@ -48,16 +48,16 @@
               border: 1px solid #6b9080;
             }
           }
-          .expertiseLabel,
-          .experienceLabel {
+          .languageLabel,
+          .countryLabel {
             font-size: calc(14 / 16) + em;
             font-weight: 400;
             line-height: 21px;
             color: #00354f;
             margin-bottom: 10px;
           }
-          .expertise,
-          .experience {
+          .country,
+          .language {
             width: calc(330 / 16) + rem;
             height: calc(59 / 16) + rem;
             border: 1px solid #c4c4c4;
@@ -71,6 +71,9 @@
               font-weight: 500;
             }
           }
+          // .country {
+          //   padding: 10px 0 !important;
+          // }
         }
         .buttons {
           display: flex;

@@ -1,4 +1,4 @@
-.step5 {
+.avatar {
   .body {
     display: grid;
     grid-template-columns: 55.27% 44.73%;
@@ -18,9 +18,16 @@
           font-weight: 500;
           line-height: 33px;
           font-size: 22px;
-          width: 225px;
+          width: 245px;
           margin-bottom: 20px;
           color: #00354f;
+        }
+        .textSmall {
+          width: 266px;
+          font-size: 14px;
+          line-height: 21px;
+          font-weight: 400;
+          margin-bottom: 20px;
         }
       }
       -ms-overflow-style: none; /* IE and Edge */
@@ -30,7 +37,7 @@
         display: none;
       }
       .form {
-        .step5Form {
+        .avatarForm {
           input[type="submit"] {
             display: block;
             width: calc(120 / 16) + rem;
@@ -48,50 +55,12 @@
               border: 1px solid #6b9080;
             }
           }
-          .userStoryLabel,
-          .userBioLabel {
-            font-size: calc(14 / 16) + em;
-            font-weight: 400;
-            line-height: 21px;
-            color: #00354f;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            .profilePic {
-              width: 20px;
-              height: 20px;
-              border-radius: 50%;
-              background-size: cover;
-              margin-right: 10px;
-            }
-          }
-          .userStory,
-          .userBio {
-            width: calc(330 / 16) + rem;
-            height: calc(100 / 16) + rem;
-            border: 1px solid #c4c4c4;
-            border-radius: 10px;
-            background-color: #f1f1f1;
-            padding: 18px 15px 28px 20px;
-            margin-bottom: 30px;
-            resize: none;
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-            /* Hide scrollbar for Chrome, Safari and Opera */
-            &::-webkit-scrollbar {
-              display: none;
-            }
-            &::placeholder {
-              font-size: 12px;
-              line-height: 18px;
-              font-weight: 500;
-            }
-          }
         }
         .buttons {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          margin-top: 30px;
           .backButton {
             border: none;
             background-color: #fff;
