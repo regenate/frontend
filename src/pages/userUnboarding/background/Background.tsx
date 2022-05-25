@@ -4,104 +4,96 @@ import {
   LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
+import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
+import { BackgroundModel } from "models/background";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { OnboardingService } from "services/onboarding.service";
+import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Background.module.scss";
 
 const Background = (props: any) => {
-  const [userTitle, setUserTitle] = useState("");
-  const [url, setUrl] = useState("");
-  const [companySchool, setCompanySchool] = useState("");
-  const [submit, setSubmit] = useState(false);
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
 
-  const title = "More about your expertise";
-  const text =
-    "This will make it easier for potential mentors and mentees to know about your expertise and experience";
-
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setSubmit(true);
-  };
 
-  const handleUserTitle = (event: any) => {
-    setUserTitle(event.target.value);
-  };
+    const formData = new FormData(event.currentTarget);
 
-  const handleUrl = (event: any) => {
-    setUrl(event.target.value);
-  };
+    const inputData: BackgroundModel = {
+      figmaPortfolioUrl: formData.get("figma") as string,
+      gitHubUrl: formData.get("github") as string,
+      linkedlnUrl: formData.get("linkedin") as string,
+    };
 
-  const handleCompanySchool = (event: any) => {
-    setCompanySchool(event.target.value);
+    await OnboardingService.updateBackgroundDispatch(
+      inputData,
+      dispatch,
+      navigate,
+      setReportProgress,
+      t
+    );
   };
-
-  const handleGetLinkedInURL = () => {};
 
   return (
     <div className={styles.background}>
+      {reportProgress === "inProgress" && <ProgressOverlay />}
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.step}>STEP 3 of 5</div>
-            <div className={styles.text}>Great! What's your superpower?</div>
+            <div className={styles.step}>{t("background.step_3")}</div>
+            <div className={styles.text}>{t("background.super_power")}</div>
           </div>
 
           <div className={styles.form}>
             <form className={styles.originForm} onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="company" className={styles.companySchoolLabel}>
-                  Company/School
+                <label htmlFor="figma" className={styles.figmaLabel}>
+                  {t("background.figma_portfolio")}
                 </label>
                 <input
-                  className={styles.companySchool}
+                  className={styles.figma}
                   type="text"
-                  name="company"
-                  id="company"
+                  name="figma"
+                  id="figma"
                   placeholder=""
-                  autoComplete="company"
-                  value={companySchool}
-                  onChange={handleCompanySchool}
                 />
 
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div>
-                <label htmlFor="title" className={styles.userTitleLabel}>
-                  Your title
+                <label htmlFor="github" className={styles.githubLabel}>
+                  {t("background.gitHub_url")}
                 </label>
                 <input
-                  className={styles.userTitle}
+                  className={styles.github}
                   type="text"
-                  name="title"
-                  placeholder="Mr. Mrs. Miss Dr."
-                  id="title"
-                  autoComplete="title"
-                  value={userTitle}
-                  onChange={handleUserTitle}
+                  name="github"
+                  placeholder=""
+                  id="github"
                 />
 
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div>
-                <label htmlFor="linkedInUrl" className={styles.urlLabel}>
-                  LinkedIn URL (Optional)
+                <label htmlFor="linkedin" className={styles.linkedinLabel}>
+                  {t("background.linkedln_url")}
                 </label>
                 <div className={styles.linkedIn}>
-                  <span className={styles.linkedInPrefix}>Linkedin.com</span>
                   <input
-                    className={styles.url}
+                    className={styles.linkedin}
                     type="text"
-                    name="linkedInUrl"
-                    id="linkedInUrl"
-                    autoComplete="linkedInUrl"
-                    value={url}
-                    onChange={handleUrl}
+                    name="linkedin"
+                    id="linkedin"
                   />
                 </div>
-              </div>
-              <div onClick={handleGetLinkedInURL} className={styles.getUrl}>
-                Get your LinkedIn URL
               </div>
 
               {/* {password.length <= 8 && submit && (
@@ -116,16 +108,18 @@ const Background = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to={`/${GlobalUrls.avatar}`}>
-                  <input type="submit" value="Continue" />
-                </Link>
+                <input type="submit" value="Continue" />
               </div>
             </form>
           </div>
         </div>
 
         <div className={styles.right}>
-          <Community Icon={BriefcaseIconSvg} title={title} text={text} />
+          <Community
+            Icon={BriefcaseIconSvg}
+            title={t("background.community.title")}
+            text={t("background.community.body")}
+          />
           <div className={styles.liveChat}>
             <LivechatFalseIconSvg />
           </div>

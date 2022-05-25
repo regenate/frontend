@@ -5,35 +5,48 @@ import {
   LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
+import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
+import { AvatarModel } from "models/avatar";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { OnboardingService } from "services/onboarding.service";
+import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Avatar.module.scss";
 
 const Avatar = (props: any) => {
-  const [submit, setSubmit] = useState(false);
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
 
-  const title = "Put a face to your name";
-  const text =
-    "This will help make it easy for mentors and other mentees to get personal with you and make the knowing process fun and alive";
-
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setSubmit(true);
+
+    //TODO use correct image input
+    const inputData: AvatarModel = undefined;
+
+    await OnboardingService.updateAvatarDispatch(
+      inputData,
+      dispatch,
+      navigate,
+      setReportProgress,
+      t
+    );
   };
 
   return (
     <div className={styles.avatar}>
+      {reportProgress === "inProgress" && <ProgressOverlay />}
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.step}>STEP 4 of 5</div>
-            <div className={styles.text}>
-              Add a profile photo so people can find you
-            </div>
-            <div className={styles.textSmall}>
-              Have a favorite picture? Upload it now
-            </div>
+            <div className={styles.step}>{t("avatar.step_4")}</div>
+            <div className={styles.text}>{t("avatar.add_photo")}</div>
+            <div className={styles.textSmall}>{t("avatar.favorite_photo")}</div>
           </div>
 
           <div className={styles.form}>
@@ -60,16 +73,18 @@ const Avatar = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to={`/${GlobalUrls.bio}`}>
-                  <input type="submit" value="Continue" />
-                </Link>
+                <input type="submit" value="Continue" />
               </div>
             </form>
           </div>
         </div>
 
         <div className={styles.right}>
-          <Community Icon={CameraIconSvg} title={title} text={text} />
+          <Community
+            Icon={CameraIconSvg}
+            title={t("avatar.community.title")}
+            text={t("avatar.community.body")}
+          />
           <div className={styles.liveChat}>
             <LivechatFalseIconSvg />
           </div>

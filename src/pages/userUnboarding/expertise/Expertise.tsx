@@ -6,23 +6,44 @@ import {
 import Community from "components/community/Community";
 import Experience from "components/formComponents/Experience";
 import ExpertiseData from "components/formComponents/ExpertiseData";
+import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
+import { ExperienceLevelEnum } from "enums/experience-level";
+import { ExpertiseEnum } from "enums/expertise";
 import { GlobalUrls } from "enums/GlobalUrls";
+import { ExpertiseModel } from "models/expertise";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { OnboardingService } from "services/onboarding.service";
+import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Expertise.module.scss";
 
 const Expertise = (props: any) => {
-  const [expertise, setExpertise] = useState("");
-  const [experience, setExperience] = useState("");
-  const [submit, setSubmit] = useState(false);
+  const [expertise, setExpertise] = useState<ExpertiseEnum>(undefined);
+  const [experience, setExperience] = useState<ExperienceLevelEnum>(undefined);
 
-  const title = "More about your expertise";
-  const text =
-    "This will make it easier for potential mentors and mentees to know about your expertise and experience";
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setSubmit(true);
+
+    const inputData: ExpertiseModel = {
+      expertise: expertise,
+      experienceLevel: experience,
+    };
+
+    await OnboardingService.updateExpertiseDispatch(
+      inputData,
+      dispatch,
+      navigate,
+      setReportProgress,
+      t
+    );
   };
 
   const handleExpertise = (event: any) => {
@@ -35,18 +56,19 @@ const Expertise = (props: any) => {
 
   return (
     <div className={styles.expertise}>
+      {reportProgress === "inProgress" && <ProgressOverlay />}
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.step}>STEP 2 of 5</div>
-            <div className={styles.text}>Great! What's your superpower?</div>
+            <div className={styles.step}>{t("expertise.step_2")}</div>
+            <div className={styles.text}>{t("expertise.super_power")}</div>
           </div>
 
           <div className={styles.form}>
             <form className={styles.originForm} onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="country" className={styles.expertiseLabel}>
-                  What is your expertise?
+                  {t("expertise.what_expertise")}
                 </label>
                 <select
                   name="country"
@@ -62,7 +84,7 @@ const Expertise = (props: any) => {
               </div>
               <div>
                 <label htmlFor="language" className={styles.experienceLabel}>
-                  Level of experience
+                  {t("expertise.experience_level")}
                 </label>
                 <select
                   name="country"
@@ -79,7 +101,7 @@ const Expertise = (props: any) => {
         <p>Password cannot be less than 8 characters</p>
       )} */}
               <div className={styles.buttons}>
-                <Link to="/origin">
+                <Link to={`/${GlobalUrls.origin}`}>
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
@@ -87,16 +109,18 @@ const Expertise = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to={`/${GlobalUrls.background}`}>
-                  <input type="submit" value="Continue" />
-                </Link>
+                <input type="submit" value="Continue" />
               </div>
             </form>
           </div>
         </div>
 
         <div className={styles.right}>
-          <Community Icon={BriefcaseIconSvg} title={title} text={text} />
+          <Community
+            Icon={BriefcaseIconSvg}
+            title={t("expertise.community.title")}
+            text={t("expertise.community.body")}
+          />
           <div className={styles.liveChat}>
             <LivechatFalseIconSvg />
           </div>

@@ -5,6 +5,23 @@
     "continue": "continue",
     "back": "back"
   },
+  "expertise_enum": {
+    "none": "none",
+    "react": "react",
+    "angular": "angular",
+    "html": "html",
+    "css": "css",
+    "javascript": "javascript",
+    "typescript": "typescript",
+    "uiUx": "ui/ux"
+  },
+  "experience_level_enum": {
+    "none": "none",
+    "junior": "junior",
+    "intermediate": "intermediate",
+    "senior": "senior",
+    "master": "master"
+  },
   "community": {
     "title": "A community of mentors and mentees.",
     "body": "Be part of a community of mentors and mentees globally that supports each other to make magical conversations happen; supported 24/7"
@@ -46,18 +63,52 @@
     "failed": "error occured while updating language and country"
   },
   "expertise": {
+    "community": {
+      "title": "More about your expertise",
+      "body": "This will make it easier for potential mentors and mentees to know about your expertise and experience."
+    },
+    "step_2": "STEP 2 of 5",
+    "super_power": "Great! What's your superpower?",
+    "what_expertise": "What is your expertise?",
+    "experience_level": "Level of experience",
     "successful": "user expertise successfully updated",
     "failed": "error occured while updating user expertise"
   },
   "background": {
+    "community": {
+      "title": "More about your background",
+      "body": "This will make it easier for potential mentors and mentees to know about your expertise and experience."
+    },
+    "step_3": "STEP 3 of 5",
+    "super_power": "Great! What's your superpower?",
+    "figma_portfolio": "figma Portfolio url(optional)",
+    "gitHub_url": "github url(optional)",
+    "linkedln_url": "linkedln url(optional)",
     "successful": "user background successfully updated",
     "failed": "error occured while updating user background"
   },
   "avatar": {
+    "community": {
+      "title": "Put a face to your name",
+      "body": "This will help make it easy for mentors and other mentees to get personal with you and make the knowing process fun and alive."
+    },
+    "step_4": "STEP 4 of 5",
+    "add_photo": "Add a profile photo so people can find you",
+    "favorite_photo": "Have a favorite picture? Upload it now",
     "successful": "user avatar successfully updated",
     "failed": "error occured while updating user avatar"
   },
   "bio": {
+    "community": {
+      "title": "More about your bio",
+      "body": "This will help make it easy for mentors and other mentees to get personal with you and make the knowing process fun and alive."
+    },
+    "bio_text": "i am a product designer at Apple who writes about design. I love my doggie (fluffy) and enjoy collecting new NFTs during my free time!",
+    "about_yourself": "Tell us more about yourself, your goals and what you love!",
+    "step_5": "STEP 5 of 5",
+    "introduction_approach": "Almost there! How would you like to be intro'd",
+    "every_body_story": "Everybody has a story, what's yours?",
+    "sample_bio": "Sample Bio",
     "successful": "user bio successfully updated",
     "failed": "error occured while updating user bio"
   }

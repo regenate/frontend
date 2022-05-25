@@ -4,31 +4,40 @@ import {
   StarIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
+import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
+import { BioModel } from "models/bio";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { OnboardingService } from "services/onboarding.service";
+import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Bio.module.scss";
 
 const Bio = (props: any) => {
-  const [userStory, setUserStory] = useState("");
-  const [userBio, setUserBio] = useState("");
-  const [submit, setSubmit] = useState(false);
+  const [userBio, setUserBio] = useState<string>(undefined);
 
-  const title = "More about your expertise";
-  const text =
-    "This will make it easier for potential mentors and mentees to know about your expertise and experience";
-  const userBioText =
-    "i am a product designer at Apple who writes about design. I love my doggie (fluffy) and enjoy collecting new NFTs during my free time!";
-  const userStoryText =
-    "Tell us more about yourself, your goals and what you love!";
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setSubmit(true);
-  };
 
-  const handleUserStory = (event: any) => {
-    setUserStory(event.target.value);
+    const inputData: BioModel = {
+      bio: userBio,
+    };
+
+    await OnboardingService.updateBioDispatch(
+      inputData,
+      dispatch,
+      navigate,
+      setReportProgress,
+      t
+    );
   };
 
   const handleUserBio = (event: any) => {
@@ -37,40 +46,19 @@ const Bio = (props: any) => {
 
   return (
     <div className={styles.bio}>
+      {reportProgress === "inProgress" && <ProgressOverlay />}
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.step}>STEP 5 of 5</div>
-            <div className={styles.text}>
-              Almost there! How would you like to be intro'd
-            </div>
+            <div className={styles.step}>{t("bio.step_5")}</div>
+            <div className={styles.text}>{t("bio.introduction_approach")}</div>
           </div>
 
           <div className={styles.form}>
             <form className={styles.bioForm} onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="userStory" className={styles.userStoryLabel}>
-                  <img
-                    className={styles.profilePic}
-                    src="/profile-picture.jpg"
-                    alt="user avatar"
-                  />
-                  <span>Everybody has a story, what's yours?</span>
-                </label>
-                <textarea
-                  className={styles.userStory}
-                  onChange={handleUserStory}
-                  id="userStory"
-                  name="userStory"
-                  value={userStory}
-                  placeholder={userStoryText}
-                />
-
-                {/* {!email && submit && <p>Enter a valid email address</p>} */}
-              </div>
-              <div>
                 <label htmlFor="userBio" className={styles.userBioLabel}>
-                  Sample Bio
+                  {t("bio.sample_bio")}
                 </label>
                 <textarea
                   className={styles.userBio}
@@ -78,7 +66,7 @@ const Bio = (props: any) => {
                   name="userBio"
                   value={userBio}
                   onChange={handleUserBio}
-                  placeholder={userBioText}
+                  placeholder={t("bio.bio_text")}
                 />
               </div>
 
@@ -94,16 +82,18 @@ const Bio = (props: any) => {
                     value="Back"
                   />
                 </Link>
-                <Link to="/">
-                  <input type="submit" value="Continue" />
-                </Link>
+                <input type="submit" value="Continue" />
               </div>
             </form>
           </div>
         </div>
 
         <div className={styles.right}>
-          <Community Icon={StarIconSvg} title={title} text={text} />
+          <Community
+            Icon={StarIconSvg}
+            title={t("bio.community.title")}
+            text={t("bio.community.body")}
+          />
           <div className={styles.liveChat}>
             <LivechatFalseIconSvg />
           </div>

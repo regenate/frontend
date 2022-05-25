@@ -7,6 +7,7 @@ import Community from "components/community/Community";
 import Countries from "components/formComponents/Countries";
 import Languages from "components/formComponents/Languages";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
+import { GlobalUrls } from "enums/GlobalUrls";
 import { OriginModel } from "models/origin";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -98,7 +99,7 @@ const Origin = (props: any) => {
         <p>Password cannot be less than 8 characters</p>
       )} */}
               <div className={styles.buttons}>
-                <Link to="/">
+                <Link to={`/${GlobalUrls.home}`}>
                   <ChevronLeftIconSvg />
                   <input
                     type="button"
