@@ -17,6 +17,8 @@ import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Avatar.module.scss";
 
 const Avatar = (props: any) => {
+  const [preview, setPreview] = useState<string>(undefined);
+
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,16 +28,60 @@ const Avatar = (props: any) => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    //TODO use correct image input
-    const inputData: AvatarModel = undefined;
+    const formData = new FormData(event.currentTarget);
+    const file = formData.get("uploadPhoto") as File;
 
-    await OnboardingService.updateAvatarDispatch(
-      inputData,
-      dispatch,
-      navigate,
-      setReportProgress,
-      t
-    );
+    try {
+      console.warn(file);
+      const fileBas64 = (await toBase64(file)) as string;
+
+      const inputData: AvatarModel = {
+        data: fileBas64,
+        mime: file.type,
+        filename: file?.name,
+      };
+      await OnboardingService.updateAvatarDispatch(
+        inputData,
+        dispatch,
+        navigate,
+        setReportProgress,
+        t
+      );
+    } catch (error) {
+      console.warn("error occured uploading image");
+      return;
+    }
+
+    return;
+  };
+
+  const toBase64 = (file: File) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
+  const onSelectFile = async (e: any) => {
+    // Select only single file
+    const sFile: File =
+      !e.target.files || e.target.files.length === 0
+        ? undefined
+        : e.target.files[0];
+
+    try {
+      if (sFile) {
+        const fileBas64 = (await toBase64(sFile)) as string;
+        setPreview(fileBas64);
+      } else {
+        setPreview(undefined);
+      }
+    } catch (error) {
+      console.warn("error occured choosing image");
+      return;
+    }
   };
 
   return (
@@ -53,7 +99,7 @@ const Avatar = (props: any) => {
             <form className={styles.avatarForm} onSubmit={handleSubmit}>
               <div className={styles.imageUpload}>
                 <label className={styles.imageLabel} htmlFor="uploadPhoto">
-                  <AddPhoto />
+                  {preview ? <img src={preview} alt="avatar" /> : <AddPhoto />}
                 </label>
                 <input
                   style={{ display: "none" }}
@@ -61,6 +107,7 @@ const Avatar = (props: any) => {
                   name="uploadPhoto"
                   id="uploadPhoto"
                   accept="image/*"
+                  onChange={onSelectFile}
                 />
               </div>
 
