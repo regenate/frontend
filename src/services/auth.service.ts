@@ -1,6 +1,7 @@
 import { AnyAction } from "@reduxjs/toolkit";
 import { GlobalUrls } from "enums/GlobalUrls";
 import { LoginModel } from "models/login";
+import { RegisterModel } from "models/register";
 import { UserModel } from "models/user";
 import { Dispatch } from "react";
 import { NavigateFunction } from "react-router-dom";
@@ -47,5 +48,36 @@ export class AuthService {
       type: "info",
       text: "user logged out",
     });
+  }
+
+  public static async registerDispatch(
+    data: RegisterModel,
+    dispatch: Dispatch<AnyAction>,
+    navigate: NavigateFunction,
+    setReportProgress: SetReportProgressType,
+    t: any
+  ) {
+    try {
+      setReportProgress("inProgress");
+      const request = await AuthApi.register(data);
+      const responseData = UserModel.fromJson(request.response.data);
+
+      dispatch(authUpdateUser(UserModel.fromJson(responseData)));
+      NotificationService.newNotificationDispatch(dispatch, {
+        type: "success",
+        text: `${t("register.successful")}`,
+      });
+      navigate(`/${GlobalUrls.role}`, { replace: true });
+    } catch (error) {
+      setReportProgress("failed");
+      NotificationService.newNotificationDispatch(dispatch, {
+        type: "error",
+        text: `${t("register.failed")}`,
+      });
+      dispatch(authUpdateUser(undefined));
+      throw error;
+    } finally {
+      setReportProgress("done");
+    }
   }
 }

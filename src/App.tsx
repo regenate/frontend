@@ -5,9 +5,9 @@ import { GlobalUrls } from "enums/GlobalUrls";
 import { RoleEnum } from "enums/role";
 import { UserModel } from "models/user";
 import CommunityStandards from "pages/communityStandards/CommunityStandards";
-import Join from "pages/join/Join";
 import Login from "pages/login/Login";
 import PrivacyPolicy from "pages/privacyPolicy/PrivacyPolicy";
+import Register from "pages/register/Register";
 import Role from "pages/role/Role";
 import User from "pages/user/User";
 import Avatar from "pages/userUnboarding/avatar/Avatar";
@@ -53,7 +53,7 @@ function App() {
           }
         />
         <Route path={`/${GlobalUrls.login}`} element={<Login />} />
-        <Route path={`/${GlobalUrls.register}`} element={<Join />} />
+        <Route path={`/${GlobalUrls.register}`} element={<Register />} />
 
         <Route element={<UserOnboarding user={user} />}>
           <Route path={`/${GlobalUrls.role}`} element={<Role />} />

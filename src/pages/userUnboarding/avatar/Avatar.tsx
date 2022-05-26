@@ -32,7 +32,6 @@ const Avatar = (props: any) => {
     const file = formData.get("uploadPhoto") as File;
 
     try {
-      console.warn(file);
       const fileBas64 = (await toBase64(file)) as string;
 
       const inputData: AvatarModel = {

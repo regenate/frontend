@@ -6,35 +6,45 @@ import {
   LivechatFalseIconSvg,
   PlayIcon,
 } from "assets/svg/icons";
+import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
+import { GlobalUrls } from "enums/GlobalUrls";
 import SocialLogin from "modals/socialLogin/SocialLogin";
+import { RegisterModel } from "models/register";
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./Join.module.scss";
+import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthService } from "services/auth.service";
+import { ReportProgressType } from "utils/types/ReportProgress";
+import styles from "./Register.module.scss";
 
-const Join = (props: any) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [submit, setSubmit] = useState(false);
-  const [name, setName] = useState("");
+const Register = (props: any) => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [reportProgress, setReportProgress] =
+    useState<ReportProgressType>("none");
+
   const [inputType, setInputType] = useState(false);
 
   const inputRef = useRef(null);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setSubmit(true);
-  };
+    const formData = new FormData(event.currentTarget);
 
-  const handleEmail = (event: any) => {
-    setEmail(event.target.value);
-  };
+    const inputData: RegisterModel = {
+      email: formData.get("email") as string,
+      password: formData.get("password") as string,
+    };
 
-  const handleName = (event: any) => {
-    setName(event.target.value);
-  };
-
-  const handlePassword = (event: any) => {
-    setPassword(event.target.value);
+    await AuthService.registerDispatch(
+      inputData,
+      dispatch,
+      navigate,
+      setReportProgress,
+      t
+    );
   };
 
   const handleInputType = () => {
@@ -43,10 +53,11 @@ const Join = (props: any) => {
 
   return (
     <div className={styles.login}>
+      {reportProgress === "inProgress" && <ProgressOverlay />}
       <div className={styles.body}>
         <div className={styles.left}>
           <div className={styles.welcome}>
-            <div className={styles.title}>Join REGENATE Today</div>
+            <div className={styles.title}>{t("register.title")}</div>
           </div>
           <div className={styles.socialLogin}>
             <div
@@ -55,7 +66,7 @@ const Join = (props: any) => {
             >
               <SocialLogin ref={inputRef} />
               <GoogleIconSvg />
-              <span>Continue with Google</span>
+              <span>{t("register.continue_google")}</span>
             </div>
             <div
               className={styles.linkedin}
@@ -63,19 +74,19 @@ const Join = (props: any) => {
             >
               <SocialLogin ref={inputRef} />
               <LinkedinIconSvg />
-              <span>Continue with LinkedIn</span>
+              <span>{t("register.continue_linkedin")}</span>
             </div>
           </div>
           <div className={styles.divider}>
             <hr />
-            <span className={styles.text}>OR</span>
+            <span className={styles.text}>{t("general.or")}</span>
             <hr />
           </div>
           <div className={styles.nativeLogin}>
             <form className={styles.loginForm} onSubmit={handleSubmit}>
-              <div>
+              {/* <div>
                 <label htmlFor="email" className={styles.nameLabel}>
-                  Your name
+                  {t("register.name")}
                 </label>
                 <input
                   className={styles.name}
@@ -88,38 +99,31 @@ const Join = (props: any) => {
                   onChange={handleName}
                 />
 
-                {/* {!email && submit && <p>Enter a valid email address</p>} */}
-              </div>
+              </div> */}
               <div>
                 <label htmlFor="email" className={styles.emailLabel}>
-                  Email address
+                  {t("register.email_address")}
                 </label>
                 <input
                   className={styles.email}
                   type="email"
                   name="email"
-                  placeholder="Your email address"
+                  placeholder={t("register.email_placeholder")}
                   id="email"
-                  autoComplete="email"
-                  value={email}
-                  onChange={handleEmail}
                 />
 
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div className={styles.passwordContainer}>
                 <label htmlFor="password" className={styles.passwordLabel}>
-                  Create a password
+                  {t("register.create_password")}
                 </label>
                 <input
                   className={styles.password}
                   type={!inputType ? "password" : "text"}
                   name="password"
-                  placeholder="password"
+                  placeholder={t("register.password_placeholder")}
                   id="password"
-                  autoComplete="password"
-                  value={password}
-                  onChange={handlePassword}
                 />
                 <div className={styles.eye} onClick={handleInputType}>
                   {inputType ? <EyeSVG /> : <EyeOffSVG />}
@@ -133,32 +137,33 @@ const Join = (props: any) => {
             </form>
           </div>
           <div className={styles.bottomText}>
-            <span className={styles.text}>By continuing, you agree to the</span>
+            <span className={styles.text}>{t("register.you_agree")}</span>
             <span className={styles.textBold}>
-              <Link to="/privacyPolicy">Terms of use Privacy policy</Link>
+              <Link to="/privacyPolicy">{t("register.privacy_policy")}</Link>
             </span>
-            <span className={styles.text}>, and</span>
+            <span className={styles.text}>,{t("general.and")} and</span>
             <span className={styles.textBold}>
-              <Link to="/communityStandards">Community Standards</Link>
+              <Link to="/communityStandards">
+                {t("register.community_standards")}
+              </Link>
             </span>{" "}
-            <span className={styles.text}>of Regenate.com</span>
+            <span className={styles.text}>{t("register.of_regenate")}</span>
             <div className={styles.login}>
-              <span>Already have an account?</span>
-              <Link to="/login">Log in</Link>
+              <span>{t("register.already_account")}</span>
+              <Link to={`/${GlobalUrls.login}`}>{t("register.login")}</Link>
             </div>
           </div>
         </div>
 
         <div className={styles.right}>
           <div className={styles.rightText}>
-            <div className={styles.title}>Accelerate your career growth</div>
-            <div className={styles.text}>
-              Join members from over 60+ countries to learn from curated mentors
-              in tech
+            <div className={styles.title}>
+              {t("register.accelerate_career")}
             </div>
+            <div className={styles.text}>{t("register.join_members")}</div>
             <div className={styles.regenateVideo}>
               <PlayIcon />
-              <span className={styles.text}>Learn how Regenate works</span>
+              <span className={styles.text}>{t("register.learn_regnate")}</span>
             </div>
           </div>
           <div className={styles.liveChat}>
@@ -170,4 +175,4 @@ const Join = (props: any) => {
   );
 };
 
-export default Join;
+export default Register;
