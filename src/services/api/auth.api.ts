@@ -8,6 +8,6 @@ export class AuthApi {
   }
 
   public static async register(data: RegisterModel) {
-    return HttpService.post("auth/register", data);
+    return HttpService.post("auth/signup", data);
   }
 }
