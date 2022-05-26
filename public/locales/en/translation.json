@@ -3,7 +3,8 @@
     "or": "OR",
     "none": "none",
     "continue": "continue",
-    "back": "back"
+    "back": "back",
+    "and": "and"
   },
   "expertise_enum": {
     "none": "none",
@@ -40,6 +41,27 @@
     "create_account": "Create an account",
     "successful": "login successful",
     "failed": "login failed. Please check your credentials"
+  },
+  "register": {
+    "title": "Join REGENATE Today",
+    "continue_google": "Continue with Google",
+    "continue_linkedin": "Continue with LinkedIn",
+    "name": "Your name",
+    "email_address": "Email address",
+    "email_placeholder": "Your email address",
+    "password_placeholder": "Password",
+    "create_password": "Create a password",
+    "you_agree": "By continuing, you agree to the",
+    "privacy_policy": "Terms of use Privacy policy",
+    "community_standards": "Community Standards",
+    "of_regenate": "of Regenate.com",
+    "already_account": "Already have an account?",
+    "login": "Log in",
+    "accelerate_career": "Accelerate your career growth",
+    "join_members": "Join members from over 60+ countries to learn from curated mentors in tech",
+    "learn_regnate": "Learn how Regenate works",
+    "successful": "registration successful",
+    "failed": "registration failed."
   },
   "role": {
     "part_of_community": "We're glad you're here! How do you want to be a part of this community?",

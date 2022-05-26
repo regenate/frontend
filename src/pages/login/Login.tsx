@@ -6,6 +6,7 @@ import {
 } from "assets/svg/icons";
 import Community from "components/community/Community";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
+import { GlobalUrls } from "enums/GlobalUrls";
 import { LoginModel } from "models/login";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -132,7 +133,9 @@ const Login = (props: any) => {
               {" "}
               {t("login.new_to_regenate")}
             </span>
-            <Link to="/register">{t("login.create_account")}</Link>
+            <Link to={`/${GlobalUrls.register}`}>
+              {t("login.create_account")}
+            </Link>
           </div>
         </div>
 
