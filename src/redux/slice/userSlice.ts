@@ -11,7 +11,6 @@ import { UserModel } from "models/user";
 
 export interface UserState {
   user: UserModel;
-  role: RoleEnum;
   origin: OriginModel;
   expertise: ExpertiseModel;
   background: BackgroundModel;
@@ -21,7 +20,6 @@ export interface UserState {
 
 const initialState: UserState = {
   user: undefined,
-  role: RoleEnum.none,
   origin: undefined,
   expertise: undefined,
   background: undefined,
@@ -37,7 +35,7 @@ export const userSlice = createSlice({
       state.user = action.payload;
     },
     onboardingUpdateRole: (state, action: PayloadAction<RoleEnum>) => {
-      state.role = action.payload;
+      state.user = { ...state.user, role: action.payload };
     },
     onboardingUpdateOrigin: (state, action: PayloadAction<OriginModel>) => {
       state.origin = action.payload;
