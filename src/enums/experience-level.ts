@@ -41,4 +41,10 @@ export namespace ExperienceLevelEnum {
       throw Error(`translation not found for ExperienceLevelEnum.`);
     }
   }
+
+  export function toEnum(
+    role: string | ExperienceLevelEnum
+  ): ExperienceLevelEnum {
+    return ALL_VALUES.find((s) => s.toString() === role);
+  }
 }

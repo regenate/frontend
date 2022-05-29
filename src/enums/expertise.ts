@@ -46,4 +46,8 @@ export namespace ExpertiseEnum {
       throw Error(`translation not found for ExpertiseEnum.`);
     }
   }
+
+  export function toEnum(role: string | ExpertiseEnum): ExpertiseEnum {
+    return ALL_VALUES.find((s) => s.toString() === role);
+  }
 }

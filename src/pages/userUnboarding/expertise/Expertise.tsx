@@ -33,8 +33,8 @@ const Expertise = (props: any) => {
     event.preventDefault();
 
     const inputData: ExpertiseModel = {
-      expertise: expertise,
-      experienceLevel: experience,
+      expertise: ExpertiseEnum.toEnum(expertise),
+      experienceLevel: ExperienceLevelEnum.toEnum(experience),
     };
 
     await OnboardingService.updateExpertiseDispatch(
@@ -67,12 +67,12 @@ const Expertise = (props: any) => {
           <div className={styles.form}>
             <form className={styles.originForm} onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="country" className={styles.expertiseLabel}>
+                <label htmlFor="expertise" className={styles.expertiseLabel}>
                   {t("expertise.what_expertise")}
                 </label>
                 <select
-                  name="country"
-                  id="country"
+                  name="expertise"
+                  id="expertise"
                   onChange={handleExpertise}
                   value={expertise}
                   className={styles.expertise}
@@ -83,12 +83,12 @@ const Expertise = (props: any) => {
                 {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div>
-                <label htmlFor="language" className={styles.experienceLabel}>
+                <label htmlFor="experience" className={styles.experienceLabel}>
                   {t("expertise.experience_level")}
                 </label>
                 <select
-                  name="country"
-                  id="country"
+                  name="experience"
+                  id="experience"
                   onChange={handleExperience}
                   value={experience}
                   className={styles.experience}
