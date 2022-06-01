@@ -161,7 +161,7 @@
       }
     }
     .right {
-      display: none;
+      display: none; //mobile view first
       @include extraLargeDesktop() {
         position: sticky;
         top: 85px;
