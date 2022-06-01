@@ -1,3 +1,5 @@
+@import "src/scss/style.scss";
+
 .login {
   .body {
     display: grid;
@@ -159,69 +161,72 @@
       }
     }
     .right {
-      position: sticky;
-      top: 85px;
-      height: calc(100vh - 85px - 26px);
-      background: linear-gradient(
-        258.09deg,
-        #ea1869 7.64%,
-        #d72e7e 45.19%,
-        #c04897 91.99%
-      );
-      .rightText {
-        color: #fff;
-        border-radius: 10px;
-        width: 383px;
-        height: 251px;
-        position: absolute;
-        padding: 47px 38px 48px 39px;
-        top: 25%;
-        left: 50%;
-        right: 50%;
-        transform: translateX(-50%);
-        .title {
-          width: calc(246 / 16) + rem;
-          height: 80px;
-          font-weight: 700;
-          font-size: calc(30 / 16) + em;
-          line-height: 40px;
-          margin-bottom: 15px;
-        }
-        .text {
-          width: 316px;
-          height: 46px;
-          font-weight: 600;
-          font-size: calc(15 / 16) + em;
-          line-height: 22.5px;
-          margin-bottom: 20px;
-        }
-        .regenateVideo {
-          width: 277px;
-          height: 79px;
-          box-sizing: border-box;
+      display: none;
+      @include extraLargeDesktop() {
+        position: sticky;
+        top: 85px;
+        height: calc(100vh - 85px - 26px);
+        background: linear-gradient(
+          258.09deg,
+          #ea1869 7.64%,
+          #d72e7e 45.19%,
+          #c04897 91.99%
+        );
+        .rightText {
+          color: #fff;
           border-radius: 10px;
-          background: rgba(196, 196, 196, 0.3);
-          padding: 24px 0 25px 18px;
-          svg {
-            margin-right: 5px;
-            cursor: pointer;
-            &:hover {
-              border-radius: 50%;
-              border: 1px solid #4285f4;
-            }
+          width: 383px;
+          height: 251px;
+          position: absolute;
+          padding: 47px 38px 48px 39px;
+          top: 25%;
+          left: 50%;
+          right: 50%;
+          transform: translateX(-50%);
+          .title {
+            width: calc(246 / 16) + rem;
+            height: 80px;
+            font-weight: 700;
+            font-size: calc(30 / 16) + em;
+            line-height: 40px;
+            margin-bottom: 15px;
           }
           .text {
-            font-size: 15px;
+            width: 316px;
+            height: 46px;
+            font-weight: 600;
+            font-size: calc(15 / 16) + em;
             line-height: 22.5px;
-            font-weight: 700;
+            margin-bottom: 20px;
+          }
+          .regenateVideo {
+            width: 277px;
+            height: 79px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            background: rgba(196, 196, 196, 0.3);
+            padding: 24px 0 25px 18px;
+            svg {
+              margin-right: 5px;
+              cursor: pointer;
+              &:hover {
+                border-radius: 50%;
+                border: 1px solid #4285f4;
+              }
+            }
+            .text {
+              font-size: 15px;
+              line-height: 22.5px;
+              font-weight: 700;
+            }
           }
         }
-      }
-      .liveChat {
-        position: absolute;
-        right: 50px;
-        bottom: 27px;
-        cursor: pointer;
+        .liveChat {
+          position: absolute;
+          right: 50px;
+          bottom: 27px;
+          cursor: pointer;
+        }
       }
     }
   }
