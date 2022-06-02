@@ -3,12 +3,13 @@
   .body {
     display: grid;
     justify-content: center;
+
     @include extraLargeDesktop() {
       grid-template-columns: 55.27% 44.73%;
     }
     .left {
       width: calc(330 / 16) + rem;
-      margin-left: calc(100 / 16) + rem;
+      margin-left: auto;
       overflow-y: scroll;
       margin-top: 60px;
       .welcome {
