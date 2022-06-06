@@ -1,9 +1,26 @@
+@import "src/scss/style.scss";
 .login {
   .body {
-    display: grid;
-    grid-template-columns: 55.27% 44.73%;
+    @include mobile() {
+      grid-template-columns: auto;
+    }
+    @include desktop() {
+      grid-template-columns: auto;
+    }
+    @include largeDesktop() {
+      display: grid;
+      grid-template-columns: 55.27% 44.73%;
+    }
 
     .left {
+      @include mobile() {
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      @include desktop() {
+        margin: 0 auto;
+        overflow: hidden;
+      }
       width: calc(330 / 16) + rem;
       margin-left: calc(101 / 16) + rem;
       overflow-y: scroll;
@@ -152,20 +169,29 @@
       }
     }
     .right {
-      position: sticky;
-      top: 85px;
-      height: calc(100vh - 85px - 26px);
-      background: linear-gradient(
-        258.09deg,
-        #ea1869 7.64%,
-        #d72e7e 45.19%,
-        #c04897 91.99%
-      );
-      .liveChat {
-        position: absolute;
-        right: 50px;
-        bottom: 27px;
-        cursor: pointer;
+      @include mobile() {
+        display: none;
+      }
+      @include desktop() {
+        display: none;
+      }
+      @include largeDesktop() {
+        display: block;
+        position: sticky;
+        top: 85px;
+        height: calc(100vh - 85px - 26px);
+        background: linear-gradient(
+          258.09deg,
+          #ea1869 7.64%,
+          #d72e7e 45.19%,
+          #c04897 91.99%
+        );
+        .liveChat {
+          position: absolute;
+          right: 50px;
+          bottom: 27px;
+          cursor: pointer;
+        }
       }
     }
   }
