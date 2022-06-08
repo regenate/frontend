@@ -28,6 +28,7 @@ function App() {
   const user = useSelector((state: RootState) => state.userReducer.user);
 
   HttpService.setUserToken(user?.bearerToken);
+  HttpService.setRole(user?.role);
 
   const notificationRed = useSelector(
     (state: RootState) => state.notificationReducer

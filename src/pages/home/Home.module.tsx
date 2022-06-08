@@ -3,8 +3,8 @@ import { HomeUrls } from "enums/GlobalUrls";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Home";
 import styles from "./Home.module.scss";
+import Landing from "./landing/Landing";
 
 const HomeModule = () => {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ const HomeModule = () => {
 
       <div className={styles.content}>
         <Routes>
-          <Route path={`/${HomeUrls.base}`} element={<Home />} />
+          <Route path={`/${HomeUrls.base}`} element={<Landing />} />
         </Routes>
       </div>
     </div>

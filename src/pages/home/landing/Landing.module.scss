@@ -1,0 +1,14 @@
+.landing {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.left,
+.right {
+  padding: 10px;
+}
+
+.percent_section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
