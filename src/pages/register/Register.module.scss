@@ -3,10 +3,17 @@
 .login {
   .body {
     display: grid;
-    grid-template-columns: 55.27% 44.73%;
+    // grid-template-columns: 55.27% 44.73%;
+    justify-content: center;
+    @include extraLargeDesktop() {
+      grid-template-columns: 55.27% 44.73%;
+    }
     .left {
       width: calc(330 / 16) + rem;
-      margin-left: calc(101 / 16) + rem;
+      // margin-left: calc(101 / 16) + rem;
+      @include extraLargeDesktop() {
+        margin-left: calc(100 / 16) + rem;
+      }
       overflow-y: scroll;
       .welcome {
         .title {
@@ -159,10 +166,15 @@
           margin-top: 20px;
         }
       }
+
+      @include extraLargeDesktop() {
+        margin: auto;
+      }
     }
     .right {
       display: none; //mobile view first
       @include extraLargeDesktop() {
+        display: block;
         position: sticky;
         top: 85px;
         height: calc(100vh - 85px - 26px);
