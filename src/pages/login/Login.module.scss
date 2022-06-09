@@ -1,28 +1,37 @@
 @import "src/scss/style.scss";
 .login {
   .body {
-    @include mobile() {
-      grid-template-columns: auto;
-    }
-    @include desktop() {
-      grid-template-columns: auto;
-    }
-    @include largeDesktop() {
-      display: grid;
+    // @include mobile() {
+    //   grid-template-columns: auto;
+    // }
+    // @include desktop() {
+    //   grid-template-columns: auto;
+    // }
+    // @include largeDesktop() {
+    //   display: grid;
+    //   grid-template-columns: 55.27% 44.73%;
+    // }
+
+    display: grid;
+    justify-content: center;
+    @include extraLargeDesktop() {
       grid-template-columns: 55.27% 44.73%;
     }
 
     .left {
-      @include mobile() {
-        margin: 0 auto;
-        overflow: hidden;
-      }
-      @include desktop() {
-        margin: 0 auto;
-        overflow: hidden;
-      }
+      // @include mobile() {
+      //   margin: 0 auto;
+      //   overflow: hidden;
+      // }
+      // @include desktop() {
+      //   margin: 0 auto;
+      //   overflow: hidden;
+      // }
       width: calc(330 / 16) + rem;
-      margin-left: calc(101 / 16) + rem;
+      //margin-left: calc(101 / 16) + rem;
+      @include extraLargeDesktop() {
+        margin-left: calc(100 / 16) + rem;
+      }
       overflow-y: scroll;
       .welcome {
         .title {
@@ -167,15 +176,14 @@
           }
         }
       }
+
+      @include extraLargeDesktop() {
+        margin: auto;
+      }
     }
     .right {
-      @include mobile() {
-        display: none;
-      }
-      @include desktop() {
-        display: none;
-      }
-      @include largeDesktop() {
+      display: none;
+      @include extraLargeDesktop() {
         display: block;
         position: sticky;
         top: 85px;
