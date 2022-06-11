@@ -1,10 +1,20 @@
+@import "src/scss/style.scss";
 .bio {
   .body {
     display: grid;
-    grid-template-columns: 55.27% 44.73%;
+    justify-content: center;
+    height: calc(100vh - 85px - 26px);
+
+    @include largeDesktop() {
+      grid-template-columns: 55.27% 44.73%;
+      margin: auto;
+    }
+
     .left {
+      @include largeDesktop() {
+        grid-template-columns: 55.27% 44.73%;
+      }
       width: calc(330 / 16) + rem;
-      margin-left: calc(100 / 16) + rem;
       overflow-y: scroll;
       margin-top: 60px;
       .welcome {
@@ -18,9 +28,10 @@
           font-weight: 500;
           line-height: 33px;
           font-size: 22px;
-          width: 225px;
+          // width: 225px;
           margin-bottom: 20px;
           color: #00354f;
+          text-align: center;
         }
       }
       -ms-overflow-style: none; /* IE and Edge */
@@ -103,22 +114,30 @@
           }
         }
       }
+      @include largeDesktop() {
+        margin: auto;
+      }
     }
     .right {
-      position: sticky;
-      top: 85px;
-      height: calc(100vh - 85px - 26px);
-      background: linear-gradient(
-        258.09deg,
-        #ea1869 7.64%,
-        #d72e7e 45.19%,
-        #c04897 91.99%
-      );
-      .liveChat {
-        position: absolute;
-        right: 50px;
-        bottom: 27px;
-        cursor: pointer;
+      display: none;
+
+      @include largeDesktop() {
+        display: block;
+        position: sticky;
+        top: 85px;
+        height: calc(100vh - 85px - 26px);
+        background: linear-gradient(
+          258.09deg,
+          #ea1869 7.64%,
+          #d72e7e 45.19%,
+          #c04897 91.99%
+        );
+        .liveChat {
+          position: absolute;
+          right: 50px;
+          bottom: 27px;
+          cursor: pointer;
+        }
       }
     }
   }
