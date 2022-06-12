@@ -133,5 +133,30 @@
     "sample_bio": "Sample Bio",
     "successful": "user bio successfully updated",
     "failed": "error occured while updating user bio"
+  },
+  "header": {
+    "company_name": "REGENATE",
+    "education_navigation": "Education",
+    "search": "Search",
+    "message_tip": "Message",
+    "notification_tip": "Notification"
+  },
+  "side_navigation": {
+    "home": "Home",
+    "chats": "Chats",
+    "connections": "Connections"
+  },
+  "home": {
+    "landing": {
+      "fill": "Fill your profile",
+      "complete": "Complete your profile to get more",
+      "percent_complete": "{{0}}% Completed",
+      "verify_email": "Verify email",
+      "add_avatar": "Add avatar",
+      "add_background": "Add portfolio links",
+      "add_bio": "Fill up your bio",
+      "add_expertise": "Add your expertise",
+      "add_langauge": "Fill up your language"
+    }
   }
 }

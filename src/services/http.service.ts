@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import { RoleEnum } from "enums/role";
 
 export interface HttpResponse {
   statusCode: number;
@@ -8,9 +9,16 @@ export interface HttpResponse {
 
 export class HttpService {
   private static USER_TOKEN: string;
+  private static ROLE: RoleEnum;
   private static BASE_URL = "https://regenate.herokuapp.com";
-  public static setUserToken = (token: string) =>
-    (HttpService.USER_TOKEN = token);
+  public static setUserToken = (token: string) => {
+    HttpService.USER_TOKEN = token;
+  };
+
+  public static setRole = (role: RoleEnum) => {
+    HttpService.ROLE = role;
+  };
+  public static getRole = () => HttpService.ROLE;
   public static post(
     url: string,
     data: object = undefined,

@@ -16,22 +16,45 @@ export class OnboardingApi {
   }
 
   public static async updateOrigin(data: OriginModel) {
-    return HttpService.post("mentee/origin", data);
+    return HttpService.post(
+      `${
+        HttpService.getRole() === RoleEnum.mentee ? "mentee" : "mentor"
+      }/origin`,
+      data
+    );
   }
 
   public static async updateExpertise(data: ExpertiseModel) {
-    return HttpService.post("mentee/expertise", data);
+    return HttpService.post(
+      `${
+        HttpService.getRole() === RoleEnum.mentee ? "mentee" : "mentor"
+      }/expertise`,
+      data
+    );
   }
 
   public static async updateBackground(data: BackgroundModel) {
-    return HttpService.post("mentee/background", data);
+    return HttpService.post(
+      `${
+        HttpService.getRole() === RoleEnum.mentee ? "mentee" : "mentor"
+      }/background`,
+      data
+    );
   }
 
   public static async updateAvatar(data: AvatarModel) {
-    return HttpService.post("mentee/avatar", data);
+    return HttpService.post(
+      `${
+        HttpService.getRole() === RoleEnum.mentee ? "mentee" : "mentor"
+      }/avatar`,
+      data
+    );
   }
 
   public static async updateBio(data: BioModel) {
-    return HttpService.post("mentee/bio", data);
+    return HttpService.post(
+      `${HttpService.getRole() === RoleEnum.mentee ? "mentee" : "mentor"}/bio`,
+      data
+    );
   }
 }
