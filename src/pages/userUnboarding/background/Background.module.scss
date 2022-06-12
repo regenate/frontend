@@ -1,8 +1,24 @@
+
+@import "src/scss/style.scss";
 .background {
   .body {
+    @include mobile() {
+      grid-template-columns: auto;
+    }
+    @include desktop() {
+      grid-template-columns: auto;
+    }
     display: grid;
     grid-template-columns: 55.27% 44.73%;
     .left {
+      @include mobile() {
+        margin: 0 auto;
+        overflow-x: hidden;
+      }
+      @include desktop() {
+        margin: 0 auto;
+        overflow-x: hidden;
+      }
       width: calc(330 / 16) + rem;
       margin-left: calc(100 / 16) + rem;
       overflow-y: scroll;
@@ -97,6 +113,12 @@
       }
     }
     .right {
+      @include mobile() {
+        display: none;
+      }
+      @include desktop() {
+        display: none;
+      }
       position: sticky;
       top: 85px;
       height: calc(100vh - 85px - 26px);
