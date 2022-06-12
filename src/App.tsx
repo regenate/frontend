@@ -4,19 +4,23 @@ import Notification from "components/notification/Notification";
 import { GlobalUrls } from "enums/GlobalUrls";
 import { RoleEnum } from "enums/role";
 import { UserModel } from "models/user";
+import BookingModule from "pages/booking/Booking.module";
 import CommunityStandards from "pages/communityStandards/CommunityStandards";
+import ConnectionModule from "pages/connections/Connection.module";
 import HomeModule from "pages/home/Home.module";
 import Login from "pages/login/Login";
+import MentorModule from "pages/mentor/Mentor.module";
 import PrivacyPolicy from "pages/privacyPolicy/PrivacyPolicy";
+import ProfileModule from "pages/profile/Profile.module";
 import Register from "pages/register/Register";
 import Role from "pages/role/Role";
+import SettingsModule from "pages/settings/Settings.module";
 import User from "pages/user/User";
 import Avatar from "pages/userUnboarding/avatar/Avatar";
 import Background from "pages/userUnboarding/background/Background";
 import Bio from "pages/userUnboarding/bio/Bio";
 import Expertise from "pages/userUnboarding/expertise/Expertise";
 import Origin from "pages/userUnboarding/origin/Origin";
-import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import { RootState } from "redux/store";
@@ -72,6 +76,18 @@ function App() {
 
         <Route element={<Protected user={user} />}>
           <Route path={`/${GlobalUrls.home}`} element={<HomeModule />} />
+          <Route
+            path={`/${GlobalUrls.connection}`}
+            element={<ConnectionModule />}
+          />
+          <Route path={`/${GlobalUrls.booking}`} element={<BookingModule />} />
+          <Route path={`/${GlobalUrls.mentor}`} element={<MentorModule />} />
+          <Route
+            path={`/${GlobalUrls.settings}`}
+            element={<SettingsModule />}
+          />
+
+          <Route path={`/${GlobalUrls.profile}`} element={<ProfileModule />} />
         </Route>
       </Routes>
     </div>
