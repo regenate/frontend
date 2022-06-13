@@ -6,11 +6,13 @@ import {
 import Community from "components/community/Community";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
+import { RoleEnum } from "enums/role";
 import { BackgroundModel } from "models/background";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { HttpService } from "services/http.service";
 import { OnboardingService } from "services/onboarding.service";
 import { ReportProgressType } from "utils/types/ReportProgress";
 import styles from "./Background.module.scss";
@@ -26,11 +28,15 @@ const Background = (props: any) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+    const companyOrSchool = formData.get("companyOrSchool") as string;
+    const jobTitle = formData.get("jobTitle") as string;
 
     const inputData: BackgroundModel = {
       figmaPortfolioUrl: formData.get("figma") as string,
       gitHubUrl: formData.get("github") as string,
       linkedlnUrl: formData.get("linkedin") as string,
+      companyOrSchool: companyOrSchool ?? undefined,
+      jobTitle: jobTitle ?? undefined,
     };
 
     await OnboardingService.updateBackgroundDispatch(
@@ -86,7 +92,7 @@ const Background = (props: any) => {
                 <label htmlFor="linkedin" className={styles.linkedinLabel}>
                   {t("background.linkedln_url")}
                 </label>
-                <div className={styles.linkedIn}>
+                <div>
                   <input
                     className={styles.linkedin}
                     type="text"
@@ -95,6 +101,41 @@ const Background = (props: any) => {
                   />
                 </div>
               </div>
+
+              {HttpService.getRole() === RoleEnum.mentor && (
+                <div>
+                  <label htmlFor="jobTitle" className={styles.jobTitleLabel}>
+                    {t("background.job_title")}
+                  </label>
+                  <div>
+                    <input
+                      className={styles.jobTitle}
+                      type="text"
+                      name="jobTitle"
+                      id="jobTitle"
+                    />
+                  </div>
+                </div>
+              )}
+
+              {HttpService.getRole() === RoleEnum.mentor && (
+                <div>
+                  <label
+                    htmlFor="companyOrSchool"
+                    className={styles.companyOrSchoolLabel}
+                  >
+                    {t("background.company_or_school")}
+                  </label>
+                  <div>
+                    <input
+                      className={styles.companyOrSchool}
+                      type="text"
+                      name="companyOrSchool"
+                      id="companyOrSchool"
+                    />
+                  </div>
+                </div>
+              )}
 
               {/* {password.length <= 8 && submit && (
         <p>Password cannot be less than 8 characters</p>

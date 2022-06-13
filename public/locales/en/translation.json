@@ -105,7 +105,9 @@
     "super_power": "Great! What's your superpower?",
     "figma_portfolio": "figma Portfolio url(optional)",
     "gitHub_url": "github url(optional)",
-    "linkedln_url": "linkedln url(optional)",
+    "linkedln_url": "linkedln url (optional)",
+    "job_title": "Job title (optional)",
+    "company_or_school": "Company or school (optional)",
     "successful": "user background successfully updated",
     "failed": "error occured while updating user background"
   },

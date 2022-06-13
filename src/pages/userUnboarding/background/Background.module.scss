@@ -50,6 +50,8 @@
           }
           .githubLabel,
           .linkedinLabel,
+          .jobTitleLabel,
+          .companyOrSchoolLabel,
           .figmaLabel {
             font-size: calc(14 / 16) + em;
             font-weight: 400;
@@ -59,6 +61,8 @@
           }
           .github,
           .linkedin,
+          .jobTitle,
+          .companyOrSchool,
           .figma {
             width: calc(330 / 16) + rem;
             height: calc(59 / 16) + rem;
