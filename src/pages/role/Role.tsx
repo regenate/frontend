@@ -4,7 +4,7 @@ import { CommunityIconSvg, LivechatFalseIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { RoleEnum } from "enums/role";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -50,7 +50,7 @@ const Role = (props: any) => {
             </div>
             <div
               className={styles.beAmentor}
-              onClick={() => handleSubmitRole(RoleEnum.mentee)}
+              onClick={() => handleSubmitRole(RoleEnum.mentor)}
             >
               <img src={beAMentor} alt="be a mentor" />
               <p className={styles.title}>{t("role.mentor_title")}</p>
