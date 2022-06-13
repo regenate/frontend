@@ -62,5 +62,4 @@ const BookingMain = () => {
     </div>
   );
 };
-
 export default BookingMain;
