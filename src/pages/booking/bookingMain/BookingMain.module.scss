@@ -1,1 +1,42 @@
 // booking css code here
+.bookingModuleHeader h1 {
+  height: 44px;
+  left: 400px;
+  top: 95px;
+  color: #0a243f;
+  font-family: "Poppins";
+  font-weight: 800;
+  font-style: normal;
+  font-size: 29px;
+  line-height: 44px;
+  letter-spacing: 0.03em;
+}
+.bookingModuleHeader h5 {
+  height: 21px;
+  left: 400px;
+  top: 151px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #0a243f;
+  margin-bottom: 30px;
+}
+.bookingModuleHeader h5 > a {
+  color: #077f7f;
+}
+.bookingModuleTabList {
+  color: red;
+  background-color: blue;
+}
+.bookingModuleBtn {
+  color: white;
+  background: #0d0d0d;
+  width: 165px;
+  height: 59px;
+  left: 90px;
+  top: 338px;
+  border-radius: 10px;
+  border: 1px none;
+}
