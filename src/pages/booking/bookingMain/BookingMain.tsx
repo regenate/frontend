@@ -9,7 +9,9 @@ const BookingMain = () => {
 
   let url = "";
   const [selectedTab, setSelectedTab] = React.useState("1");
-  const handleChange = (event, newValue) => {
+  const handleChange = (event: any, newValue: any) => {
+    console.warn(event);
+    console.warn(newValue);
     setSelectedTab(newValue);
   };
 
