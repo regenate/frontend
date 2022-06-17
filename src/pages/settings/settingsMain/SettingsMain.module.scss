@@ -1,1 +1,110 @@
 // settings css code here
+
+.input {
+  margin-left: 20px;
+}
+
+.pageTitle {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  margin-left: 20px;
+  color: #00354f;
+}
+
+.tab {
+  text-decoration: none;
+  text-transform: lowercase;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.tabTitle {
+  text-transform: lowercase;
+}
+
+.mentee {
+  width: 100%;
+  color: #00354f;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit {
+  width: 24px;
+  height: 20px;
+  left: 1080px;
+  top: 239px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #1a9736;
+}
+
+.update {
+  width: 24px;
+  height: 20px;
+  left: 1000px;
+  top: 239px;
+  margin-right: 21px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #1a9736;
+}
+
+.content {
+  height: 20px;
+  left: 397px;
+  top: 265px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height */
+
+  color: rgba(0, 53, 79, 0.5);
+}
+
+.affiliate {
+  width: 501px;
+  height: 40px;
+  left: 398px;
+  top: 799px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 53, 79, 0.5);
+}
+
+.NABottom {
+  margin-top: 30px;
+  width: 26px;
+  height: 20px;
+  left: 398px;
+  top: 851px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  padding-bottom: 70px;
+  /* identical to box height */
+
+  color: rgba(0, 53, 79, 0.5);
+}
+
+.partner {
+  color: #1a9736;
+}
