@@ -126,7 +126,7 @@ const Register = (props: any) => {
                   id="password"
                 />
                 <div className={styles.eye} onClick={handleInputType}>
-                  {inputType ? <EyeSVG /> : <EyeOffSVG />}
+                  {inputType ? <EyeOffSVG /> : <EyeSVG />}
                 </div>
               </div>
 
