@@ -1,10 +1,7 @@
 import { AddPhoto } from "assets/image/images";
-import {
-  CameraIconSvg,
-  ChevronLeftIconSvg,
-  LivechatFalseIconSvg,
-} from "assets/svg/icons";
+import { CameraIconSvg, ChevronLeftIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
+import LiveChat from "components/liveChat/LiveChat";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
 import { AvatarModel } from "models/avatar";
@@ -132,7 +129,7 @@ const Avatar = (props: any) => {
             text={t("avatar.community.body")}
           />
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>

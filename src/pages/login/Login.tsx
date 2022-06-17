@@ -2,9 +2,9 @@ import {
   CommunityIconSvg,
   GoogleIconSvg,
   LinkedinIconSvg,
-  LivechatFalseIconSvg,
 } from "assets/svg/icons";
 import Community from "components/community/Community";
+import LiveChat from "components/liveChat/LiveChat";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
 import { LoginModel } from "models/login";
@@ -87,8 +87,6 @@ const Login = (props: any) => {
                   id="email"
                   autoComplete="email"
                 />
-
-                {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div>
                 <label htmlFor="password" className={styles.passwordLabel}>
@@ -103,10 +101,6 @@ const Login = (props: any) => {
                   autoComplete="password"
                 />
               </div>
-
-              {/* {password.length <= 8 && submit && (
-            <p>Password cannot be less than 8 characters</p>
-          )} */}
               <div className={styles.formAction}>
                 <span className={styles.rememberMe}>
                   <label>
@@ -146,7 +140,7 @@ const Login = (props: any) => {
             text={t("community.body")}
           />
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>
