@@ -146,7 +146,8 @@
   "side_navigation": {
     "home": "Home",
     "chats": "Chats",
-    "connections": "Connections"
+    "connections": "Connections",
+    "settings": "Settings"
   },
   "home": {
     "landing": {
