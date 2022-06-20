@@ -1,9 +1,6 @@
-import {
-  ChevronLeftIconSvg,
-  LivechatFalseIconSvg,
-  StarIconSvg,
-} from "assets/svg/icons";
+import { ChevronLeftIconSvg, StarIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
+import LiveChat from "components/liveChat/LiveChat";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
 import { BioModel } from "models/bio";
@@ -69,10 +66,6 @@ const Bio = (props: any) => {
                   placeholder={t("bio.bio_text")}
                 />
               </div>
-
-              {/* {password.length <= 8 && submit && (
-        <p>Password cannot be less than 8 characters</p>
-      )} */}
               <div className={styles.buttons}>
                 <Link to={`/${GlobalUrls.avatar}`}>
                   <ChevronLeftIconSvg />
@@ -95,7 +88,7 @@ const Bio = (props: any) => {
             text={t("bio.community.body")}
           />
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>

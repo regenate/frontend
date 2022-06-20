@@ -1,11 +1,8 @@
-import {
-  ChevronLeftIconSvg,
-  LivechatFalseIconSvg,
-  StarIconSvg,
-} from "assets/svg/icons";
+import { ChevronLeftIconSvg, StarIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
 import Countries from "components/formComponents/Countries";
 import Languages from "components/formComponents/Languages";
+import LiveChat from "components/liveChat/LiveChat";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
 import { OriginModel } from "models/origin";
@@ -77,8 +74,6 @@ const Origin = (props: any) => {
                 >
                   <Countries />
                 </select>
-
-                {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div>
                 <label htmlFor="language" className={styles.languageLabel}>
@@ -94,10 +89,6 @@ const Origin = (props: any) => {
                   <Languages />
                 </select>
               </div>
-
-              {/* {password.length <= 8 && submit && (
-        <p>Password cannot be less than 8 characters</p>
-      )} */}
               <div className={styles.buttons}>
                 <Link to={`/${GlobalUrls.home}`}>
                   <ChevronLeftIconSvg />
@@ -121,7 +112,7 @@ const Origin = (props: any) => {
             text={t("origin.community.body")}
           />
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>

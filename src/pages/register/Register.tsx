@@ -3,9 +3,9 @@ import {
   EyeSVG,
   GoogleIconSvg,
   LinkedinIconSvg,
-  LivechatFalseIconSvg,
   PlayIcon,
 } from "assets/svg/icons";
+import LiveChat from "components/liveChat/LiveChat";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { GlobalUrls } from "enums/GlobalUrls";
 import SocialLogin from "modals/socialLogin/SocialLogin";
@@ -111,8 +111,6 @@ const Register = (props: any) => {
                   placeholder={t("register.email_placeholder")}
                   id="email"
                 />
-
-                {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div className={styles.passwordContainer}>
                 <label htmlFor="password" className={styles.passwordLabel}>
@@ -126,13 +124,9 @@ const Register = (props: any) => {
                   id="password"
                 />
                 <div className={styles.eye} onClick={handleInputType}>
-                  {inputType ? <EyeSVG /> : <EyeOffSVG />}
+                  {inputType ? <EyeOffSVG /> : <EyeSVG />}
                 </div>
               </div>
-
-              {/* {password.length <= 8 && submit && (
-            <p>Password cannot be less than 8 characters</p>
-          )} */}
               <input type="submit" value="Create my account" />
             </form>
           </div>
@@ -167,7 +161,7 @@ const Register = (props: any) => {
             </div>
           </div>
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>
