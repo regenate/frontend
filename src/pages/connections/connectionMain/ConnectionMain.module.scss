@@ -1,1 +1,92 @@
-// connection css code here
+.titleText {
+  font-family: Poppins;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 48px;
+  color: #0a243f;
+  width: 331px;
+  height: 48px;
+}
+.paraText {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22.5px;
+  width: 507px;
+  color: #0a243f;
+
+  height: 41px;
+}
+.tith6 {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 15px;
+  color: #077f7f;
+  margin-top: 20px;
+}
+
+.searchField {
+  display: flex;
+}
+.searchInput {
+  display: flex;
+  border: 0.5px solid lightgray;
+  padding: 5px 0;
+  border-radius: 5px;
+  width: 50%;
+  align-items: center;
+}
+.sortBy,
+.filter {
+  margin-left: 100px;
+  display: flex;
+  border: 0.5px solid lightgray;
+  align-items: center;
+  padding: 5px 5px;
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 5px;
+}
+.addMentor {
+  font-family: Poppins;
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 28.5px;
+  color: #384853;
+}
+.mentor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid lightgray;
+  width: 300px;
+  margin-top: 50px;
+  padding: 75px 10px;
+  border-radius: 10px;
+}
+.mentor1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paraText1 {
+  font-family: Poppins;
+  width: 187px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #6b7b8a;
+}
+.butt {
+  width: 200px;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
