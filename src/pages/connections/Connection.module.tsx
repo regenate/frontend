@@ -1,6 +1,6 @@
 import SideNavigation from "components/sideNavigation/SideNavigation";
 import { ConnectionUrls } from "enums/GlobalUrls";
-import React from "react";
+import { default as React } from "react";
 import { useTranslation } from "react-i18next";
 import { Route, Routes } from "react-router-dom";
 import styles from "./Connection.module.scss";

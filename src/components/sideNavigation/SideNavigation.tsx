@@ -5,7 +5,6 @@ import {
   SideMenuHomeIcon,
 } from "assets/svg/icons";
 import { GlobalUrls } from "enums/GlobalUrls";
-import * as React from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -31,7 +30,7 @@ const SideNavigation = () => {
         <SideMenuChatIcon />
         <span>{t("side_navigation.chats")}</span>
       </Link>
-      <Link className={styles.item} to={`/${GlobalUrls.home}`}>
+      <Link className={styles.item} to={`/${GlobalUrls.connection}`}>
         <SideMenuConnectionIcon />
         <span>{t("side_navigation.connections")}</span>
       </Link>
