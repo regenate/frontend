@@ -1,14 +1,308 @@
 .landing {
   display: grid;
   grid-template-columns: 2fr 1fr;
-}
 
-.left,
-.right {
-  padding: 10px;
-}
+  .left {
+    width: 560px;
+    height: 225px;
+    left: 13px;
+    top: 63px;
+    background: rgba(196, 196, 196, 0.1);
+    border-radius: 10px;
+    // margin-bottom: 40%;
+  }
+  .landingModule {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+  }
+  .landingModule h2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #00354f;
+    margin: 0;
+  }
+  .landingModuleIcon {
+    background: rgba(196, 196, 196, 0.1);
+    border: none #00354f;
+    margin-left: 50%;
+  }
+  .landingModuleitems {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .landingModuleitems h6 {
+    width: 267px;
+    height: 20px;
+    left: 33px;
+    top: 112px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(0, 53, 79, 0.3);
+  }
 
-.percent_section {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
+  .landingModuleitems p {
+    width: 94px;
+    height: 18px;
+    top: 109px;
+    left: 459px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 53, 79, 0.3);
+    padding: 0;
+    margin-left: 30%;
+  }
+  /*checkbox styling starts here*/
+  .radio_buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px 0 20px 0;
+    //margin-top: 60px;
+  }
+  .radio_buttons label {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration-line: line-through;
+    display: flex;
+  }
+  .radio_buttons .labelCheckBox1 {
+    text-decoration-line: line-through;
+    color: rgba(0, 53, 79, 0.3);
+  }
+  .radio_buttons .labelCheckBox2 {
+    text-decoration-line: line-through;
+    color: #077f7f;
+  }
+  .radio_buttons .labelCheckBox3 {
+    text-decoration-line: none;
+    color: #077f7f;
+  }
+  .radio_buttons label > span {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 53, 79, 0.3);
+  }
+
+  .radio_buttons input[type="checkbox"] {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    margin-left: -40%;
+  }
+  .radio_buttons label::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 0.05em none;
+    border-radius: 15px;
+    margin-right: 0.5em;
+    border: 1px solid #c4c4c4;
+  }
+  .radio_buttons label:hover::before,
+  .radio_buttons input[type="checkbox"]:hover + label::before {
+    background-color: #35e07d;
+  }
+  .radio_buttons input[type="checkbox"]:focus + labe::before {
+    box-shadow: 0 0 20px lightgreen;
+  }
+
+  .radio_buttons input[type="checkbox"]:checked + label::before {
+    content: "\002714";
+    background: #30d158;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  /*checkbox styling ends here*/
+
+  .imageContainer {
+    display: flex;
+    flex-direction: row;
+    // margin-top: 10%;
+    margin: 10% 0 5% 0;
+  }
+  .imageContainerProfile {
+    width: 56px;
+    height: 55px;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+    // background: url(.jpg), #c4c4c4;
+    background: #c4c4c4;
+  }
+  .imageContainer input {
+    width: 483px;
+    height: 50px;
+    left: 89px;
+    top: 349px;
+    background: rgba(196, 196, 196, 0.2);
+    border-radius: 5px;
+    margin-left: 20px;
+    border: none;
+    padding: 20px;
+    margin-right: -10px;
+  }
+  .imageContainer input::placeholder {
+    width: 198px;
+    height: 20px;
+    left: 109px;
+    top: 364px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    // color: rgba(0, 53, 79, 0.3);
+  }
+
+  #centerHeader {
+    width: 161px;
+    height: 30px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 20px 0 20px 0;
+    color: #00354f;
+  }
+
+  .center {
+    width: 560px;
+    height: 230px;
+    margin: 0;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    //margin-bottom: 40%;
+  }
+
+  .center h2 {
+    width: 188px;
+    height: 30px;
+    left: 33px;
+    top: 520px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #00354f;
+  }
+  .center p {
+    width: 332px;
+    height: 54px;
+    left: 33px;
+    top: 560px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 53, 79, 0.3);
+  }
+  .center button {
+    width: 174px;
+    height: 53px;
+    left: 33px;
+    top: 634px;
+    background: #00354f;
+    border-radius: 10px;
+    color: white;
+    border: none;
+  }
+  .centerImage {
+    display: block;
+    border-radius: 50px;
+    margin-left: 20px;
+  }
+
+  /*right styling starts here*/
+  .right {
+    padding: 10px;
+    width: 266px;
+    height: 167px;
+    top: 126px;
+    left: 993px;
+    background: #fef9ef;
+    border-radius: 10px;
+    // margin-top: 10px;
+  }
+  .right h4 {
+    width: 143px;
+    height: 27px;
+    left: 1012px;
+    top: 143px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #00354f;
+  }
+  .right p {
+    width: 228px;
+    height: 36px;
+    left: 1012px;
+    top: 180px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #00354f;
+  }
+  .right button {
+    width: 108px;
+    height: 40px;
+    background: rgba(196, 196, 196, 0.3);
+    border: 1px solid #00354f;
+    border-radius: 10px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .HomePageRightIcon {
+    padding-right: 5px;
+  }
+
+  .left,
+  .right {
+    padding: 10px;
+  }
+
+  .percent_section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
 }
