@@ -3,7 +3,6 @@ import { LinearProgress } from "@mui/material";
 import homePageImg from "assets/image/homePageImg.svg";
 import profileImg from "assets/image/profileImg.svg";
 import { HomePageRightIcon } from "assets/svg/icons";
-import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from "./Landing.module.scss";
 
