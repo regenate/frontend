@@ -34,6 +34,11 @@ const SideNavigation = () => {
         <SideMenuConnectionIcon />
         <span>{t("side_navigation.connections")}</span>
       </Link>
+
+      <Link className={styles.item} to={`/${GlobalUrls.settings}`}>
+        <SideMenuConnectionIcon />
+        <span>{t("side_navigation.settings")}</span>
+      </Link>
     </div>
   );
 };
