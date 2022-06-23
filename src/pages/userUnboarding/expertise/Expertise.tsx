@@ -1,11 +1,8 @@
-import {
-  BriefcaseIconSvg,
-  ChevronLeftIconSvg,
-  LivechatFalseIconSvg,
-} from "assets/svg/icons";
+import { BriefcaseIconSvg, ChevronLeftIconSvg } from "assets/svg/icons";
 import Community from "components/community/Community";
 import Experience from "components/formComponents/Experience";
 import ExpertiseData from "components/formComponents/ExpertiseData";
+import LiveChat from "components/liveChat/LiveChat";
 import ProgressOverlay from "components/progress-overlay/ProgressOverlay";
 import { ExperienceLevelEnum } from "enums/experience-level";
 import { ExpertiseEnum } from "enums/expertise";
@@ -79,8 +76,6 @@ const Expertise = (props: any) => {
                 >
                   <ExpertiseData />
                 </select>
-
-                {/* {!email && submit && <p>Enter a valid email address</p>} */}
               </div>
               <div>
                 <label htmlFor="experience" className={styles.experienceLabel}>
@@ -96,10 +91,6 @@ const Expertise = (props: any) => {
                   <Experience />
                 </select>
               </div>
-
-              {/* {password.length <= 8 && submit && (
-        <p>Password cannot be less than 8 characters</p>
-      )} */}
               <div className={styles.buttons}>
                 <Link to={`/${GlobalUrls.origin}`}>
                   <ChevronLeftIconSvg />
@@ -122,7 +113,7 @@ const Expertise = (props: any) => {
             text={t("expertise.community.body")}
           />
           <div className={styles.liveChat}>
-            <LivechatFalseIconSvg />
+            <LiveChat />
           </div>
         </div>
       </div>
