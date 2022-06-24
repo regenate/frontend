@@ -1,1 +1,164 @@
 // mentor css code here
+.mentorMain {
+  margin: 0;
+  padding: 0;
+
+  .dropDownItems {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dropDownItems input {
+    width: 300px;
+    height: 50px;
+    background: rgba(196, 196, 196, 0.2);
+    border-style: none;
+  }
+  .searchbtn {
+    width: 380px;
+    height: 40px;
+    top: 177px;
+    left: 115px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .searchIcon {
+      margin: 0;
+      padding: 0;
+      color: #077f7f;
+      width: 19px;
+      height: 19px;
+      margin-left: 40px;
+    }
+  }
+
+  .searchbtn input {
+    height: 20px;
+    width: 300px;
+    border-style: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #c4c4c4;
+  }
+  .searchbtn input::placeholder {
+    height: 20px;
+    width: 247px;
+    left: 164px;
+    top: 187px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #c4c4c4;
+  }
+
+  .imageContainer {
+    width: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .mentorsImage {
+    width: 265px;
+    height: 364px;
+    margin-right: 30px;
+    margin-top: 30px;
+    border-radius: 15px;
+  }
+  .chatIcon {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    margin-bottom: 40px;
+  }
+  .favoriteBorderIcon {
+    position: absolute;
+    left: 18%;
+    top: 5%;
+  }
+  .name {
+    position: absolute;
+    width: auto;
+    height: 18px;
+    left: 15px;
+    top: 250px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .location {
+    position: absolute;
+    width: auto;
+    margin-top: 5px;
+    text-align: center;
+    height: 18px;
+    left: 15px;
+    top: 265px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+  .workIcon {
+    position: absolute;
+    left: 15px;
+    top: 37%;
+    //bottom: 80%;
+    // border: none;
+    // margin: 0;
+    // padding: 0;
+    // font-size: 18px;
+  }
+  .role {
+    position: absolute;
+    width: auto;
+    height: 18px;
+    left: 37px;
+    top: 293px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: red;
+    margin: 5px;
+    text-align: center;
+  }
+  .forumetwotone {
+    position: absolute;
+    left: 15px;
+    top: 40.6%;
+  }
+  .reachout {
+    position: absolute;
+    width: auto;
+    top: 41%;
+    left: 40px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: red;
+  }
+}
