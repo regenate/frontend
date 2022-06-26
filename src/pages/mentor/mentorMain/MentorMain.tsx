@@ -1,9 +1,9 @@
 import {
-  Chat,
-  FavoriteBorder,
-  ForumTwoTone,
+  FavoriteBorderTwoTone,
+  MarkUnreadChatAltTwoTone,
   Search,
-  WorkOutline,
+  TextsmsTwoTone,
+  WorkOutlineTwoTone,
 } from "@mui/icons-material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab } from "@mui/material";
@@ -23,18 +23,48 @@ const MentorMain = () => {
 
   return (
     <div className={styles.mentorMain}>
-      <Box sx={{ width: "100%", typography: "body1" }}>
+      <Box sx={{ width: "100%" }}>
         <TabContext value={selectedTab}>
-          <Box sx={{ fontSize: "30px", color: "green" }}>
-            <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab label="Mentors" value="1" />
-              <Tab label="Group Sessions" value="2" />
-              <Tab label="Topics" value="3" />
+          <Box>
+            <TabList onChange={handleChange}>
+              <Tab
+                sx={{
+                  fontSize: "20px",
+                  fontFamily: "Poppins",
+                  fontWeight: "600",
+                  color: "#00354F",
+                  lineHeight: "30px",
+                }}
+                label="Mentors"
+                value="1"
+              />
+              <Tab
+                sx={{
+                  fontSize: "20px",
+                  fontFamily: "Poppins",
+                  fontWeight: "600",
+                  color: "#00354F",
+                  lineHeight: "30px",
+                }}
+                label="Group Sessions"
+                value="2"
+              />
+              <Tab
+                sx={{
+                  fontSize: "20px",
+                  fontFamily: "Poppins",
+                  fontWeight: "600",
+                  color: "#00354F",
+                  lineHeight: "30px",
+                }}
+                label="Topics"
+                value="3"
+              />
             </TabList>
           </Box>
           <TabPanel value="1"></TabPanel>
-          <TabPanel value="2">Group Sessions</TabPanel>
-          <TabPanel value="3">Topics</TabPanel>
+          <TabPanel value="2"></TabPanel>
+          <TabPanel value="3"></TabPanel>
         </TabContext>
       </Box>
 
@@ -48,14 +78,14 @@ const MentorMain = () => {
         </button>
 
         <div className={styles.selectedOptions}>
-          <select name="expertise" id="expertiseLevel">
+          <select name="expertise" className={styles.expertise}>
             <option>Expertise</option>
             <option value="professional">Professional</option>
             <option value="intermediate">Intermediate</option>
             <option value="beginner">Beginner</option>
           </select>
 
-          <select name="level" id="LevelofExperience">
+          <select name="level" id="LevelofExperience" className={styles.level}>
             <option>Level</option>
             <option value="difficult">Difficult</option>
             <option value="hard">Hard</option>
@@ -381,342 +411,342 @@ const MentorMain = () => {
       </div>
 
       {/*mentors information */}
-      <div className={styles.imageContainer}>
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
+      <div className={styles.mentorsImageContainer}>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/7275385/pexels-photo-7275385.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/6962024/pexels-photo-6962024.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/6626882/pexels-photo-6626882.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/7148620/pexels-photo-7148620.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/6831602/pexels-photo-6831602.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/6475046/pexels-photo-6475046.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/6195663/pexels-photo-6195663.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.pexels.com/photos/7038052/pexels-photo-7038052.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
 
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
-
-        <img
-          className={styles.mentorsImage}
-          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="mentorsProfile"
-        />
-
-        <a href="#">
-          <Chat className={styles.chatIcon} />
-        </a>
-        <a href="#">
-          <FavoriteBorder className={styles.favoriteBorderIcon} />
-        </a>
-
-        <h2 className={styles.name}>Christian Solorzano SE</h2>
-        <h2 className={styles.location}>Cambio Group</h2>
-        <a href="#">
-          <WorkOutline className={styles.workIcon} />
-        </a>
-
-        <h3 className={styles.role}>Sr. Experience Designer</h3>
-        <a href="#">
-          <ForumTwoTone className={styles.forumetwotone} />
-        </a>
-
-        <h3 className={styles.reachout}>
-          Job search, Career advice, Leader...
-        </h3>
+        <div className={styles.mentorsImage}>
+          <img
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80"
+            alt="mentorImage"
+          />
+          <div className={styles.topinboxIcon}>
+            <MarkUnreadChatAltTwoTone className={styles.messageIcon} />
+            <span>18</span>
+          </div>
+          <div className={styles.topFavoriteIcon}>
+            <FavoriteBorderTwoTone />
+          </div>
+          <div className={styles.bottomText}>
+            <h3 className={styles.bottomTextName}>
+              Christian Solorzano<span>SE</span>
+            </h3>
+            <h3 className={styles.bottomTextGroup}>Cambio Group</h3>
+          </div>
+          <div className={styles.workOutlineTwoTone}>
+            <WorkOutlineTwoTone />
+            <p>Sr. Experience Designer</p>
+          </div>
+          <div className={styles.textsmsTwoTone}>
+            <TextsmsTwoTone />
+            <p>Job search, Career advice, Leader...</p>
+          </div>
+        </div>
       </div>
     </div>
   );
