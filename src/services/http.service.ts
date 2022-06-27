@@ -1,5 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { RoleEnum } from "enums/role";
+import { store } from "redux/store";
+import { AuthService } from "./auth.service";
 
 export interface HttpResponse {
   statusCode: number;
@@ -141,6 +143,10 @@ export class HttpService {
         })
         .catch((error) => {
           const transformError = HttpService.handleError(error);
+          if (transformError.statusCode === 401) {
+            const dispatch = store.dispatch;
+            AuthService.logoutDispatch(dispatch);
+          }
           const toSendRes: HttpResponse = {
             statusCode: transformError.statusCode,
             error: transformError.errorData,

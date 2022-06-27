@@ -5,7 +5,7 @@ import { RegisterModel } from "models/register";
 import { UserModel } from "models/user";
 import { Dispatch } from "react";
 import { NavigateFunction } from "react-router-dom";
-import { authUpdateUser } from "redux/slice/userSlice";
+import { authResetUser, authUpdateUser } from "redux/slice/userSlice";
 import { SetReportProgressType } from "utils/types/ReportProgress";
 import { AuthApi } from "./api/auth.api";
 import { NotificationService } from "./notification.service";
@@ -43,11 +43,7 @@ export class AuthService {
   }
 
   public static async logoutDispatch(dispatch: Dispatch<AnyAction>) {
-    dispatch(authUpdateUser(undefined));
-    NotificationService.newNotificationDispatch(dispatch, {
-      type: "info",
-      text: "user logged out",
-    });
+    dispatch(authResetUser());
   }
 
   public static async registerDispatch(

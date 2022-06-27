@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit";
 import counterReducer, { CounterState } from "redux/slice/counterSlice";
 import persistReducer from "reduxjs-toolkit-persist/lib/persistReducer";
 import storage from "reduxjs-toolkit-persist/lib/storage";
@@ -25,7 +25,15 @@ const reducers = combineReducers<RootState>({
   notificationReducer: notificationReducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const rootReducer = (state: RootState, action: AnyAction) => {
+  if (action.type === "user/authResetUser") {
+    // check for action type
+    state = undefined;
+  }
+  return reducers(state, action);
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,

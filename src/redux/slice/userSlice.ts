@@ -8,6 +8,7 @@ import { BioModel } from "models/bio";
 import { ExpertiseModel } from "models/expertise";
 import { OriginModel } from "models/origin";
 import { UserModel } from "models/user";
+import { UserCompleteType } from "models/user-complete";
 
 export interface UserState {
   user: UserModel;
@@ -34,6 +35,9 @@ export const userSlice = createSlice({
     authUpdateUser: (state, action: PayloadAction<UserModel>) => {
       state.user = action.payload;
     },
+    authResetUser: (state, _action: PayloadAction<UserModel>) => {
+      state.user = undefined;
+    },
     onboardingUpdateRole: (state, action: PayloadAction<RoleEnum>) => {
       state.user = { ...state.user, role: action.payload };
     },
@@ -58,18 +62,42 @@ export const userSlice = createSlice({
     onboardingUpdateBio: (state, action: PayloadAction<BioModel>) => {
       state.bio = action.payload;
     },
+    homeUpdateUserComplete: (
+      state,
+      action: PayloadAction<UserCompleteType>
+    ) => {
+      state.origin = {
+        country: action.payload.country,
+        language: action.payload.language,
+      };
+      state.expertise = {
+        expertise: action.payload.expertise,
+        experienceLevel: action.payload.experienceLevel,
+      };
+      state.background = {
+        figmaPortfolioUrl: action.payload.figmaPortfolioUrl,
+        gitHubUrl: action.payload.gitHubUrl,
+        linkedlnUrl: action.payload.linkedlnUrl,
+        companyOrSchool: action.payload.companyOrSchool,
+        jobTitle: action.payload.jobTitle,
+      };
+      state.avatar = action.payload.avatar;
+      state.bio = { bio: action.payload.bio };
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
 export const {
   authUpdateUser,
+  authResetUser,
   onboardingUpdateRole,
   onboardingUpdateOrigin,
   onboardingUpdateExpertise,
   onboardingUpdateBackground,
   onboardingUpdateAvatar,
   onboardingUpdateBio,
+  homeUpdateUserComplete,
 } = userSlice.actions;
 
 const userReducer = userSlice.reducer;
