@@ -1,1 +1,196 @@
 // mentor css code here
+
+@import "src/scss/style.scss";
+.mentorMain {
+  margin: 10px 10px;
+  padding: 0;
+
+  .dropDownItems {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .searchbtn {
+      width: 380px;
+      height: 40px;
+      top: 177px;
+      left: 115px;
+      border-radius: 10px;
+      margin-left: 10px;
+      background: #ffffff;
+      border: 1px solid #c4c4c4;
+
+      .searchIcon {
+        margin: 0;
+        padding: 0;
+        color: #077f7f;
+        width: 19px;
+        height: 19px;
+        margin-left: 40px;
+      }
+    }
+
+    .searchbtn input {
+      height: 35px;
+      width: 300px;
+      border-style: none;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 20px;
+      color: #c4c4c4;
+      border-radius: 10px;
+    }
+    .searchbtn input::placeholder {
+      height: 20px;
+      width: 247px;
+      left: 164px;
+      top: 187px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 20px;
+      color: #c4c4c4;
+    }
+  }
+
+  .mentorsImageContainer {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    .mentorsImage {
+      position: relative;
+      margin-bottom: 15px;
+    }
+    .mentorsImage > img {
+      width: 265px;
+      height: 364px;
+      left: 116px;
+      top: 241px;
+      border-radius: 15px;
+      background: #d9d9d9;
+    }
+    .topinboxIcon {
+      position: absolute;
+      top: 12px;
+      left: 180px;
+      width: 40px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      padding-left: 3px;
+      @include largeDesktop() {
+        left: 180px;
+      }
+    }
+    .topinboxIcon span {
+      position: absolute;
+      top: 5px;
+      align-items: center;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      color: #00354f;
+    }
+    .topFavoriteIcon {
+      position: absolute;
+      top: 12px;
+      left: 230px;
+      color: #ffffff;
+      @include largeDesktop() {
+        left: 230px;
+      }
+    }
+    .bottomText h3 {
+      margin: 10px 0 10px 5px;
+    }
+    // .IconAndTextWrapper {
+    //   display: flex;
+
+    //   background-color: green;
+    // }
+    .bottomTextName {
+      position: absolute;
+      top: 230px;
+      margin-left: 10px;
+      width: auto;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+      color: #ffffff;
+      margin-left: 5px;
+    }
+    .bottomTextName span {
+      width: 14px;
+      font-family: "Poppins";
+      margin-left: 10px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+      color: #ffffff;
+    }
+    .bottomTextGroup {
+      position: absolute;
+      margin-left: 5px;
+      width: auto;
+      top: 250px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+      color: #ffffff;
+    }
+    .workOutlineTwoTone {
+      position: absolute;
+      top: 300px;
+      margin-left: 5px;
+      display: flex;
+      justify-content: center;
+      color: #ffffff;
+    }
+    .workOutlineTwoTone p {
+      width: 140px;
+      height: 18px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+    .textsmsTwoTone {
+      position: absolute;
+      margin-left: 5px;
+      top: 325px;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+    }
+    .textsmsTwoTone p {
+      width: 215px;
+      height: 18px;
+      top: 572px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      color: #ffffff;
+    }
+  }
+}
