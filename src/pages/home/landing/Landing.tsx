@@ -3,7 +3,9 @@ import { LinearProgress } from "@mui/material";
 import homePageImg from "assets/image/homePageImg.svg";
 import profileImg from "assets/image/profileImg.svg";
 import { HomePageRightIcon } from "assets/svg/icons";
+import { GlobalUrls } from "enums/GlobalUrls";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import styles from "./Landing.module.scss";
 
 const Landing = () => {
@@ -103,12 +105,14 @@ const Landing = () => {
         <p>
           Need help? Our wizard helps you find the right mentor just for you.
         </p>
-        <button>
-          <div className={styles.HomePageRightIcon}>
-            <HomePageRightIcon />
-          </div>
-          Get match
-        </button>
+        <Link to={`/${GlobalUrls.mentor}`}>
+          <button>
+            <div className={styles.HomePageRightIcon}>
+              <HomePageRightIcon />
+            </div>
+            Get match
+          </button>
+        </Link>
       </div>
     </div>
   );

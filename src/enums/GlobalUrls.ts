@@ -33,6 +33,7 @@ export enum BookingUrls {
 
 export enum MentorUrls {
   base = "",
+  profile = "profile",
 }
 
 export enum ProfileUrls {

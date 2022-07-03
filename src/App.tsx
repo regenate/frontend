@@ -81,7 +81,7 @@ function App() {
             element={<ConnectionModule />}
           />
           <Route path={`/${GlobalUrls.booking}`} element={<BookingModule />} />
-          <Route path={`/${GlobalUrls.mentor}`} element={<MentorModule />} />
+          <Route path={`/${GlobalUrls.mentor}/*`} element={<MentorModule />} />
           <Route
             path={`/${GlobalUrls.settings}`}
             element={<SettingsModule />}
