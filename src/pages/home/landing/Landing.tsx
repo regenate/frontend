@@ -91,7 +91,9 @@ const Landing = () => {
               To get started, find a mentor that suits your needs and send a
               connection request. Your activity will appear here.
             </p>
-            <button>Discover mentors</button>
+            <Link to={`/${GlobalUrls.mentor}`}>
+              <button>Discover mentors</button>
+            </Link>
           </div>
 
           <div className={styles.centerImage}>
