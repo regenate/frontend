@@ -5,6 +5,7 @@ import { GlobalUrls } from "enums/GlobalUrls";
 import { RoleEnum } from "enums/role";
 import { UserModel } from "models/user";
 import BookingModule from "pages/booking/Booking.module";
+import ChatsModule from "pages/chats/Chats.module";
 import CommunityStandards from "pages/communityStandards/CommunityStandards";
 import ConnectionModule from "pages/connections/Connection.module";
 import HomeModule from "pages/home/Home.module";
@@ -81,6 +82,7 @@ function App() {
             element={<ConnectionModule />}
           />
           <Route path={`/${GlobalUrls.booking}`} element={<BookingModule />} />
+          <Route path={`/${GlobalUrls.chat}`} element={<ChatsModule />} />
           <Route path={`/${GlobalUrls.mentor}/*`} element={<MentorModule />} />
           <Route
             path={`/${GlobalUrls.settings}`}

@@ -31,7 +31,7 @@ const SideNavigation = () => {
         <SideMenuBookingIcon />
         <span>{t("side_navigation.bookings")}</span>
       </Link>
-      <Link className={styles.item} to={`/${GlobalUrls.home}`}>
+      <Link className={styles.item} to={`/${GlobalUrls.chat}`}>
         <SideMenuChatIcon />
         <span>{t("side_navigation.chats")}</span>
       </Link>

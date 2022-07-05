@@ -48,3 +48,7 @@ export enum ProfileUrls {
 export enum SettingsUrls {
   base = "",
 }
+
+export enum ChatsUrls {
+  base = "",
+}
