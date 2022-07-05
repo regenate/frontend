@@ -38,6 +38,11 @@ export enum MentorUrls {
 
 export enum ProfileUrls {
   base = "",
+  goal1 = "goal1",
+  goal2 = "goal2",
+  goal3 = "goal3",
+  goal4 = "goal4",
+  goal5 = "goal5",
 }
 
 export enum SettingsUrls {

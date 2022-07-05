@@ -87,7 +87,10 @@ function App() {
             element={<SettingsModule />}
           />
 
-          <Route path={`/${GlobalUrls.profile}`} element={<ProfileModule />} />
+          <Route
+            path={`/${GlobalUrls.profile}/*`}
+            element={<ProfileModule />}
+          />
         </Route>
       </Routes>
     </div>
