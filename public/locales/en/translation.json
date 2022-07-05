@@ -147,7 +147,8 @@
     "home": "Home",
     "chats": "Chats",
     "connections": "Connections",
-    "settings": "Settings"
+    "settings": "Settings",
+    "bookings": "Bookings"
   },
   "home": {
     "landing": {

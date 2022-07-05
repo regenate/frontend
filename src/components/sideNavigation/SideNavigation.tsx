@@ -1,5 +1,6 @@
 import Avatar from "@mui/material/Avatar";
 import {
+  SideMenuBookingIcon,
   SideMenuChatIcon,
   SideMenuConnectionIcon,
   SideMenuHomeIcon,
@@ -25,6 +26,10 @@ const SideNavigation = () => {
       <Link className={styles.item} to={`/${GlobalUrls.home}`}>
         <SideMenuHomeIcon />
         <span>{t("side_navigation.home")}</span>
+      </Link>
+      <Link className={styles.item} to={`/${GlobalUrls.booking}`}>
+        <SideMenuBookingIcon />
+        <span>{t("side_navigation.bookings")}</span>
       </Link>
       <Link className={styles.item} to={`/${GlobalUrls.home}`}>
         <SideMenuChatIcon />
