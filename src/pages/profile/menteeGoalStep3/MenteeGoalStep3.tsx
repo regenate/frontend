@@ -37,16 +37,16 @@ export default function MenteeGoalStep3() {
         </div>
       </div>
 
+      <h5>Here are the best matches for you.</h5>
       <div className={styles.text}>
-        <h5>Here are the best matches for you.</h5>
-        <p>
+        <h6>
           Based on you preferences, here are the top mentors that matches you.
           we recommend{" "}
           <span>scheduling a mentoring session with one of them</span>
-          <div className={styles.reloadIcon}>
-            <ReloadIcon />
-          </div>
-        </p>
+        </h6>
+        <div className={styles.reloadIcon}>
+          <ReloadIcon />
+        </div>
       </div>
 
       <div className={styles.MentorsDetailsWrapper}>

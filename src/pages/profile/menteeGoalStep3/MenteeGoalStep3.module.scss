@@ -63,19 +63,25 @@
       }
     }
   }
+  h5 {
+    width: 315px;
+    height: 27px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #00354f;
+  }
   .text {
     margin-bottom: 5%;
-    h5 {
-      width: 315px;
-      height: 27px;
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 27px;
-      color: #00354f;
-    }
-    p {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 849px;
+    height: 79px;
+
+    h6 {
       width: 555px;
       height: 40px;
       font-family: "Poppins";
@@ -84,23 +90,23 @@
       font-size: 13px;
       line-height: 20px;
       color: rgba(0, 53, 79, 0.8);
-      position: relative;
 
       span {
         color: #268f8f;
       }
-      .reloadIcon {
-        position: absolute;
-        width: 33px;
-        height: 29px;
-        left: 800px;
-        top: 20px;
-        padding: 5px;
-        margin: 0 5px;
-        background: rgba(196, 196, 196, 0.37);
-        border-radius: 2px;
-        align-items: center;
-      }
+    }
+    .reloadIcon {
+      width: 33px;
+      height: 29px;
+      left: 800px;
+      top: 20px;
+      padding: 5px;
+      margin-left: 40%;
+      background: rgba(196, 196, 196, 0.37);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
   .MentorsDetailsWrapper {
