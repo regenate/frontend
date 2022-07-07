@@ -1,0 +1,62 @@
+.body {
+  width: 1100px;
+}
+.title h4 {
+  font-weight: 800;
+}
+.title p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.heading p {
+  margin-bottom: 0px;
+}
+
+.butt {
+  padding: 20px;
+  width: 90%;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.12);
+}
+.lab {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 7px;
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+.field {
+  background-color: lightgray;
+  display: flex;
+  width: 350px;
+  height: 50px;
+  padding: 0px 10px;
+  border-radius: 7px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.field input {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.button {
+  display: flex;
+  margin-left: 820px;
+}
+.button button {
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(71, 143, 71);
+  border: none;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
