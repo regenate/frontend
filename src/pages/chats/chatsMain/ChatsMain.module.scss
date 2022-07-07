@@ -1,0 +1,92 @@
+.input {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  height: calc(100vh - 137px);
+  flex: 1;
+  border-right: 2px solid #eeeeee;
+}
+
+.left h1 {
+  width: 183px;
+  height: 27px;
+  left: 365px;
+  top: 92px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #00354f;
+}
+
+.left hr {
+  width: 367px;
+  margin-left: -21px;
+  border: 2px solid #eeeeee;
+}
+
+.left p {
+  width: 91px;
+  height: 20px;
+  left: 365px;
+  top: 164px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: #8e9aa6;
+}
+
+.right {
+  text-align: center;
+  flex: 2;
+  border-right: 2px solid #eeeeee;
+}
+
+.message {
+  position: absolute;
+  width: 92.26px;
+  left: 1000px;
+  margin: auto;
+  margin-top: 155px;
+}
+
+.right h6 {
+  width: 165px;
+  height: 22px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 139.5%;
+  color: #00354f;
+  margin: auto;
+  margin-top: 270px;
+}
+
+.right p {
+  width: 258px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 139.5%;
+  margin: auto;
+  margin-top: 10px;
+  color: #595757;
+}
+
+.right button {
+  width: 150px;
+  height: 43px;
+  margin-top: 25px;
+  color: white;
+  background: #00354f;
+  border-radius: 8px;
+}
