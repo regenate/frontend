@@ -1,4 +1,10 @@
+import {
+  BriefcaseIconSvg,
+  ChevronLeftIconSvg,
+  LivechatFalseIconSvg,
+} from "assets/svg/icons";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
+import Community from "components/community/Community";
 import { Box, Tab } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -18,10 +24,14 @@ const BookingMain = () => {
   return (
     <div className={styles.bookingMain}>
       <div className={styles.bookingModuleHeader}>
-        <h1>Bookings</h1>
+          <Community
+            Icon={BriefcaseIconSvg}
+            title={t("bookingmain.community.title")}
+            text={t("bookingmain.community.body")}
+          />
         <h5>
-          The Session timings are following your local time zone Europe/Berlin{" "}
-          <a href={url}>Update</a>
+        {t("bookingmain.timing")}{" "}
+          <a href={url}>{t("bookingmain.update")}</a>
         </h5>
       </div>
 
@@ -45,21 +55,18 @@ const BookingMain = () => {
               </TabList>
             </Box>
             <TabPanel value="1">
-              You have no upcoming bookings - start sharing a conversation with
-              a mentor
+            {t("bookingmain.value1")}
             </TabPanel>
             <TabPanel value="2">
-              You have no pending bookings - start sharing a conversation with a
-              mentor
+            {t("bookingmain.value2")}
             </TabPanel>
             <TabPanel value="3">
-              You have no past bookings - start sharing a conversation with a
-              mentor
+            {t("bookingmain.value3")}
             </TabPanel>
           </TabContext>
         </Box>
 
-        <button className={styles.bookingModuleBtn}>Explore mentors</button>
+        <button className={styles.bookingModuleBtn}>{t("bookingmain.explore_mentors")}</button>
       </div>
     </div>
   );

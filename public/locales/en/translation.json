@@ -111,6 +111,55 @@
     "successful": "user background successfully updated",
     "failed": "error occured while updating user background"
   },
+  "bookingmain": {
+    "community": {
+      "title": "Bookings",
+      "body": ""
+    },
+    "value1": "You have no upcoming bookings - start sharing a conversation witha mentor",
+    "value2": "You have no pending bookings - start sharing a conversation with a mentor",
+    "value3": " You have no past bookings - start sharing a conversation with a mentor",
+    "timing": "The Session timings are following your local time zone Europe/Berlin",
+    "update": "Update",
+    "explore_mentors": "Explore mentors",
+    "successful": "user background successfully updated",
+    "failed": "error occured while updating user background"
+  },
+  "connectionmain": {
+    "community": {
+      
+      "body": ""
+    },
+    "title": " My Connections",
+    "click": "Community members you've met and connected with will appear here.Click the profile to view your journey with a membber.",
+    "mentors": " Mentors",
+    "add_mentors": "Add mentors",
+    "learn": " Learn and grow with over 2000+ mentors today",
+    "discover_mentors": "Discover Mentors",
+    "successful": "user background successfully updated",
+    "failed": "error occured while updating user background"
+  },
+  "landing": {
+    "community": {
+      
+      "body": ""
+    },
+    "title": " Let's Start with the basics",
+    "click": "Community members you've met and connected with will appear here.Click the profile to view your journey with a membber.",
+    "setting": " Get more by setting up a profile you love",
+    "completed": "67% completed",
+    "verify": " Verify email",
+    "experience": "Fill up your experience level",
+    "book": " Book your first session",
+    "updates": "Recent updates",
+    "connect": " Connect and grow",
+    "get_started": "o get started, find a mentor that suits your needs and send a connection request. Your activity will appear here.",
+    "discover_button": " Discover mentors",
+    "mentors_for_you": "Mentors for you",
+    "need_help": " Need help? Our wizard helps you find the right mentor just for you.",
+    "successful": "user background successfully updated",
+    "failed": "error occured while updating user background"
+  },
   "avatar": {
     "community": {
       "title": "Put a face to your name",

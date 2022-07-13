@@ -29,15 +29,15 @@ const Landing = () => {
       {/*My code starts here */}
       <div className={styles.left}>
         <div className={styles.landingModule}>
-          <h2>Let's Start with the basics</h2>
+          <h2>{t("landing.title")}</h2>
           <div className={styles.landingModuleIcon}>
             <Cancel />
           </div>
         </div>
 
         <div className={styles.landingModuleitems}>
-          <h6>Get more by setting up a profile you love</h6>
-          <p>67% completed</p>
+          <h6>{t("landing.setting")}</h6>
+          <p>{t("landing.completed")}</p>
         </div>
         <LinearProgress
           variant="determinate"
@@ -57,18 +57,18 @@ const Landing = () => {
         <div className={styles.radio_buttons}>
           <input type="checkbox" id="checkbox1" />
           <label htmlFor="checkbox1" className={styles.labelCheckBox1}>
-            Verify email
+          {t("landing.verify")}
           </label>
           <br />
           <input type="checkbox" id="checkbox2" />
           <label htmlFor="checkbox2" className={styles.labelCheckBox2}>
-            Fill up your experience level
+          {t("landing.experience")}
           </label>
           <br />
           <input type="checkbox" id="checkbox3" />
           <label htmlFor="checkbox3" className={styles.labelCheckBox3}>
-            Book your first session
-            <span> - Learn/network with mentors</span>
+          {t("landing.book")}
+            <span> {t("landing.network")}- Learn/network with mentors</span>
           </label>
         </div>
 
@@ -81,15 +81,14 @@ const Landing = () => {
           <input type="text" placeholder="what would you like to share?" />
         </div>
 
-        <h2 id={styles.centerHeader}>Recent updates</h2>
+        <h2 id={styles.centerHeader}>{t("landing.updates")}</h2>
         <div className={styles.center}>
           <div className={styles.centerItems}>
-            <h2>Connect and grow</h2>
+            <h2>{t("landing.connect")}</h2>
             <p>
-              To get started, find a mentor that suits your needs and send a
-              connection request. Your activity will appear here.
+            {t("landing.get_started")}
             </p>
-            <button>Discover mentors</button>
+            <button>{t("landing.discover_button")}</button>
           </div>
 
           <div className={styles.centerImage}>
@@ -99,9 +98,9 @@ const Landing = () => {
       </div>
 
       <div className={styles.right}>
-        <h4>Mentors for you</h4>
+        <h4>{t("landing.mentors_for_you")}</h4>
         <p>
-          Need help? Our wizard helps you find the right mentor just for you.
+        {t("landing.need_help")}
         </p>
         <button>
           <div className={styles.HomePageRightIcon}>
