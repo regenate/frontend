@@ -3,8 +3,9 @@
 .mentorMain {
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: auto;
   height: auto;
+  overflow-y: hidden;
 
   .dropDownItems {
     width: 100%;
@@ -12,6 +13,25 @@
     flex-direction: row;
     align-items: center;
     margin: 0;
+
+    input {
+      height: 35px;
+      width: 300px;
+      background: #ffffff;
+      border: 1px solid #c4c4c4;
+      border-radius: 10px;
+    }
+    input::placeholder {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 20px;
+      color: #c4c4c4;
+    }
+    .searchIcon {
+      left: 50px;
+    }
 
     .searchbtn {
       width: 380px;
@@ -87,11 +107,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: space-around;
-    // flex-wrap: wrap;
     margin-bottom: 40px;
 
     .itemWrapper {
@@ -158,6 +173,7 @@
             font-size: 12px;
             line-height: 18px;
             color: #ffffff;
+            margin-left: 5px;
           }
         }
         h4 {
@@ -296,14 +312,17 @@
     border: 1px solid rgba(0, 53, 79, 0.1);
   }
   .mentorsFooterWrapper2 {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     .left2 {
+      width: 30%;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      margin: 0;
+      justify-content: space-between;
 
       p {
         font-family: "Poppins";
@@ -315,26 +334,53 @@
       }
     }
     .right2 {
+      width: 30%;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: #00354f;
+      }
     }
   }
-
   .mentorsFooterWrapper3 {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
+
     .left3 {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      width: 30%;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: rgba(0, 53, 79, 0.5);
     }
     .right3 {
+      width: 30%;
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: space-between;
+
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 16px;
+        color: rgba(0, 53, 79, 0.5);
+      }
     }
   }
 }

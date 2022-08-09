@@ -40,7 +40,7 @@ const MentorMain = () => {
             <TabList onChange={handleChange}>
               <Tab
                 sx={{
-                  fontSize: "20px",
+                  fontSize: "15px",
                   fontFamily: "Poppins",
                   fontWeight: "600",
                   color: "#00354F",
@@ -51,7 +51,7 @@ const MentorMain = () => {
               />
               <Tab
                 sx={{
-                  fontSize: "20px",
+                  fontSize: "15px",
                   fontFamily: "Poppins",
                   fontWeight: "600",
                   color: "#00354F",
@@ -62,7 +62,7 @@ const MentorMain = () => {
               />
               <Tab
                 sx={{
-                  fontSize: "20px",
+                  fontSize: "15px",
                   fontFamily: "Poppins",
                   fontWeight: "600",
                   color: "#00354F",
@@ -78,6 +78,8 @@ const MentorMain = () => {
           <TabPanel value="3"></TabPanel>
         </TabContext>
       </Box>
+
+      {/*mentors top */}
 
       <div className={styles.dropDownItems}>
         <button className={styles.searchbtn}>
@@ -140,6 +142,7 @@ const MentorMain = () => {
         <button type="submit">Load more mentors</button>
       </div>
 
+      {/*mentors page footer */}
       <div className={styles.mentorsFooterWrapper}>
         <div className={styles.left}>
           <RegensLogo className={styles.mentorsFooterLogo} />
@@ -184,7 +187,10 @@ const MentorMain = () => {
       </div>
 
       <div className={styles.mentorsFooterWrapper3}>
-        <Footer className={styles.left3} />
+        <div className={styles.left3}>
+          <Footer />
+        </div>
+
         <div className={styles.right3}>
           <p>Contact us</p>
           <p>Privacy Policy</p>
