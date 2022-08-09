@@ -1,0 +1,23 @@
+.mentorModule {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 10px;
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+  width: 100%;
+}
+
+.mentorModule .sideNav,
+.mentorModule .content {
+  padding-top: 50px;
+}
+
+.mentorModule .sideNav {
+  border-right: solid 1px #e3e6ea;
+}
+
+.mentorModule .content {
+  padding-left: 20px;
+}
+/*# sourceMappingURL=Mentor.module.css.map */

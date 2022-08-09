@@ -1,0 +1,500 @@
+.mentorMain {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+.mentorMain .dropDownItems {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+.mentorMain .dropDownItems .searchbtn {
+  width: 380px;
+  height: 40px;
+  top: 177px;
+  left: 115px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+}
+
+.mentorMain .dropDownItems .searchbtn .searchIcon {
+  margin: 0;
+  padding: 0;
+  color: #077f7f;
+  width: 19px;
+  height: 19px;
+  margin-left: 40px;
+}
+
+.mentorMain .dropDownItems .searchbtn input {
+  height: 35px;
+  width: 300px;
+  border-style: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #c4c4c4;
+  border-radius: 10px;
+  outline: none;
+}
+
+.mentorMain .dropDownItems .searchbtn input::-webkit-input-placeholder {
+  height: 20px;
+  width: 247px;
+  left: 164px;
+  top: 187px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #c4c4c4;
+}
+
+.mentorMain .dropDownItems .searchbtn input:-ms-input-placeholder {
+  height: 20px;
+  width: 247px;
+  left: 164px;
+  top: 187px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #c4c4c4;
+}
+
+.mentorMain .dropDownItems .searchbtn input::-ms-input-placeholder {
+  height: 20px;
+  width: 247px;
+  left: 164px;
+  top: 187px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #c4c4c4;
+}
+
+.mentorMain .dropDownItems .searchbtn input::placeholder {
+  height: 20px;
+  width: 247px;
+  left: 164px;
+  top: 187px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #c4c4c4;
+}
+
+.mentorMain select,
+.mentorMain option {
+  height: 40px;
+  width: 170px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  margin-left: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #00354f;
+  padding: 0 10px;
+}
+
+.mentorMain select,
+.mentorMain option:focus {
+  outline: none;
+}
+
+.mentorMain .container {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.mentorMain .container .itemWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mentorMain .container .itemWrapper .item {
+  margin-top: 20px;
+  position: relative;
+}
+
+.mentorMain .container .itemWrapper .item img {
+  width: 265px;
+  height: 364px;
+  border-radius: 15px;
+  opacity: 0.9;
+}
+
+.mentorMain .container .itemWrapper .item .messagesIconContainer {
+  width: 40px;
+  height: 24px;
+  top: 20px;
+  left: 172px;
+  padding: 5px;
+  position: absolute;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mentorMain .container .itemWrapper .item .messagesIconContainer .messagesIcon {
+  font-size: 18px;
+}
+
+.mentorMain .container .itemWrapper .item .messagesIconContainer span {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 15px;
+  color: #00354f;
+}
+
+.mentorMain .container .itemWrapper .item .favoriteIcon {
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+.mentorMain .container .itemWrapper .item h3 {
+  top: 253px;
+  left: 15px;
+  position: absolute;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.mentorMain .container .itemWrapper .item h3 span {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.mentorMain .container .itemWrapper .item h4 {
+  position: absolute;
+  top: 270px;
+  left: 15px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.mentorMain .container .itemWrapper .item .workContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: 15px;
+  top: 43%;
+  bottom: -25%;
+}
+
+.mentorMain .container .itemWrapper .item .workContainer .workIcon {
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mentorMain .container .itemWrapper .item .workContainer h6 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  padding-left: 5px;
+  color: #ffffff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+.mentorMain .container .itemWrapper .item .interestContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  left: 15px;
+  top: 46%;
+  bottom: -30%;
+}
+
+.mentorMain .container .itemWrapper .item .interestContainer .interestIcon {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.mentorMain .container .itemWrapper .item .interestContainer h6 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  padding-left: 5px;
+  margin: 0;
+}
+
+.mentorMain .container button {
+  width: 219px;
+  height: 53px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: #ffffff;
+  background: #00354f;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.mentorMain .mentorsFooterWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mentorMain .mentorsFooterWrapper .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mentorMain .mentorsFooterWrapper .left .mentorsFooterLogo {
+  width: 40px;
+  height: 40px;
+}
+
+.mentorMain .mentorsFooterWrapper .left p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  color: rgba(0, 53, 79, 0.5);
+  margin: 0;
+}
+
+.mentorMain .mentorsFooterWrapper .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mentorMain .mentorsFooterWrapper .right .socialIconContainer {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  background: #00354f;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.mentorMain .mentorsFooterWrapper .right .socialIconContainer .Icon {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  margin: 0;
+}
+
+.mentorMain hr {
+  width: 100%;
+  height: 0px;
+  border: 1px solid rgba(0, 53, 79, 0.1);
+}
+
+.mentorMain .mentorsFooterWrapper2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mentorMain .mentorsFooterWrapper2 .left2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mentorMain .mentorsFooterWrapper2 .left2 p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #00354f;
+}
+
+.mentorMain .mentorsFooterWrapper2 .right2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mentorMain .mentorsFooterWrapper3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mentorMain .mentorsFooterWrapper3 .left3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mentorMain .mentorsFooterWrapper3 .right3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=MentorMain.module.css.map */

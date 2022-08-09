@@ -1,15 +1,17 @@
 // mentor css code here
 
-@import "src/scss/style.scss";
 .mentorMain {
-  margin: 10px 10px;
+  margin: 0;
   padding: 0;
+  width: 100%;
+  height: auto;
 
   .dropDownItems {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin: 0;
 
     .searchbtn {
       width: 380px;
@@ -42,6 +44,7 @@
       line-height: 20px;
       color: #c4c4c4;
       border-radius: 10px;
+      outline: none;
     }
     .searchbtn input::placeholder {
       height: 20px;
@@ -56,141 +59,282 @@
       color: #c4c4c4;
     }
   }
+  select,
+  option {
+    height: 40px;
+    width: 170px;
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #00354f;
+    padding: 0 10px;
+  }
+  select,
+  option:focus {
+    outline: none;
+  }
 
-  .mentorsImageContainer {
+  .container {
     width: auto;
+    height: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: space-around;
+    // flex-wrap: wrap;
+    margin-bottom: 40px;
 
-    .mentorsImage {
-      position: relative;
-      margin-bottom: 15px;
-    }
-    .mentorsImage > img {
-      width: 265px;
-      height: 364px;
-      left: 116px;
-      top: 241px;
-      border-radius: 15px;
-      background: #d9d9d9;
-    }
-    .topinboxIcon {
-      position: absolute;
-      top: 12px;
-      left: 180px;
-      width: 40px;
-      height: 24px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 5px;
-      padding-left: 3px;
-      @include largeDesktop() {
-        left: 180px;
+    .itemWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .item {
+        margin-top: 20px;
+        position: relative;
+
+        img {
+          width: 265px;
+          height: 364px;
+          border-radius: 15px;
+          opacity: 0.9;
+        }
+        .messagesIconContainer {
+          width: 40px;
+          height: 24px;
+          top: 20px;
+          left: 172px;
+          padding: 5px;
+          position: absolute;
+          color: black;
+          background-color: rgb(255, 255, 255);
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+
+          .messagesIcon {
+            font-size: 18px;
+          }
+          span {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 15px;
+            color: #00354f;
+          }
+        }
+        .favoriteIcon {
+          margin-left: 10px;
+          color: #ffffff;
+        }
+        h3 {
+          top: 253px;
+          left: 15px;
+          position: absolute;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 18px;
+          color: #ffffff;
+
+          span {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;
+            color: #ffffff;
+          }
+        }
+        h4 {
+          position: absolute;
+          top: 270px;
+          left: 15px;
+
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 18px;
+          color: #ffffff;
+        }
+        .workContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          left: 15px;
+          top: 43%;
+          bottom: -25%;
+
+          .workIcon {
+            color: #ffffff;
+            font-size: 14px;
+            align-items: center;
+          }
+
+          h6 {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            padding-left: 5px;
+            color: #ffffff;
+            align-items: center;
+            margin: 0;
+          }
+        }
+
+        .interestContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          left: 15px;
+          top: 46%;
+          bottom: -30%;
+
+          .interestIcon {
+            color: #ffffff;
+            font-size: 14px;
+          }
+          h6 {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            color: #ffffff;
+            padding-left: 5px;
+            margin: 0;
+          }
+        }
       }
     }
-    .topinboxIcon span {
-      position: absolute;
-      top: 5px;
+    button {
+      width: 219px;
+      height: 53px;
+      display: flex;
       align-items: center;
+      justify-content: center;
       font-family: "Poppins";
       font-style: normal;
       font-weight: 600;
-      font-size: 12px;
-      line-height: 15px;
-      color: #00354f;
-    }
-    .topFavoriteIcon {
-      position: absolute;
-      top: 12px;
-      left: 230px;
+      font-size: 13px;
+      line-height: 20px;
       color: #ffffff;
-      @include largeDesktop() {
-        left: 230px;
+      background: #00354f;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .mentorsFooterWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .mentorsFooterLogo {
+        width: 40px;
+        height: 40px;
+      }
+
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 16px;
+        color: rgba(0, 53, 79, 0.5);
+        margin: 0;
       }
     }
-    .bottomText h3 {
-      margin: 10px 0 10px 5px;
-    }
-    // .IconAndTextWrapper {
-    //   display: flex;
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-    //   background-color: green;
-    // }
-    .bottomTextName {
-      position: absolute;
-      top: 230px;
-      margin-left: 10px;
-      width: auto;
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 18px;
-      color: #ffffff;
-      margin-left: 5px;
+      .socialIconContainer {
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+        background: #00354f;
+        color: #ffffff;
+        border-radius: 50%;
+
+        .Icon {
+          transform: scale(0.8);
+          margin: 0;
+        }
+      }
     }
-    .bottomTextName span {
-      width: 14px;
-      font-family: "Poppins";
-      margin-left: 10px;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 18px;
-      color: #ffffff;
-    }
-    .bottomTextGroup {
-      position: absolute;
-      margin-left: 5px;
-      width: auto;
-      top: 250px;
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 18px;
-      color: #ffffff;
-    }
-    .workOutlineTwoTone {
-      position: absolute;
-      top: 300px;
-      margin-left: 5px;
+  }
+  hr {
+    width: 100%;
+    height: 0px;
+    border: 1px solid rgba(0, 53, 79, 0.1);
+  }
+  .mentorsFooterWrapper2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left2 {
       display: flex;
-      justify-content: center;
-      color: #ffffff;
+      align-items: center;
+      justify-content: space-around;
+
+      p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 18px;
+        color: #00354f;
+      }
     }
-    .workOutlineTwoTone p {
-      width: 140px;
-      height: 18px;
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 18px;
-      margin-bottom: 5px;
-      color: #ffffff;
-    }
-    .textsmsTwoTone {
-      position: absolute;
-      margin-left: 5px;
-      top: 325px;
-      color: #ffffff;
+    .right2 {
       display: flex;
-      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
-    .textsmsTwoTone p {
-      width: 215px;
-      height: 18px;
-      top: 572px;
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 18px;
-      color: #ffffff;
+  }
+
+  .mentorsFooterWrapper3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .right3 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
   }
 }
